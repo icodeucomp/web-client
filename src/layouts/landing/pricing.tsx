@@ -18,7 +18,7 @@ const Pricing = () => {
       </div>
       <menu className="flex flex-wrap justify-center gap-8">
         {price.map((parent, i) => (
-          <article key={i} className="flex flex-col flex-1 max-w-sm gap-4 p-8 overflow-hidden text-center shadow-2xl rounded-3xl bg-light">
+          <article key={i} className="flex flex-col flex-1 min-w-80 max-w-sm gap-4 p-8 overflow-hidden text-center shadow-2xl rounded-3xl bg-light">
             <Images src={parent.pathImg} alt={parent.title} className="w-16 h-16 mx-auto" />
             <h4 className="flex-grow text-xl font-bold text-blue">{parent.title}</h4>
             <p className="text-xs font-medium text-yellow">Starts From</p>

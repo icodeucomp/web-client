@@ -6,7 +6,7 @@ import { IoIosArrowDown } from "react-icons/io";
 
 const Hero = () => {
   return (
-    <Container className="relative min-h-500 sm:min-h-screen">
+    <Container className="relative min-h-500 sm:min-h-screen 2xl:min-h-600">
       <div className="flex justify-between py-4">
         <Link href="/" className="flex items-center gap-2">
           <Images className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14" src="/icons/logo-icodeu.svg" alt="logo i code u" />

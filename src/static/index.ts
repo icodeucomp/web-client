@@ -7,7 +7,7 @@ export const service: TemplateField[] = [
     description: "Designing websites that adapt to all devices, from desktops to mobile phones.",
   },
   {
-    pathImg: "/icons/price-white.svg",
+    pathImg: "/icons/process-white.svg",
     title: "SEO & Website Performance Optimization",
     description:
       "Improving your website's visibility on search engines and attracting more visitors, also ensuring your website runs fast and efficiently, providing the best user experience.",
@@ -29,12 +29,12 @@ export const service: TemplateField[] = [
   },
 ];
 
-export const serve: string[] = [
-  "Highly Affordable Prices",
-  "Professional and Experienced Team",
-  "Excellent Customer Service",
-  "Customized Solutions to Meet Your Needs",
-  "Focus on Customer Satisfaction",
+export const serve: { pathImg: string; description: string }[] = [
+  { pathImg: "/icons/price.svg", description: "Highly Affordable Prices" },
+  { pathImg: "/icons/person.svg", description: "Professional and Experienced Team" },
+  { pathImg: "/icons/customer.svg", description: "Excellent Customer Service" },
+  { pathImg: "/icons/list.svg", description: "Customized Solutions to Meet Your Needs" },
+  { pathImg: "/icons/hand.svg", description: "Focus on Customer Satisfaction" },
 ];
 
 export const price: PriceField[] = [
@@ -45,7 +45,7 @@ export const price: PriceField[] = [
     description: ["Free Domain", "Free Server", "Exclusive Design", "Up to 10 revision"],
   },
   {
-    pathImg: "/icons/price-orange.svg",
+    pathImg: "/icons/process-orange.svg",
     title: "SEO & Website Performance Optimization",
     price: 100000,
     description: ["Free Domain", "Free Server", "Exclusive Design"],

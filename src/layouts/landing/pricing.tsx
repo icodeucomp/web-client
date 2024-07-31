@@ -8,9 +8,9 @@ import { IoIosArrowForward } from "react-icons/io";
 
 const Pricing = () => {
   return (
-    <Container className="space-y-24">
+    <Container className="pt-10 space-y-24">
       <div className="pt-4 text-center">
-        <h2 className="pb-2 text-sm font-medium uppercase">Pricing & Plans</h2>
+        <h2 className="pb-2 text-sm tracking-[4px] uppercase">Pricing & Plans</h2>
         <hr className="w-16 h-0.5 mx-auto bg-light" />
         <h3 className="max-w-screen-lg mx-auto mt-6 text-xl font-bold md:text-2xl lg:text-4xl text-light text-shadow">
           Whether your time-saving automation needs are large or small, we`re here to help you scale.

@@ -16,19 +16,20 @@ export default function Home() {
         <Prefer />
       </section>
       <section className="relative bg-gradient-to-b from-yellow from-40% to-orange">
-        <Backdrop className="bg-dark/30" />
+        <Backdrop className="bg-dark/20" />
         <Pricing />
       </section>
       <section className="bg-gradient-to-b from-blue to-dark-blue">
         <Experience />
       </section>
       <section className="bg-gradient-to-b from-yellow from-30% to-dark-yellow relative">
-        <Image src="/images/line-background.png" alt="line" fill objectFit="cover" />
-        <Backdrop className="bg-dark/20" />
+        <Image src="/images/black-line-desktop.png" alt="line" fill objectFit="cover" className="hidden md:block" />
+        <Image src="/images/black-line-mobile.png" alt="line" fill objectFit="cover" className="block md:hidden" />
+        <Backdrop className="bg-dark/10" />
         <Contact />
       </section>
       <section className="relative grid bg-blue min-h-400 place-items-center">
-        <Image src="/images/line-background.png" alt="line" fill objectFit="cover" />
+        <Image src="/images/white-line-desktop.png" alt="line" fill objectFit="cover" />
         <Testimonial />
       </section>
       <section className="bg-dark-blue">

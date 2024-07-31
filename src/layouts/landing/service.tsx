@@ -7,7 +7,7 @@ const Service = () => {
   return (
     <Container>
       <div className="pt-4 pb-16 text-center">
-        <h2 className="pb-2 text-sm font-medium uppercase">Our Services</h2>
+        <h2 className="pb-2 text-sm tracking-[4px] uppercase">Our Services</h2>
         <hr className="w-16 h-0.5 mx-auto bg-light" />
         <h3 className="max-w-2xl mx-auto mt-6 text-xl font-bold md:text-2xl lg:text-4xl text-blue text-shadow">
           We provide great services for our customers based on needs

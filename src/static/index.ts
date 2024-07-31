@@ -38,7 +38,12 @@ export const serve: string[] = [
 ];
 
 export const price: PriceField[] = [
-  { pathImg: "/icons/code-orange.svg", title: "Web Development", price: 200000, description: ["Free Domain", "Free Server", "Exclusive Design"] },
+  {
+    pathImg: "/icons/code-orange.svg",
+    title: "Web Development",
+    price: 200000,
+    description: ["Free Domain", "Free Server", "Exclusive Design", "Up to 10 revision"],
+  },
   {
     pathImg: "/icons/price-orange.svg",
     title: "SEO & Website Performance Optimization",

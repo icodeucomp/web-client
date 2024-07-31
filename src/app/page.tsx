@@ -1,24 +1,34 @@
-import { Contact, Experience, Footer, Hero, Pricing, Service, Testimonial } from "@/layouts/landing";
+import Backdrop from "@/components/backdrop";
+import Images from "@/components/images";
+import { Contact, Experience, Footer, Hero, Prefer, Pricing, Service, Testimonial } from "@/layouts/landing";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <>
-      <section className="bg-blue sm:bg-gradient-to-b sm:from-blue sm:from-30% sm:to-orange">
+      <section className="bg-gradient-to-b from-blue from-30% to-orange">
         <Hero />
       </section>
       <section className="bg-gradient-to-b from-orange to-blue">
         <Service />
       </section>
-      <section className="bg-gradient-to-b from-yellow to-orange">
+      <section className="bg-blue">
+        <Prefer />
+      </section>
+      <section className="relative bg-gradient-to-b from-yellow from-40% to-orange">
+        <Backdrop className="bg-dark/30" />
         <Pricing />
       </section>
-      <section className="bg-blue">
+      <section className="bg-gradient-to-b from-blue to-dark-blue">
         <Experience />
       </section>
-      <section className="bg-yellow">
+      <section className="bg-gradient-to-b from-yellow from-30% to-dark-yellow relative">
+        <Image src="/images/line-background.png" alt="line" fill objectFit="cover" />
+        <Backdrop className="bg-dark/20" />
         <Contact />
       </section>
-      <section className="grid bg-blue min-h-400 place-items-center">
+      <section className="relative grid bg-blue min-h-400 place-items-center">
+        <Image src="/images/line-background.png" alt="line" fill objectFit="cover" />
         <Testimonial />
       </section>
       <section className="bg-dark-blue">

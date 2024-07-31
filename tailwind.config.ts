@@ -45,6 +45,8 @@ const config: Config = {
         blue: "#003153",
         orange: "#FF6C01",
         yellow: "#FF9D00",
+        "light-yellow": "#FFC54F",
+        "dark-yellow": "#995E00",
         green: "#5CC97B",
         light: "#FFFFFF",
         dark: "#313335",

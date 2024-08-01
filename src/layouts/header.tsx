@@ -1,14 +1,27 @@
-import Image from "next/image";
+import Container from "@/components/container";
+import Images from "@/components/images";
 import Link from "next/link";
+import { MdArrowCircleRight } from "react-icons/md";
 
 const Header = () => {
   return (
-    <header className="fixed top-0 w-full bg-dark/80 lg:bg-dark/60 lg:py-4 lg:px-16 text-light z-1000">
-      <div className="relative flex items-center justify-between w-full h-20 gap-4 px-8 pb-4 lg:h-full lg:px-0">
-        <Link href="/">
-          <Image src="/images/logo-image.webp" alt="Mitra Sama Sejahtera Logo" width={150} height={150} />
+    <header className="fixed top-0 w-full py-4 z-1000">
+      <Container className="flex items-center justify-between">
+        <Link href="/" className="flex items-center gap-2">
+          <Images className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14" src="/icons/logo-icodeu.svg" alt="logo i code u" />
+          <h1 className="text-lg font-bold sm:text-xl md:text-2xl font-red-hat">ICodeU</h1>
         </Link>
-      </div>
+        <div className="flex gap-4">
+          <Link href="/">Home</Link>
+          <Link href="/">About Us</Link>
+          <Link href="/">Service</Link>
+          <Link href="/">Pricing</Link>
+        </div>
+        <Link href="/" className="flex items-center gap-2">
+          Contact Us
+          <MdArrowCircleRight size={20} />
+        </Link>
+      </Container>
     </header>
   );
 };

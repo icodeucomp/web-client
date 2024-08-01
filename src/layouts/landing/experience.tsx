@@ -25,7 +25,8 @@ const Experience = () => {
       </div>
       <menu className="block pt-8 pb-16 space-y-8 md:hidden">
         {experience.map((item, index) => (
-          <li key={index} className={`flex items-center gap-4 ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}>
+          <li key={index} className={`flex items-center relative gap-4 ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}>
+            <i className="absolute p-2 text-xs rounded-full bg-orange -top-4 -right-4">{index + 1}</i>
             <div className="p-4 shadow-2xl rounded-2xl bg-dark shadow-light/30">
               <Images src={item.pathImg} alt={item.description} className="h-20 w-28" cover />
             </div>
@@ -36,15 +37,16 @@ const Experience = () => {
           </li>
         ))}
       </menu>
-      <menu className="grid grid-cols-2 px-8 pt-8 pb-16 space-y-8">
+      <menu className="hidden grid-cols-2 gap-12 px-8 pt-8 pb-16 md:grid">
         {experience.map((item, index) => (
-          <li key={index} className={`flex items-center justify-center gap-4 ${index === 1}`}>
+          <li key={index} className={`flex items-center justify-center gap-4 relative`}>
+            <i className="absolute px-3.5 py-2 text-sm font-bold rounded-full bg-orange -top-5 -right-5">{index + 1}</i>
             <div className="max-w-sm space-y-1 text-end">
               <h5 className="text-xl sm:text-2xl text-gradient">{item.title}</h5>
               <p className="text-sm sm:text-base">{item.description}</p>
             </div>
             <div className="p-4 rounded-2xl bg-dark card-shadow">
-              <Images src={item.pathImg} alt={item.description} className="h-48 w-60" cover />
+              <Images src={item.pathImg} alt={item.description} className="w-32 h-20 lg:h-48 lg:w-60" cover />
             </div>
           </li>
         ))}

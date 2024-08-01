@@ -35,3 +35,14 @@ export interface PriceField {
   price: number;
   description: string[];
 }
+
+export interface CardPriceProps {
+  onMouseLeave: () => void;
+  onMouseEnter: () => void;
+  isHighlight: boolean;
+  pathImg: string;
+  price: number;
+  title: string;
+  description: string[];
+  index: number;
+}

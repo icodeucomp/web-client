@@ -58,7 +58,7 @@ const Contact = () => {
           className="flex-col items-center justify-center flex-1 max-w-lg gap-16 text-gray-200 min-h-500"
           src="/images/home/talk-people.png"
         >
-          <h4 className="text-3xl font-bold leading-snug text-center">We specialize in helping our customers digitize their business</h4>
+          <h4 className="text-3xl font-bold leading-snug text-center">“We specialize in helping our customers digitize their business”</h4>
           <div className="text-center">
             <Images src="/images/home/sandra.png" alt="sandra photo" className="w-20 h-20 mx-auto" />
             <h5 className="mt-4 text-lg font-bold">Sandra Lewis</h5>

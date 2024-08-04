@@ -27,7 +27,7 @@ const Testimonial = () => {
                   <p className="text-sm text-gray-500">{item.job}</p>
                 </div>
               </div>
-              <p className="h-16 text-2xl tracking-wide text-yellow">"{item.subject}"</p>
+              <p className="h-16 text-2xl tracking-wide text-yellow">“{item.subject}”</p>
               <p className="flex-grow text-sm text-justify text-gray-500">{item.message}</p>
               <div className="flex items-center">
                 {Array.from({ length: 5 }).map((_, index) => (

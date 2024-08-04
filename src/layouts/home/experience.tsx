@@ -6,9 +6,11 @@ import { experience } from "@/static";
 const Experience = () => {
   return (
     <Container>
-      <div className="flex items-center pt-8">
+      <div className="flex items-center pb-8">
         <i className="flex-grow border-t border-gray-400" />
-        <p className="flex-shrink text-xs font-light text-gray-300 tracking-[4px] uppercase md:text-sm ms-4">OUR DEVELOPMENT METHODS</p>
+        <p className="font-extrabold tracking-wide text-yellow ms-4 me-2">03</p>
+        <p className="font-extrabold tracking-wide text-yellow me-4">|</p>
+        <p className="flex-shrink text-xs font-bold tracking-wide text-gray-300 uppercase md:text-sm">Our Development Methods</p>
       </div>
       <div className="flex items-start justify-end gap-8 pt-8 text-end">
         <div className="max-w-full space-y-8 md:max-w-sm ms-auto">

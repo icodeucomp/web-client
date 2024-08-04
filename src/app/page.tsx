@@ -1,7 +1,9 @@
-import Backdrop from "@/components/backdrop";
-import Images from "@/components/images";
-import { Contact, Experience, Footer, Hero, Prefer, Pricing, Service, Testimonial } from "@/layouts/landing";
 import Image from "next/image";
+
+import { Contact, Experience, Hero, Prefer, Pricing, Service, Testimonial } from "@/layouts/landing";
+import Footer from "@/layouts/footer";
+
+import Backdrop from "@/components/backdrop";
 
 export default function Home() {
   return (

@@ -30,6 +30,9 @@ input[type="number"] {
 }
 
 @layer components {
+  .button-gradient {
+    @apply flex items-center gap-2 rounded-3xl bg-gradient-to-r from-yellow to-orange hover:from-orange hover:to-yellow;
+  }
   .text-gradient {
     @apply font-extrabold text-transparent bg-gradient-to-r from-yellow to-orange bg-clip-text;
   }

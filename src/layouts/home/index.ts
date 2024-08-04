@@ -1,9 +1,9 @@
+import Blog from "./blog";
 import Contact from "./contact";
 import Experience from "./experience";
 import Hero from "./hero";
-import Prefer from "./prefer";
-import Pricing from "./pricing";
+import Profile from "./profile";
 import Service from "./service";
 import Testimonial from "./testimonial";
 
-export { Prefer, Contact, Experience, Hero, Pricing, Service, Testimonial };
+export { Hero, Blog, Testimonial, Contact, Profile, Service, Experience };

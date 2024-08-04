@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <Container className="relative min-h-500 sm:min-h-screen 2xl:min-h-600">
       <div className="flex justify-between py-4">
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/home" className="flex items-center gap-2">
           <Images className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14" src="/icons/logo-icodeu.svg" alt="logo i code u" />
           <h1 className="text-lg font-bold sm:text-xl md:text-2xl font-red-hat">ICodeU</h1>
         </Link>
@@ -23,7 +23,7 @@ const Hero = () => {
           We apply agile methods to deliver customized IT services and support for various non-IT tasks, ensuring your business needs are met
           efficiently
         </p>
-        <Button className="flex items-center gap-2 mx-auto rounded-3xl bg-gradient-to-r from-yellow to-orange hover:from-orange hover:to-yellow">
+        <Button className="mx-auto button-gradient">
           See Pricing
           <IoIosArrowDown size={16} className="rounded-full shadow-md bg-light fill-orange" />
         </Button>

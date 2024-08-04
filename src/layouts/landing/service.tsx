@@ -1,7 +1,7 @@
 import Container from "@/components/container";
 import Images from "@/components/images";
 
-import { serve, service } from "@/static";
+import { service } from "@/static";
 
 const Service = () => {
   return (

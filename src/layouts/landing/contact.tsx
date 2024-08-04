@@ -1,6 +1,7 @@
 import Button from "@/components/button";
 import Container from "@/components/container";
 import Images from "@/components/images";
+
 import { FaWhatsapp } from "react-icons/fa";
 
 const Contact = () => {

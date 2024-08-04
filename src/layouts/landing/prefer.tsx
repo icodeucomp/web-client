@@ -1,7 +1,7 @@
 import Container from "@/components/container";
 import Images from "@/components/images";
+
 import { serve } from "@/static";
-import React from "react";
 
 const Prefer = () => {
   return (

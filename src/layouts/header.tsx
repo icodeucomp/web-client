@@ -5,7 +5,7 @@ import { MdArrowCircleRight } from "react-icons/md";
 
 const Header = () => {
   return (
-    <header className="fixed top-0 w-full py-4 z-1000">
+    <header className="fixed top-0 w-full py-4 z-1000 bg-blue">
       <Container className="flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <Images className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14" src="/icons/logo-icodeu.svg" alt="logo i code u" />

@@ -29,6 +29,19 @@ export interface TemplateField {
   description: string;
 }
 
+export interface BlogField extends TemplateField {
+  date: string;
+  topic: string;
+}
+
+export interface TestimonialField {
+  name: string;
+  job: string;
+  subject: string;
+  message: string;
+  pathImg: string;
+}
+
 export interface PriceField {
   pathImg: string;
   title: string;

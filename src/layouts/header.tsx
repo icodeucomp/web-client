@@ -1,12 +1,13 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
 import Link from "next/link";
 
 import Container from "@/components/container";
 import Images from "@/components/images";
 
 import { MdArrowCircleRight } from "react-icons/md";
-import { useEffect, useState } from "react";
 
 const Header = () => {
   const [isVisible, setIsVisible] = useState<boolean>(true);
@@ -16,9 +17,9 @@ const Header = () => {
     const currentScrollY = window.scrollY;
 
     const handleScroll = () => {
-      if (currentScrollY > 300 && currentScrollY > lastScrollY) {
+      if (currentScrollY > lastScrollY) {
         setIsVisible(false);
-      } else if (currentScrollY < lastScrollY || currentScrollY <= 300) {
+      } else {
         setIsVisible(true);
       }
       setLastScrollY(currentScrollY);

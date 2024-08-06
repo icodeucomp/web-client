@@ -3,21 +3,22 @@
 import { useState } from "react";
 import Link from "next/link";
 
-import { SwiperSlide, Swiper, useSwiper } from "swiper/react";
+import { SwiperSlide, Swiper } from "swiper/react";
+
+import { Navigation } from "swiper/modules";
 
 import Button from "@/components/button";
 import Container from "@/components/container";
 import Images from "@/components/images";
 
 import { IoIosArrowForward } from "react-icons/io";
+import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 
 import { price } from "@/static";
 
 import currency from "@/utils/currency";
 
 import { CardPriceProps } from "@/types";
-import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
-import { Navigation, Pagination } from "swiper/modules";
 
 const Card = ({ onMouseLeave, onMouseEnter, isHighlight, pathImg, price, title, description, index }: CardPriceProps) => {
   return (
@@ -54,11 +55,9 @@ const Card = ({ onMouseLeave, onMouseEnter, isHighlight, pathImg, price, title, 
 const Pricing = () => {
   const [hover, setHover] = useState<number | null>(null);
 
-  const swiper = useSwiper();
-
   return (
-    <Container className="pt-10 space-y-24">
-      <div className="pt-4 text-center">
+    <Container className="pt-10">
+      <div className="pt-4 text-center mb-16 lg:mb-24">
         <h2 className="pb-2 text-sm tracking-[4px] uppercase">Pricing & Plans</h2>
         <hr className="w-16 h-0.5 mx-auto bg-light" />
         <h3 className="max-w-screen-lg mx-auto mt-6 text-xl font-bold md:text-2xl lg:text-4xl text-light text-shadow">
@@ -85,10 +84,7 @@ const Pricing = () => {
       </div>
       <Swiper
         modules={[Navigation]}
-        navigation={{
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        }}
+        navigation={{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }}
         spaceBetween={10}
         breakpoints={{ 0: { slidesPerView: 1 }, 768: { slidesPerView: 2 } }}
         slidesPerView={2}
@@ -120,7 +116,7 @@ const Pricing = () => {
       <Link href="/" className="items-center justify-center hidden w-full gap-2 pb-8 text-sm font-medium hover:underline lg:flex">
         See Full Pricing <IoIosArrowForward size={20} className="rounded-full bg-light fill-orange" />
       </Link>
-      <div className="flex items-center justify-center w-full gap-2 pb-8 text-sm font-medium lg:hidden">
+      <div className="flex items-center justify-center w-full gap-2 py-8 text-sm font-medium lg:hidden">
         <div className="swiper-button-prev">
           <FaLongArrowAltLeft size={24} />
         </div>

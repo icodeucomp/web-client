@@ -25,8 +25,8 @@ const Service = () => {
         {service
           .filter((_, index) => index < 4)
           .map((item, index) => (
-            <article key={index} className={`h-full text-center bg-light rounded-3xl group ${index % 2 === 1 ? "-mt-10" : ""}`}>
-              <div className="flex flex-col justify-center gap-4 p-4 duration-300 bg-gradient-to-b from-yellow to-orange rounded-3xl h-72 group-hover:-translate-x-4 group-hover:-translate-y-4">
+            <article key={index} className={`h-full text-center bg-card-3d rounded-3xl group ${index % 2 === 1 ? "-mt-10" : ""}`}>
+              <div className="flex flex-col justify-center gap-4 p-4 duration-300 bg-gradient-to-b from-yellow to-orange rounded-3xl h-72 -translate-x-1.5 -translate-y-1.5 group-hover:-translate-x-4 group-hover:-translate-y-4">
                 <Images src={item.pathImg} alt={item.title} className="w-10 h-10 mx-auto" />
                 <h4 className="text-base font-semibold md:text-lg">{item.title}</h4>
                 <p className="text-sm font-light">{item.description}</p>

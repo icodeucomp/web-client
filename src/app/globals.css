@@ -18,6 +18,11 @@
   box-shadow: -8px 10px 15px #ffffff51;
 }
 
+.bg-card-3d {
+  background: #cc7e00;
+  background: linear-gradient(180deg, #cc7e00 0%, #cc5500 100%);
+}
+
 .swiper-button-next::after,
 .swiper-button-prev::after {
   content: "" !important;

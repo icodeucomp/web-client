@@ -8,6 +8,8 @@ export interface ContainerProps {
 export interface BackgroundProps {
   src: string;
   className?: string;
+  isBackdrop?: boolean;
+  colorBackdrop?: string;
   children: JSX.Element | JSX.Element[];
 }
 
@@ -24,9 +26,24 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export interface TemplateField {
-  pathImg: string;
+  pathIcon: string;
   title: string;
   description: string;
+}
+
+export interface CardPriceProps {
+  onMouseLeave: () => void;
+  onMouseEnter: () => void;
+  isHighlight: boolean;
+  pathImg: string;
+  price: number;
+  title: string;
+  description: string[];
+  index: number;
+}
+
+export interface OurService extends TemplateField {
+  pathImg: string;
 }
 
 export interface BlogField extends TemplateField {
@@ -47,15 +64,4 @@ export interface PriceField {
   title: string;
   price: number;
   description: string[];
-}
-
-export interface CardPriceProps {
-  onMouseLeave: () => void;
-  onMouseEnter: () => void;
-  isHighlight: boolean;
-  pathImg: string;
-  price: number;
-  title: string;
-  description: string[];
-  index: number;
 }

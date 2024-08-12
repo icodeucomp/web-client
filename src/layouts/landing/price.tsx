@@ -57,7 +57,7 @@ const Pricing = () => {
 
   return (
     <Container className="pt-10">
-      <div className="pt-4 text-center mb-16 lg:mb-24">
+      <div className="pt-4 mb-16 text-center lg:mb-24">
         <h2 className="pb-2 text-sm tracking-[4px] uppercase">Pricing & Plans</h2>
         <hr className="w-16 h-0.5 mx-auto bg-light" />
         <h3 className="max-w-screen-lg mx-auto mt-6 text-xl font-bold md:text-2xl lg:text-4xl text-light text-shadow">
@@ -113,7 +113,7 @@ const Pricing = () => {
           </Link>
         </SwiperSlide>
       </Swiper>
-      <Link href="/" className="items-center justify-center hidden w-full gap-2 pb-8 text-sm font-medium hover:underline lg:flex">
+      <Link href="/" className="items-center justify-center hidden gap-2 py-16 mx-auto text-sm font-medium w-max hover:underline lg:flex">
         See Full Pricing <IoIosArrowForward size={20} className="rounded-full bg-light fill-orange" />
       </Link>
       <div className="flex items-center justify-center w-full gap-2 py-8 text-sm font-medium lg:hidden">

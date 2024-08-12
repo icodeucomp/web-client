@@ -25,7 +25,7 @@ const Blog = () => {
           {blog.map((item, index) => (
             <article key={index} className="max-w-xs space-y-2 overflow-hidden min-w-72 rounded-3xl bg-light">
               <div className="relative">
-                <Images src={item.pathImg} alt={item.title} className="h-40 w-80" cover />
+                <Images src={item.pathIcon} alt={item.title} className="h-40 w-80" cover />
                 <span className="absolute bottom-0 left-0 p-2 text-sm rounded-se-md bg-light-red">{item.topic}</span>
               </div>
               <div className="px-4 pt-4 pb-8 space-y-4">

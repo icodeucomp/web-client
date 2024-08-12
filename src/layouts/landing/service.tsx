@@ -15,7 +15,7 @@ const Service = () => {
         <div className="flex flex-wrap justify-center pt-16 gap-14">
           {service.map((item, index) => (
             <div key={index} className="max-w-xs space-y-4">
-              <Images src={item.pathImg} alt={item.title} className="w-10 h-10 mx-auto" />
+              <Images src={item.pathIcon} alt={item.title} className="w-10 h-10 mx-auto" />
               <h4 className="h-10 text-base font-semibold md:text-lg">{item.title}</h4>
               <p className="text-sm font-light">{item.description}</p>
             </div>

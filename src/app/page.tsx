@@ -1,7 +1,6 @@
 import Image from "next/image";
 
-import { Contact, Experience, Hero, Prefer, Pricing, Service, Testimonial } from "@/layouts/landing";
-import Footer from "@/layouts/footer";
+import { Contact, Experience, Hero, Prefer, Price, Service, Testimonial, Footer } from "@/layouts/landing";
 
 import Backdrop from "@/components/backdrop";
 
@@ -19,7 +18,7 @@ export default function Home() {
       </section>
       <section className="relative bg-gradient-to-b from-yellow from-40% to-orange">
         <Backdrop className="bg-dark/20" />
-        <Pricing />
+        <Price />
       </section>
       <section className="bg-gradient-to-b from-blue to-dark-blue">
         <Experience />

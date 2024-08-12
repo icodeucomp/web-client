@@ -7,7 +7,7 @@ const Prefer = () => {
   return (
     <Container className="flex justify-between gap-8 pb-16 md:pb-0">
       <div className="hidden max-w-sm mx-auto md:block">
-        <Images src="/images/people.png" alt="people service picture" className="max-w-md min-w-96 min-h-600" />
+        <Images src="/images/people-landing.png" alt="people service picture" className="max-w-md min-w-96 min-h-600" />
       </div>
       <div className="max-w-xl space-y-8">
         <div className="flex items-center py-8">

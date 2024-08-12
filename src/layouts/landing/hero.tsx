@@ -13,8 +13,12 @@ const Hero = () => {
           <h1 className="text-lg font-bold sm:text-xl md:text-2xl font-red-hat">ICodeU</h1>
         </Link>
         <div className="flex items-center gap-2">
-          <Button className="border-2 rounded-3xl border-orange text-orange hover:bg-orange hover:text-light">Contact Us</Button>
-          <Button className="rounded-3xl bg-gradient-to-r from-yellow to-orange hover:from-orange hover:to-yellow">See Pricing</Button>
+          <Link href="/contact">
+            <Button className="border-2 rounded-3xl border-orange text-orange hover:bg-orange hover:text-light">Contact Us</Button>
+          </Link>
+          <Link href="/price">
+            <Button className="rounded-3xl bg-gradient-to-r from-yellow to-orange hover:from-orange hover:to-yellow">See Pricing</Button>
+          </Link>
         </div>
       </div>
       <div className="max-w-2xl mx-auto my-24 space-y-8 text-center">

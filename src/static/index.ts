@@ -1,29 +1,60 @@
-import { BlogField, PriceField, TemplateField, TestimonialField } from "@/types";
+import { BlogField, OurService, PriceField, TemplateField, TestimonialField } from "@/types";
+
+export const mission: string[] = [
+  "Develop technology solutions that meet the specific needs of businesses, driving success and growth.",
+  "Build and nurture strong partnerships with clients and stakeholders, creating an environment where collaborative efforts lead to shared growth and achievement.",
+  "Cultivate an agile, fair, and harmonious workplace that supports employee well-being and fosters a culture of innovation and productivity.",
+  "Implement agile methodologies to ensure flexibility, rapid adaptation, and precise execution of technology solutions, optimizing results and enhancing client satisfaction.",
+];
+
+export const coreValues: TemplateField[] = [
+  { pathIcon: "/icons/nano-technology.svg", title: "Adaptability", description: "Embrace and navigate change with flexibility and efficiency." },
+  {
+    pathIcon: "/icons/load-balancer.svg",
+    title: "Balance",
+    description: "Foster a harmonious work environment that supports well-being and satisfaction.",
+  },
+  {
+    pathIcon: "/icons/shield-check.svg",
+    title: "Trust",
+    description: "Build reliable and transparent relationships with clients, partners, and team members.",
+  },
+  {
+    pathIcon: "/icons/backup-restore.svg",
+    title: "Resilience",
+    description: "Adapt and recover quickly from challenges, maintaining effectiveness and stability.",
+  },
+  {
+    pathIcon: "/icons/people-team.svg",
+    title: "Collaboration",
+    description: "Engage in cooperative efforts to achieve shared objectives and enhance team success.",
+  },
+];
 
 export const service: TemplateField[] = [
   {
-    pathImg: "/icons/code-white.svg",
+    pathIcon: "/icons/code-white.svg",
     title: "Responsive Website Development",
     description: "Designing websites that adapt to all devices, from desktops to mobile phones.",
   },
   {
-    pathImg: "/icons/process-white.svg",
+    pathIcon: "/icons/process-white.svg",
     title: "SEO & Website Performance Optimization",
     description:
       "Improving your website's visibility on search engines and attracting more visitors, also ensuring your website runs fast and efficiently, providing the best user experience.",
   },
   {
-    pathImg: "/icons/figma-white.svg",
+    pathIcon: "/icons/figma-white.svg",
     title: "Custom UI/UX Design",
     description: "Creating attractive interfaces and intuitive user experiences for your website.",
   },
   {
-    pathImg: "/icons/wordpress-white.svg",
+    pathIcon: "/icons/wordpress-white.svg",
     title: "Wordpress Development",
     description: "Developing WordPress-based websites tailored to your business needs.",
   },
   {
-    pathImg: "/icons/task-white.svg",
+    pathIcon: "/icons/task-white.svg",
     title: "IT & Non-IT Task Completion",
     description: "Professional assistance for various IT and non-IT tasks, ensuring all your technology needs are met.",
   },
@@ -35,6 +66,60 @@ export const serve: { pathImg: string; description: string }[] = [
   { pathImg: "/icons/customer.svg", description: "Excellent Customer Service" },
   { pathImg: "/icons/list.svg", description: "Customized Solutions to Meet Your Needs" },
   { pathImg: "/icons/hand.svg", description: "Focus on Customer Satisfaction" },
+];
+
+export const experience: TemplateField[] = [
+  {
+    pathIcon: "/images/discover.png",
+    title: "Discover",
+    description: "We begin each project by thoroughly understanding the challenge and its context...",
+  },
+  {
+    pathIcon: "/images/design.png",
+    title: "Design",
+    description: "...which enables us to craft a solution that aligns with your requirements...",
+  },
+  {
+    pathIcon: "/images/coding.png",
+    title: "Develop",
+    description: "...maintaining high development standards while optimizing costs...",
+  },
+  {
+    pathIcon: "/images/deliver.png",
+    title: "Deliver",
+    description: "...delivering a customized solution that maximizes your value.",
+  },
+];
+
+export const ourService: OurService[] = [
+  {
+    pathIcon: "/icons/code-computer.svg",
+    pathImg: "/images/service/responsive.png",
+    title: "Responsive Web Development",
+    description:
+      "Our Responsive Web Development service ensures that your website looks and functions flawlessly on any screen size, from desktops to smartphones and tablets.",
+  },
+  {
+    pathIcon: "/icons/statistics.svg",
+    pathImg: "/images/service/notebook.png",
+    title: "SEO & Website Performance Optimization",
+    description:
+      "Boost your online visibility and enhance your website's performance with our comprehensive SEO & Website Performance Optimization service. We help you achieve higher search engine rankings and ensure your site runs smoothly, providing an exceptional user experience that keeps visitors engaged.",
+  },
+  {
+    pathIcon: "/icons/wordpress-white.svg",
+    pathImg: "/images/service/wordpress.png",
+    title: "WordPress Development",
+    description:
+      "Unlock the full potential of your online presence with our WordPress Development service. We create powerful, customizable, and easy-to-manage websites tailored to meet your specific needs and goals.",
+  },
+  {
+    pathIcon: "/icons/code-computer.svg",
+    pathImg: "/images/service/uiux-phone.png",
+    title: "UI/UX Custom Design",
+    description:
+      "Elevate your digital experience with our UI/UX Custom Design service. We combine stunning visuals with seamless functionality to create engaging and user-friendly interfaces that resonate with your audience.",
+  },
 ];
 
 export const price: PriceField[] = [
@@ -55,29 +140,6 @@ export const price: PriceField[] = [
     title: "Custom UI/UX Design",
     price: 300000,
     description: ["Include Source Files", "Up to 10 Revision", "Free Mockup"],
-  },
-];
-
-export const experience: TemplateField[] = [
-  {
-    pathImg: "/images/discover.png",
-    title: "Discover",
-    description: "We begin each project by thoroughly understanding the challenge and its context...",
-  },
-  {
-    pathImg: "/images/design.png",
-    title: "Design",
-    description: "...which enables us to craft a solution that aligns with your requirements...",
-  },
-  {
-    pathImg: "/images/coding.png",
-    title: "Develop",
-    description: "...maintaining high development standards while optimizing costs...",
-  },
-  {
-    pathImg: "/images/deliver.png",
-    title: "Deliver",
-    description: "...delivering a customized solution that maximizes your value.",
   },
 ];
 
@@ -113,7 +175,7 @@ export const blog: BlogField[] = [
     title: "How to Use Social Proof in Marketing",
     description:
       "Ex fusce venenatis sit id ultrices lacus sapien integer natoque luctus. Tincidunt convallis sagittis imperdiet hendrerit nisl cursus diam. Quis vel facilisi vitae aliquam netus id euismod sem.",
-    pathImg: "/images/home/blog-one.png",
+    pathIcon: "/images/home/blog-one.png",
     date: "2024-08-03T12:43:47.432Z",
     topic: "SEO",
   },
@@ -121,7 +183,7 @@ export const blog: BlogField[] = [
     title: "Make a great first impression with these titles",
     description:
       "Pretium venenatis felis turpis scelerisque justo. Leo urna dignissim ultrices accumsan ipsum fusce phasellus. Laoreet amet nec id aliquet platea vel per efficitur curabitur accumsan.",
-    pathImg: "/images/home/blog-two.png",
+    pathIcon: "/images/home/blog-two.png",
     date: "2024-08-03T12:43:47.432Z",
     topic: "Social Media",
   },
@@ -129,7 +191,7 @@ export const blog: BlogField[] = [
     title: "How to Grab Your Reader's Attention",
     description:
       "Facilisi laoreet mattis montes vehicula quisque nisi ultrices ridiculus fringilla nostra in. Habitant ullamcorper volutpat nullam nibh ante nam suscipit et. Id natoque leo ridiculus augue litora arcu massa nibh fusce.",
-    pathImg: "/images/home/blog-three.png",
+    pathIcon: "/images/home/blog-three.png",
     date: "2024-08-03T12:43:47.432Z",
     topic: "Strategy",
   },

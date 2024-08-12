@@ -1,6 +1,7 @@
-import Footer from "@/layouts/footer";
-import { Hero, Profile, Service, Experience, Testimonial, Blog, Contact } from "@/layouts/home";
 import Image from "next/image";
+
+import { Hero, Profile, Service, Experience, Testimonial, Blog, Contact } from "@/layouts/home";
+
 import { IoIosArrowDown } from "react-icons/io";
 
 export default function page() {
@@ -38,12 +39,6 @@ export default function page() {
       </section>
       <section className="bg-blue">
         <Contact />
-      </section>
-      <section className="pt-32 bg-dark-blue">
-        <Footer />
-        <div className="w-full py-6 text-center bg-yellow">
-          <h5 className="text-sm">© 2024 ICodeU. All Rights Reserved</h5>
-        </div>
       </section>
     </>
   );

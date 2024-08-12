@@ -18,7 +18,7 @@ const Contact = () => {
         </Button>
       </div>
       <div className="max-w-xs p-6 mx-auto overflow-hidden lg:mx-0 md:max-w-md rounded-xl bg-light">
-        <form action="" className="space-y-4">
+        <form className="space-y-4">
           <div className="space-y-1">
             <label htmlFor="name" className="font-bold text-md md:text-base text-dark">
               Name

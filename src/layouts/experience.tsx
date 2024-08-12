@@ -24,7 +24,7 @@ const ExperienceSlice = () => {
           <li key={index} className={`flex items-center gap-6 ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}>
             <div className="relative p-4 rounded-2xl bg-dark card-shadow">
               <i className="absolute px-2 py-1 text-xs font-bold rounded-full bg-orange -top-3 -right-3">{index + 1}</i>
-              <Images src={item.pathImg} alt={item.description} className="h-20 w-28" cover />
+              <Images src={item.pathIcon} alt={item.description} className="h-20 w-28" cover />
             </div>
             <div className={`space-y-1 max-w-sm ${index % 2 == 0 ? "text-start" : "text-end"}`}>
               <h5 className="text-xl text-gradient">{item.title}</h5>
@@ -42,7 +42,7 @@ const ExperienceSlice = () => {
             </div>
             <div className="relative p-4 rounded-2xl bg-dark card-shadow">
               <i className="absolute px-3.5 py-2 text-sm font-bold rounded-full bg-orange -top-5 -right-5">{index + 1}</i>
-              <Images src={item.pathImg} alt={item.description} className="h-48 w-60" cover />
+              <Images src={item.pathIcon} alt={item.description} className="h-48 w-60" cover />
             </div>
           </li>
         ))}

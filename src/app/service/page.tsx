@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import HeroSlice from "@/layouts/hero";
 
@@ -39,10 +40,10 @@ export default function page() {
                     <Images src={item.pathIcon} alt={item.title} className="w-12 h-12" />
                     <h5 className="text-2xl font-bold">{item.title}</h5>
                     <p className="font-medium text-justify">{item.description}</p>
-                    <p className="flex items-center gap-2 text-xl font-medium text-center w-max group">
+                    <Link href="/price/service/1234" className="flex items-center gap-2 text-xl font-medium text-center w-max group">
                       Learn More
                       <FaLongArrowAltRight size={24} />
-                    </p>
+                    </Link>
                     <div className={`absolute ${posClass}`}>
                       <Images src={item.pathImg} alt={item.title} className={imgClass} cover />
                     </div>

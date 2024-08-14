@@ -12,28 +12,35 @@ import { MdArrowCircleRight } from "react-icons/md";
 const Header = () => {
   const [isVisible, setIsVisible] = useState<boolean>(true);
   const [lastScrollY, setLastScrollY] = useState<number>(0);
-  const [bgColor, setBgColor] = useState<string>('bg-transparent');
+  const [bgColor, setBgColor] = useState<string>("bg-transparent");
 
   if (typeof window !== "undefined") {
     window.addEventListener("scroll", () => {
       const currentScrollY = window.scrollY;
 
-      if (currentScrollY > 200 && currentScrollY > lastScrollY) {
+      if (currentScrollY > 100 && currentScrollY > lastScrollY) {
         setIsVisible(false);
-        setBgColor('bg-blue');
-      } else if (currentScrollY < lastScrollY || currentScrollY <= 200) {
+      } else if (currentScrollY < lastScrollY || currentScrollY <= 100) {
         setIsVisible(true);
-        setBgColor('bg-transparent');
       }
 
       setLastScrollY(currentScrollY);
     });
   }
 
+  if (typeof window !== "undefined") {
+    window.addEventListener("scroll", () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > 100) {
+        setBgColor("bg-blue");
+      } else {
+        setBgColor("bg-transparent");
+      }
+    });
+  }
+
   return (
-    <header
-      className={`fixed top-0 w-full py-3 z-1000 transition-transform duration-500 ${isVisible ? "translate-y-0" : "-translate-y-full"} ${bgColor}`}
-    >
+    <header className={`fixed top-0 w-full py-3 z-1000 transition-all duration-500 ${isVisible ? "translate-y-0" : "-translate-y-full"} ${bgColor}`}>
       <Container className="flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <Images className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14" src="/icons/logo-icodeu.svg" alt="logo i code u" />

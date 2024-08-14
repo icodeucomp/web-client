@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 import Container from "@/components/container";
@@ -11,18 +10,22 @@ import Background from "@/components/background";
 export default function page() {
   return (
     <>
-      <section className="bg-gradient-to-b from-yellow to-orange">
+      <section>
         <div className="flex">
-          <div className="flex-1 max-w-screen-sm bg-blue rounded-ee-10xl">
-            <Background src="/images/white-line-mobile.png" className="flex-col px-16 py-24">
-              <h4 className="py-8 text-4xl font-bold">
-                Get in Touch with our <strong className="text-gradient">Team</strong>.
-              </h4>
-              <ContactFormSlice />
-            </Background>
+          <div className="flex-1 bg-gradient-to-b from-yellow to-orange">
+            <div className="max-w-screen-sm bg-blue rounded-ee-10xl">
+              <Background src="/images/white-line-mobile.png" className="flex-col px-16 py-24">
+                <h4 className="py-8 text-4xl font-bold">
+                  Get in Touch with our <strong className="text-gradient">Team</strong>.
+                </h4>
+                <ContactFormSlice />
+              </Background>
+            </div>
           </div>
-          <div className="flex items-center justify-center flex-1">
-            <Images src="/images/people-contact-us.png" alt="people bring laptop" className="w-[500px] h-[500px]" cover />
+          <div className="flex-1 bg-blue">
+            <div className="flex items-center justify-center rounded-ss-10xl bg-gradient-to-b from-yellow to-orange h-full">
+              <Images src="/images/people-contact-us.png" alt="people bring laptop" className="w-[500px] h-[500px]" cover />
+            </div>
           </div>
         </div>
       </section>

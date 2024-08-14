@@ -29,7 +29,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 w-full py-3 z-1000 bg-blue transition-transform duration-500 ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
+      className={`fixed top-0 w-full py-3 z-1000 transition-transform duration-500 ${isVisible ? "translate-y-0 bg-transparent" : "-translate-y-full bg-blue"}`}
     >
       <Container className="flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">

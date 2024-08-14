@@ -12,15 +12,18 @@ import { MdArrowCircleRight } from "react-icons/md";
 const Header = () => {
   const [isVisible, setIsVisible] = useState<boolean>(true);
   const [lastScrollY, setLastScrollY] = useState<number>(0);
+  const [bgColor, setBgColor] = useState<string>('bg-transparent');
 
   if (typeof window !== "undefined") {
     window.addEventListener("scroll", () => {
       const currentScrollY = window.scrollY;
 
-      if (currentScrollY > 100 && currentScrollY > lastScrollY) {
+      if (currentScrollY > 200 && currentScrollY > lastScrollY) {
         setIsVisible(false);
-      } else if (currentScrollY < lastScrollY || currentScrollY <= 100) {
+        setBgColor('bg-blue');
+      } else if (currentScrollY < lastScrollY || currentScrollY <= 200) {
         setIsVisible(true);
+        setBgColor('bg-transparent');
       }
 
       setLastScrollY(currentScrollY);
@@ -29,7 +32,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 w-full py-3 z-1000 transition-transform duration-500 ${isVisible ? "translate-y-0 bg-transparent" : "-translate-y-full bg-blue"}`}
+      className={`fixed top-0 w-full py-3 z-1000 transition-transform duration-500 ${isVisible ? "translate-y-0" : "-translate-y-full"} ${bgColor}`}
     >
       <Container className="flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">

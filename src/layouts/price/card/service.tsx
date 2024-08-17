@@ -1,10 +1,12 @@
+import Link from "next/link";
+
+import MotionComponent from "@/components/motion";
 import Images from "@/components/images";
 import Button from "@/components/button";
 
 import { RiCheckLine } from "react-icons/ri";
 
 import currency from "@/utils/currency";
-import Link from "next/link";
 
 const Service = ({
   pathImg,
@@ -22,7 +24,16 @@ const Service = ({
   index: number;
 }) => {
   return (
-    <article className="relative flex flex-col flex-1 w-full gap-5 p-8 overflow-hidden text-center duration-300 shadow-2xl min-w-72 rounded-3xl bg-light hover:bg-yellow group">
+    <MotionComponent
+      tag="article"
+      duration={0.5 + index / 4}
+      delay={0.2 + index / 4}
+      initialO={0}
+      initialY={120}
+      animateO={1}
+      animateY={0}
+      className="relative flex flex-col flex-1 w-full gap-5 p-8 overflow-hidden text-center duration-300 shadow-2xl min-w-72 rounded-3xl bg-light hover:bg-yellow group"
+    >
       {index % 2 === 1 && <p className="absolute px-4 py-1 text-xs uppercase top-4 right-4 bg-orange rounded-2xl w-max">Most Popular</p>}
       <div className="p-4 mx-auto mt-8 rounded-full bg-light">
         <Images src={pathImg} alt={title} className="w-10 h-10" />
@@ -44,10 +55,10 @@ const Service = ({
           ))}
         </menu>
       </div>
-      <Link href="/price/service/1234">
+      <Link href={`/price/service/${index + 1}`}>
         <Button className="w-full rounded-2xl bg-orange text-light group-hover:bg-light group-hover:text-orange">Read More</Button>
       </Link>
-    </article>
+    </MotionComponent>
   );
 };
 

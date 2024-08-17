@@ -1,9 +1,11 @@
+import Link from "next/link";
 import Images from "@/components/images";
+
+import MotionComponent from "@/components/motion";
 
 import { MdArrowForwardIos } from "react-icons/md";
 
 import currency from "@/utils/currency";
-import Link from "next/link";
 
 const Product = ({
   pathImg,
@@ -19,7 +21,16 @@ const Product = ({
   index: number;
 }) => {
   return (
-    <article className={`relative w-full flex flex-col flex-1 overflow-hidden duration-300 shadow-2xl min-w-72 rounded-3xl bg-light group`}>
+    <MotionComponent
+      tag="article"
+      duration={0.5 + index / 4}
+      delay={0.2 + index / 4}
+      initialO={0}
+      initialY={120}
+      animateO={1}
+      animateY={0}
+      className="relative w-full flex flex-col flex-1 overflow-hidden duration-300 shadow-2xl min-w-72 rounded-3xl bg-light group"
+    >
       {index % 2 === 1 && <p className="absolute px-4 py-1 text-xs uppercase top-4 left-4 bg-orange rounded-2xl w-max">Most Popular</p>}
       <div className="mt-12">
         <Images src={pathImg} alt={title} className="w-full h-64" cover />
@@ -57,7 +68,7 @@ const Product = ({
           Learn More <MdArrowForwardIos className="fill-orange" />
         </Link>
       </div>
-    </article>
+    </MotionComponent>
   );
 };
 

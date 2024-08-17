@@ -34,9 +34,9 @@ export default function page() {
       <section className="bg-gradient-to-b from-dark-blue to-blue">
         <Testimonial />
       </section>
-      <section className="bg-gradient-to-b from-lemon-yellow to-blue">
+      {/* <section className="bg-gradient-to-b from-lemon-yellow to-blue">
         <Blog />
-      </section>
+      </section> */}
       <section className="bg-blue">
         <Contact />
       </section>

@@ -1,9 +1,10 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 import Container from "@/components/container";
 import Images from "@/components/images";
-import { useAnimation, motion } from "framer-motion";
-import { useEffect } from "react";
+import MotionComponent from "@/components/motion";
 
 const images: string[] = [
   "/images/price/stack-1.png",
@@ -33,17 +34,21 @@ const Stack = () => {
   return (
     <Container className="pb-32 space-y-8">
       <div className="flex flex-col text-5xl leading-snug">
-        <h4 className="text-gradient">Tech Stack</h4>
-        <h4 className="text-gradient">That We Used</h4>
+        <MotionComponent tag="h4" duration={0.5} initialO={0} initialX={-50} animateO={1} animateX={0} className="text-gradient">
+          Tech Stack
+        </MotionComponent>
+        <MotionComponent tag="h4" duration={1} delay={0.5} initialO={0} initialX={-50} animateO={1} animateX={0} className="text-gradient">
+          That We Used
+        </MotionComponent>
       </div>
-      <div className="space-y-8">
+      <MotionComponent tag="div" duration={1.5} delay={1} initialO={0} initialY={50} animateO={1} animateY={0} className="space-y-8">
         <div className="overflow-hidden flex">
           <motion.div className="flex gap-16 flex-shrink-0" animate="animate" variants={imageVariants}>
             {firstImages.map((image, index) => (
               <Images key={`col1-${index}`} src={image} alt="stack icon" className="w-24 h-24" cover />
             ))}
           </motion.div>
-          <motion.div className="flex gap-16 flex-shrink-0 pl-16" animate="animate" variants={imageVariants}>
+          <motion.div className="flex gap-16 flex-shrink-0" animate="animate" variants={imageVariants}>
             {firstImages.map((image, index) => (
               <Images key={`col1-${index}`} src={image} alt="stack icon" className="w-24 h-24" cover />
             ))}
@@ -56,20 +61,13 @@ const Stack = () => {
               <Images key={`col2-${index}`} src={image} alt="stack icon" className="w-24 h-24" cover />
             ))}
           </motion.div>
-          <motion.div className="flex gap-16 flex-shrink-0 pl-16" animate="animate" variants={imageVariants}>
+          <motion.div className="flex gap-16 flex-shrink-0" animate="animate" variants={imageVariants}>
             {secondImages.map((image, index) => (
               <Images key={`col2-${index}`} src={image} alt="stack icon" className="w-24 h-24" cover />
             ))}
           </motion.div>
         </div>
-      </div>
-      {/* <div className="grid grid-cols-7 gap-8 overflow-hidden">
-        {images.map((image, index) => (
-          <div key={index}>
-            <Images key={index} src={image} alt="stack icon" className="w-24 h-24" cover />
-          </div>
-        ))}
-      </div> */}
+      </MotionComponent>
     </Container>
   );
 };

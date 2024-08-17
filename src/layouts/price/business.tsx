@@ -3,7 +3,7 @@ import Tabs from "@/components/tabs";
 
 import Product from "./card/product";
 import Service from "./card/service";
-import { price } from "@/static";
+import MotionComponent from "@/components/motion";
 
 const products = [
   {
@@ -32,7 +32,7 @@ const products = [
 const services = [
   {
     pathImg: "/icons/code-orange.svg",
-    title: "Web Development",
+    title: "Responsive Web Development",
     price: 200000,
     list: ["Free Domain", "Free Server", "Exclusive Design", "Up to 10 revision"],
     description: "Feugiat finibus conubia sollicitudin iaculis nullam suspendisse netus curae faucibus euismod fringilla quisque",
@@ -47,6 +47,13 @@ const services = [
   {
     pathImg: "/icons/figma-orange.svg",
     title: "Custom UI/UX Design",
+    price: 300000,
+    list: ["Include Source Files", "Up to 10 Revision", "Free Mockup"],
+    description: "Aliquam consectetuer class netus vestibulum duis venenatis potenti consectetur vehicula habitasse luctus purus",
+  },
+  {
+    pathImg: "/icons/figma-orange.svg",
+    title: "Wordpress",
     price: 300000,
     list: ["Include Source Files", "Up to 10 Revision", "Free Mockup"],
     description: "Aliquam consectetuer class netus vestibulum duis venenatis potenti consectetur vehicula habitasse luctus purus",
@@ -82,8 +89,12 @@ const Business = () => {
   return (
     <Container className="pt-40 pb-20">
       <div className="flex flex-col items-center justify-center w-full text-3xl leading-snug">
-        <h4 className="text-gradient">Streamline your teamwork. Start free.</h4>
-        <h4 className="text-gradient">Choose the perfect plan for your business needs</h4>
+        <MotionComponent tag="h4" duration={0.5} initialO={0} initialY={40} animateO={1} animateY={0} className="text-gradient">
+          Streamline your teamwork. Start free.
+        </MotionComponent>
+        <MotionComponent tag="h4" duration={1} delay={0.5} initialO={0} initialY={40} animateO={1} animateY={0} className="text-gradient">
+          Choose the perfect plan for your business needs
+        </MotionComponent>
       </div>
       <div className="mt-10">
         <Tabs tabs={tabData} />

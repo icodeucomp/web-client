@@ -8,6 +8,7 @@ export interface ContainerProps {
 export interface BackgroundProps {
   src: string;
   className?: string;
+  parentClassName?: string;
   isBackdrop?: boolean;
   colorBackdrop?: string;
   children: JSX.Element | JSX.Element[];
@@ -29,6 +30,18 @@ export interface TemplateField {
   pathIcon: string;
   title: string;
   description: string;
+}
+
+export interface InputType {
+  isLoading?: boolean;
+  error?: boolean;
+  values: {
+    fullName: string;
+    email: string;
+    message?: string;
+    phoneNumber: string;
+    service?: string;
+  };
 }
 
 export interface CardPriceProps {

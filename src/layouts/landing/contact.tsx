@@ -1,10 +1,29 @@
+"use client";
+
+import { ChangeEvent, useState } from "react";
+
 import Button from "@/components/button";
 import Container from "@/components/container";
 import Images from "@/components/images";
 
 import { FaWhatsapp } from "react-icons/fa";
+import { InputType } from "@/types";
 
 const Contact = () => {
+  const initValues = { fullName: "", email: "", phoneNumber: "", service: "US" };
+  const initState = { values: initValues, isLoading: false, error: false };
+
+  const [input, setInput] = useState<InputType>(initState);
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setInput((prev) => ({
+      ...prev,
+      values: {
+        ...prev.values,
+        [e.target.id]: e.target.value,
+      },
+    }));
+  };
   return (
     <Container className="flex flex-col justify-center gap-8 py-16 lg:justify-between lg:flex-row">
       <div className="max-w-full space-y-8 text-center lg:text-start lg:max-w-lg">
@@ -23,28 +42,25 @@ const Contact = () => {
             <label htmlFor="name" className="font-bold text-md md:text-base text-dark">
               Name
             </label>
-            <input type="text" id="name" className="input-form" placeholder="John" required />
+            <input type="text" id="name" className="input-form" placeholder="John" required onChange={handleChange} />
           </div>
           <div className="space-y-1">
             <label htmlFor="email" className="font-bold text-md md:text-base text-dark">
               Email
             </label>
-            <input type="email" id="email" className="input-form" placeholder="john@gmail.com" required />
+            <input type="email" id="email" className="input-form" placeholder="john@gmail.com" required onChange={handleChange} />
           </div>
           <div className="space-y-1">
             <label htmlFor="number" className="font-bold text-md md:text-base text-dark">
               Number
             </label>
-            <input type="number" id="number" className="input-form" placeholder="0814234234" required />
+            <input type="number" id="number" className="input-form" placeholder="0814234234" required onChange={handleChange} />
           </div>
           <div className="space-y-1">
             <label htmlFor="services" className="font-bold text-md md:text-base text-dark">
               Which service do you need?
             </label>
-            <select id="services" className="input-form">
-              <option selected className="text-dark">
-                Select a service
-              </option>
+            <select id="services" className="input-form" value={input.values.service} onChange={handleChange}>
               <option value="US" className="text-dark">
                 United States
               </option>

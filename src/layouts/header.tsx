@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+import { usePathname } from "next/navigation";
+
 import Link from "next/link";
 
 import Container from "@/components/container";
@@ -10,9 +12,14 @@ import Images from "@/components/images";
 import { MdArrowCircleRight } from "react-icons/md";
 
 const Header = () => {
+  const pathname = usePathname();
+
   const [isVisible, setIsVisible] = useState<boolean>(true);
   const [lastScrollY, setLastScrollY] = useState<number>(0);
-  const [bgColor, setBgColor] = useState<string>("bg-transparent");
+  const [bgColor, setBgColor] = useState<string>("");
+
+  const pricePathname =
+    pathname === "/price" || pathname.split("/")[2] === "service" || pathname.split("/")[2] === "product" ? "text-orange" : "text-light";
 
   if (typeof window !== "undefined") {
     window.addEventListener("scroll", () => {
@@ -47,16 +54,25 @@ const Header = () => {
           <h1 className="text-lg font-bold sm:text-xl md:text-2xl font-red-hat">ICodeU</h1>
         </Link>
         <div className="flex gap-4">
-          <Link href="/home" className="font-medium duration-300 hover:text-orange hover:font-bold">
+          <Link
+            href="/home"
+            className={`font-medium duration-300 hover:text-orange hover:font-bold ${pathname === "/home" ? "text-orange" : "text-light"}`}
+          >
             Home
           </Link>
-          <Link href="/about" className="font-medium duration-300 hover:text-orange hover:font-bold">
+          <Link
+            href="/about"
+            className={`font-medium duration-300 hover:text-orange hover:font-bold ${pathname === "/about" ? "text-orange" : "text-light"}`}
+          >
             About Us
           </Link>
-          <Link href="/service" className="font-medium duration-300 hover:text-orange hover:font-bold">
+          <Link
+            href="/service"
+            className={`font-medium duration-300 hover:text-orange hover:font-bold ${pathname === "/service" ? "text-orange" : "text-light"}`}
+          >
             Service
           </Link>
-          <Link href="/price" className="font-medium duration-300 hover:text-orange hover:font-bold">
+          <Link href="/price" className={`font-medium duration-300 hover:text-orange hover:font-bold ${pricePathname}`}>
             Pricing
           </Link>
         </div>

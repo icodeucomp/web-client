@@ -1,11 +1,13 @@
 import Link from "next/link";
 
+import MotionComponent from "@/components/motion";
 import Container from "@/components/container";
 import Images from "@/components/images";
 
 import { FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import ContactFormSlice from "@/layouts/contact";
 import Background from "@/components/background";
+import { FaXTwitter } from "react-icons/fa6";
 
 export default function page() {
   return (
@@ -18,13 +20,55 @@ export default function page() {
                 <h4 className="py-8 text-4xl font-bold">
                   Get in Touch with our <strong className="text-gradient">Team</strong>.
                 </h4>
-                <ContactFormSlice />
+                <MotionComponent tag="div" duration={1} delay={1} initialO={0} initialX={-50} animateO={1} animateX={0} className="flex-1">
+                  <ContactFormSlice />
+                </MotionComponent>
               </Background>
             </div>
           </div>
           <div className="flex-1 bg-blue">
-            <div className="flex items-center justify-center rounded-ss-10xl bg-gradient-to-b from-yellow to-orange h-full">
-              <Images src="/images/people-contact-us.png" alt="people bring laptop" className="w-[500px] h-[500px]" cover />
+            <div className="flex flex-col items-center justify-center h-full rounded-ss-10xl bg-gradient-to-b from-yellow to-orange">
+              <div className="w-full max-w-md mx-auto">
+                <Background
+                  src="/images/bg-laptop.png"
+                  className="items-center justify-center min-h-300"
+                  parentClassName="rounded-3xl"
+                  isBackdrop
+                  colorBackdrop="bg-dark/40 z-1"
+                >
+                  <h1 className="text-2xl font-bold">Follow our social media!</h1>
+                </Background>
+
+                <div className="mt-8 space-y-2">
+                  <div className="flex items-center w-full gap-4 px-4 py-2 rounded-xl bg-light">
+                    <i>
+                      <FaXTwitter className="w-8 h-10 fill-orange" />
+                    </i>
+                    <div className="space-y-1">
+                      <p className="text-sm font-bold text-dark">Twitter (X)</p>
+                      <p className="text-sm text-dark">iCodeU</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center w-full gap-4 px-4 py-2 rounded-xl bg-light">
+                    <i>
+                      <FaInstagram className="w-8 h-10 fill-orange" />
+                    </i>
+                    <div className="space-y-1">
+                      <p className="text-sm font-bold text-dark">Instagram</p>
+                      <p className="text-sm text-dark">iCodeU</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center w-full gap-4 px-4 py-2 rounded-xl bg-light">
+                    <i>
+                      <FaLinkedin className="w-8 h-10 fill-orange" />
+                    </i>
+                    <div className="space-y-1">
+                      <p className="text-sm font-bold text-dark">LinkedIn</p>
+                      <p className="text-sm text-dark">iCodeU</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

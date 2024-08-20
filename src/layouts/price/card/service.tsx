@@ -26,19 +26,19 @@ const Service = ({
   return (
     <MotionComponent
       tag="article"
-      duration={0.5 + index / 4}
-      delay={0.2 + index / 4}
+      duration={index < 3 ? 0.5 + index / 4 : index / 5}
+      delay={index < 3 ? 0.4 + index / 4 : index / 5}
       initialO={0}
       initialY={120}
       animateO={1}
       animateY={0}
-      className="relative flex flex-col flex-1 w-full gap-5 p-8 overflow-hidden text-center duration-300 shadow-2xl min-w-72 rounded-3xl bg-light hover:bg-yellow group"
+      className="relative flex flex-col flex-1 w-full gap-5 p-8 overflow-hidden text-center duration-300 shadow-2xl min-w-72 max-w-80 rounded-3xl bg-light hover:bg-yellow group"
     >
       {index % 2 === 1 && <p className="absolute px-4 py-1 text-xs uppercase top-4 right-4 bg-orange rounded-2xl w-max">Most Popular</p>}
       <div className="p-4 mx-auto mt-8 rounded-full bg-light">
         <Images src={pathImg} alt={title} className="w-10 h-10" />
       </div>
-      <h4 className="text-base font-bold h-14 md:text-lg text-blue">{title}</h4>
+      <h4 className="h-12 text-base font-bold md:text-lg text-blue">{title}</h4>
       <div className="space-y-1">
         <p className="text-xs font-medium text-yellow group-hover:text-blue">Starts From</p>
         <h5 className="text-3xl font-bold text-yellow group-hover:text-blue">{currency(price)}</h5>

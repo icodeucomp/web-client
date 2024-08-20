@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { usePathname } from "next/navigation";
 
@@ -21,30 +21,34 @@ const Header = () => {
   const pricePathname =
     pathname === "/price" || pathname.split("/")[2] === "service" || pathname.split("/")[2] === "product" ? "text-orange" : "text-light";
 
-  if (typeof window !== "undefined") {
-    window.addEventListener("scroll", () => {
-      const currentScrollY = window.scrollY;
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", () => {
+        const currentScrollY = window.scrollY;
 
-      if (currentScrollY > 100 && currentScrollY > lastScrollY) {
-        setIsVisible(false);
-      } else if (currentScrollY < lastScrollY || currentScrollY <= 100) {
-        setIsVisible(true);
-      }
+        if (currentScrollY > 100 && currentScrollY > lastScrollY) {
+          setIsVisible(false);
+        } else if (currentScrollY < lastScrollY || currentScrollY <= 100) {
+          setIsVisible(true);
+        }
 
-      setLastScrollY(currentScrollY);
-    });
-  }
+        setLastScrollY(currentScrollY);
+      });
+    }
 
-  if (typeof window !== "undefined") {
-    window.addEventListener("scroll", () => {
-      const currentScrollY = window.scrollY;
-      if (currentScrollY > 100) {
-        setBgColor("bg-blue");
-      } else {
-        setBgColor("bg-transparent");
-      }
-    });
-  }
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", () => {
+        const currentScrollY = window.scrollY;
+        if (currentScrollY > 100) {
+          setBgColor("bg-blue");
+        } else {
+          setBgColor("bg-transparent");
+        }
+      });
+    }
+
+    return () => {};
+  }, [lastScrollY]);
 
   return (
     <header className={`fixed top-0 w-full py-3 z-1000 transition-all duration-500 ${isVisible ? "translate-y-0" : "-translate-y-full"} ${bgColor}`}>

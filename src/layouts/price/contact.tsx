@@ -23,7 +23,7 @@ const Contact = () => {
         <MotionComponent tag="div" duration={1} delay={1} initialO={0} initialX={-50} animateO={1} animateX={0} className="flex-1">
           <ContactFormSlice />
         </MotionComponent>
-        <MotionComponent tag="div" duration={1} delay={1.5} initialO={0} initialX={50} animateO={1} animateX={0} className="relative">
+        <MotionComponent tag="div" duration={1} delay={1.2} initialO={0} initialX={50} animateO={1} animateX={0} className="relative">
           <Background
             parentClassName="max-w-lg"
             className="items-center justify-center gap-16 px-4 text-gray-200 md:px-8 min-h-500"

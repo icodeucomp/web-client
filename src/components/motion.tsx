@@ -33,12 +33,6 @@ const MotionComponent = ({
 }: MotionComponentProps) => {
   const Component = motion(tag); // Create a motion component from the tag prop
 
-  const [hasAnimated, setHasAnimated] = useState<boolean>(false);
-
-  useEffect(() => {
-    setHasAnimated(true); // Set to true after the first render (loading)
-  }, []);
-
   return (
     <Component
       initial={{ opacity: initialO, y: initialY, x: initialX }}

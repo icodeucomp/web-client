@@ -5,11 +5,11 @@ import HeroSlice from "@/layouts/hero";
 
 import Container from "@/components/container";
 import Images from "@/components/images";
+import MotionComponent from "@/components/motion";
 
 import { FaLongArrowAltRight } from "react-icons/fa";
 
 import { ourService } from "@/static";
-import MotionComponent from "@/components/motion";
 
 export default function page() {
   return (
@@ -23,7 +23,7 @@ export default function page() {
       <section className="relative bg-black">
         <Image src="/images/white-line-mobile.png" alt="line background" fill className="max-w-screen-xl mx-auto" />
         <div className="bg-gradient-to-b from-blue/50 to-orange/50">
-          <Container className="grid grid-cols-3 gap-8 pt-16 pb-52 overflow-hidden">
+          <Container className="grid grid-cols-3 gap-8 pt-16 overflow-hidden pb-52">
             <>
               {ourService.map((item, index) => {
                 const posClass = `${index === 1 ? "right-10 -bottom-20" : "-translate-x-1/2 -bottom-20 left-1/2"}`;
@@ -31,8 +31,8 @@ export default function page() {
                 return (
                   <MotionComponent
                     tag="div"
-                    duration={0.5 + index / 2}
-                    delay={0.3 + index / 2}
+                    duration={0.2 + index / 2}
+                    delay={0.2 + index / 3}
                     initialO={0}
                     initialX={index % 2 === 0 ? -100 : 100}
                     animateO={1}
@@ -48,7 +48,7 @@ export default function page() {
                     <Images src={item.pathIcon} alt={item.title} className="w-12 h-12" />
                     <h5 className="text-2xl font-bold">{item.title}</h5>
                     <p className="font-medium text-justify">{item.description}</p>
-                    <Link href="/price/service/1234" className="flex items-center gap-2 text-xl font-medium text-center w-max group">
+                    <Link href={`/price/service/${index + 1}`} className="flex items-center gap-2 text-xl font-medium text-center w-max group">
                       Learn More
                       <FaLongArrowAltRight size={24} />
                     </Link>
@@ -61,8 +61,8 @@ export default function page() {
             </>
             <MotionComponent
               tag="div"
-              duration={2}
-              delay={1.8}
+              duration={1}
+              delay={0.8}
               initialO={0}
               initialY={100}
               animateO={1}
@@ -74,11 +74,12 @@ export default function page() {
               </div>
               <div className="flex items-center gap-8">
                 <div className="max-w-lg space-y-4">
-                  <Images src="/icons/task-white.svg" alt="IT & Non-IT Related Task" className="w-12 h-12" />
-                  <h5 className="text-2xl font-bold">IT & Non-IT Related Task</h5>
+                  <Images src="/icons/task-white.svg" alt="Graphic Design" className="w-12 h-12" />
+                  <h5 className="text-2xl font-bold">Graphic Design</h5>
                   <p className="font-medium text-justify">
-                    Streamline your operations and boost productivity with our comprehensive IT & Non-IT Related Task service. We offer reliable and
-                    efficient solutions for a wide range of tasks, allowing you to focus on your core business activities.
+                    Harness the power of professional graphic design in your brand. Unique logos, eye-catching marketing materials and digital
+                    graphic/illustrated work... to make your brand look awesome. By info graphics that speak for themselves, to packaging designs of
+                    the future -- we create compelling work designed specifically to captivate & communicate.
                   </p>
                   <p className="flex items-center gap-2 text-lg font-medium text-center w-max group">
                     Learn More

@@ -11,14 +11,14 @@ const Core = () => {
       <div className="relative py-8 overflow-hidden">
         <MotionComponent
           tag="div"
-          duration={0.5}
+          duration={0.4}
           initialO={0}
           animateO={1}
-          className="absolute w-full h-1 -translate-y-1/2 left-0 top-1/2 bg-light"
+          className="absolute left-0 w-full h-1 -translate-y-1/2 top-1/2 bg-light"
         />
         <MotionComponent
           tag="div"
-          duration={1}
+          duration={0.8}
           delay={0.3}
           initialO={0}
           animateO={1}
@@ -32,11 +32,11 @@ const Core = () => {
         </MotionComponent>
         <div className="flex flex-wrap items-center justify-center gap-x-16 gap-y-40">
           {coreValues.map((item, index) => {
-            const delay = index === 0 ? 0.8 : index === 3 ? 1.8 : index === 1 ? 2.8 : index === 4 ? 3.8 : 4.8;
+            const delay = index === 0 ? 0.5 : index === 3 ? 0.9 : index === 1 ? 1.3 : index === 4 ? 1.7 : 2.1;
             return (
               <MotionComponent
                 tag="div"
-                duration={1 + index}
+                duration={0.5 + index / 2}
                 delay={delay}
                 initialO={0}
                 animateO={1}

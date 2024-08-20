@@ -2,6 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import MotionComponent from "./motion";
 
 interface TabProps {
   label: string;
@@ -17,7 +18,16 @@ const Tabs: React.FC<TabsProps> = ({ tabs }) => {
 
   return (
     <>
-      <div className="flex justify-center gap-2 p-1 mx-auto rounded-full bg-light w-max">
+      <MotionComponent
+        tag="div"
+        duration={1.1}
+        delay={0.8}
+        initialO={0}
+        initialY={40}
+        animateO={1}
+        animateY={0}
+        className="flex justify-center gap-2 p-1 mx-auto rounded-full bg-light w-max"
+      >
         {tabs.map((tab, index) => (
           <button
             key={index}
@@ -28,17 +38,10 @@ const Tabs: React.FC<TabsProps> = ({ tabs }) => {
             {tab.label}
           </button>
         ))}
-      </div>
-      <motion.div
-        key={activeTab}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: 20 }}
-        transition={{ duration: 0.5 }}
-        className="p-4"
-      >
+      </MotionComponent>
+      <MotionComponent tag="div" duration={1.5} delay={1.2} initialO={0} initialY={40} animateO={1} animateY={0} key={activeTab} className="p-4">
         {tabs[activeTab]?.children}
-      </motion.div>
+      </MotionComponent>
     </>
   );
 };

@@ -22,6 +22,20 @@ const products = [
   },
   {
     pathImg: "/temporary-image-2.png",
+    title: "Website TopUp Netflix",
+    price: 100000,
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt enim, sed a blanditiis tempore corporis harum distinctio, consequatur earum possimus repudiandae soluta totam libero qui exercitationem, fugit officia ipsam error!",
+  },
+  {
+    pathImg: "/temporary-image-2.png",
+    title: "Custom UI/UX Design",
+    price: 300000,
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt enim, sed a blanditiis tempore corporis harum distinctio, consequatur earum possimus repudiandae soluta totam libero qui exercitationem, fugit officia ipsam error!",
+  },
+  {
+    pathImg: "/temporary-image-2.png",
     title: "Custom UI/UX Design",
     price: 300000,
     description:
@@ -58,13 +72,20 @@ const services = [
     list: ["Include Source Files", "Up to 10 Revision", "Free Mockup"],
     description: "Aliquam consectetuer class netus vestibulum duis venenatis potenti consectetur vehicula habitasse luctus purus",
   },
+  {
+    pathImg: "/icons/figma-orange.svg",
+    title: "Graphic Design",
+    price: 200000,
+    list: ["Include Source Files", "Up to 10 Revision", "Free Mockup"],
+    description: "Aliquam consectetuer class netus vestibulum duis venenatis potenti consectetur vehicula habitasse luctus purus",
+  },
 ];
 
 const tabData = [
   {
     label: "Products",
     children: (
-      <div className="grid grid-cols-3 gap-8 mt-8 place-items-center">
+      <div className="flex flex-wrap justify-center gap-8 mt-8">
         {products.map((item, index) => {
           const { description, pathImg, price, title } = item;
           return <Product key={index} index={index} description={description} pathImg={pathImg} price={price} title={title} />;
@@ -75,7 +96,7 @@ const tabData = [
   {
     label: "Services",
     children: (
-      <div className="grid grid-cols-3 gap-8 mt-8 place-items-center">
+      <div className="flex flex-wrap justify-center gap-8 mt-8">
         {services.map((item, index) => {
           const { description, pathImg, price, title, list } = item;
           return <Service key={index} index={index} list={list} description={description} pathImg={pathImg} price={price} title={title} />;
@@ -89,10 +110,10 @@ const Business = () => {
   return (
     <Container className="pt-40 pb-20">
       <div className="flex flex-col items-center justify-center w-full text-3xl leading-snug">
-        <MotionComponent tag="h4" duration={0.5} initialO={0} initialY={40} animateO={1} animateY={0} className="text-gradient">
+        <MotionComponent tag="h4" duration={0.3} initialO={0} initialY={40} animateO={1} animateY={0} className="text-gradient">
           Streamline your teamwork. Start free.
         </MotionComponent>
-        <MotionComponent tag="h4" duration={1} delay={0.5} initialO={0} initialY={40} animateO={1} animateY={0} className="text-gradient">
+        <MotionComponent tag="h4" duration={0.7} delay={0.4} initialO={0} initialY={40} animateO={1} animateY={0} className="text-gradient">
           Choose the perfect plan for your business needs
         </MotionComponent>
       </div>

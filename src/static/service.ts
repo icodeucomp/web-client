@@ -1,13 +1,13 @@
 const webDev = {
   serviceTitle: "Designing and Delivering The Right Web Solutions for Your Business",
   top: [
-    { title: "Consultation", pathIcon: "/icons/price/service/1/top/handshake.svg" },
-    { title: "Strategy & Planning", pathIcon: "/icons/price/service/1/top/floor-plan.svg" },
-    { title: "Design & Prototyping", pathIcon: "/icons/price/service/1/top/pencil.svg" },
-    { title: "Development", pathIcon: "/icons/price/service/1/top/code-bracket.svg" },
-    { title: "Quality Assurance", pathIcon: "/icons/price/service/1/top/task-daily.svg" },
-    { title: "Deployment", pathIcon: "/icons/price/service/1/top/deploy-line.svg" },
-    { title: "Post-Launch Support", pathIcon: "/icons/price/service/1/top/support.svg" },
+    { title: "Consultation", pathIcon: "/icons/price/service/handshake.svg" },
+    { title: "Strategy & Planning", pathIcon: "/icons/price/service/floor-plan.svg" },
+    { title: "Design & Prototyping", pathIcon: "/icons/price/service/pencil.svg" },
+    { title: "Development", pathIcon: "/icons/price/service/code-bracket.svg" },
+    { title: "Quality Assurance", pathIcon: "/icons/price/service/task-daily.svg" },
+    { title: "Deployment", pathIcon: "/icons/price/service/deploy-line.svg" },
+    { title: "Post-Launch Support", pathIcon: "/icons/price/service/support.svg" },
   ],
   bottom: [
     {
@@ -51,13 +51,13 @@ const webDev = {
 const SEO = {
   serviceTitle: "Optimizing Your Site for Search Engines and Speed for Better Result",
   top: [
-    { title: "Consultation", pathIcon: "/icons/price/service/1/top/handshake.svg" },
-    { title: "Strategy & Planning", pathIcon: "/icons/price/service/1/top/floor-plan.svg" },
-    { title: "Design & Prototyping", pathIcon: "/icons/price/service/1/top/pencil.svg" },
-    { title: "Development", pathIcon: "/icons/price/service/1/top/code-bracket.svg" },
-    { title: "Quality Assurance", pathIcon: "/icons/price/service/1/top/task-daily.svg" },
-    { title: "Deployment", pathIcon: "/icons/price/service/1/top/deploy-line.svg" },
-    { title: "Post-Launch Support", pathIcon: "/icons/price/service/1/top/support.svg" },
+    { title: "Consultation", pathIcon: "/icons/price/service/handshake.svg" },
+    { title: "Website Audit", pathIcon: "/icons/price/service/floor-plan.svg" },
+    { title: "Strategy & Planning", pathIcon: "/icons/price/service/pencil.svg" },
+    { title: "On-page & Off-page", pathIcon: "/icons/price/service/search-web.svg" },
+    { title: "Performance Testing", pathIcon: "/icons/price/service/task-daily.svg" },
+    { title: "Reporting & Analysis", pathIcon: "/icons/price/service/analytics.svg" },
+    { title: "Ongoing Maintenance", pathIcon: "/icons/price/service/support.svg" },
   ],
   bottom: [
     {
@@ -96,13 +96,12 @@ const SEO = {
 const uiAndUx = {
   serviceTitle: "Designing Seamless Experiences That Connect with Your Audience",
   top: [
-    { title: "Consultation", pathIcon: "/icons/price/service/1/top/handshake.svg" },
-    { title: "Strategy & Planning", pathIcon: "/icons/price/service/1/top/floor-plan.svg" },
-    { title: "Design & Prototyping", pathIcon: "/icons/price/service/1/top/pencil.svg" },
-    { title: "Development", pathIcon: "/icons/price/service/1/top/code-bracket.svg" },
-    { title: "Quality Assurance", pathIcon: "/icons/price/service/1/top/task-daily.svg" },
-    { title: "Deployment", pathIcon: "/icons/price/service/1/top/deploy-line.svg" },
-    { title: "Post-Launch Support", pathIcon: "/icons/price/service/1/top/support.svg" },
+    { title: "Consultation", pathIcon: "/icons/price/service/handshake.svg" },
+    { title: "Research", pathIcon: "/icons/price/service/research.svg" },
+    { title: "Strategy", pathIcon: "/icons/price/service/pencil.svg" },
+    { title: "Design & Prototyping", pathIcon: "/icons/price/service/web-page.svg" },
+    { title: "Testing", pathIcon: "/icons/price/service/task-daily.svg" },
+    { title: "Review", pathIcon: "/icons/price/service/preview.svg" },
   ],
   bottom: [
     {
@@ -142,13 +141,13 @@ const uiAndUx = {
 const wordpress = {
   serviceTitle: "Designing Seamless Experiences That Connect with Your Audience",
   top: [
-    { title: "Consultation", pathIcon: "/icons/price/service/1/top/handshake.svg" },
-    { title: "Strategy & Planning", pathIcon: "/icons/price/service/1/top/floor-plan.svg" },
-    { title: "Design & Prototyping", pathIcon: "/icons/price/service/1/top/pencil.svg" },
-    { title: "Development", pathIcon: "/icons/price/service/1/top/code-bracket.svg" },
-    { title: "Quality Assurance", pathIcon: "/icons/price/service/1/top/task-daily.svg" },
-    { title: "Deployment", pathIcon: "/icons/price/service/1/top/deploy-line.svg" },
-    { title: "Post-Launch Support", pathIcon: "/icons/price/service/1/top/support.svg" },
+    { title: "Consultation", pathIcon: "/icons/price/service/handshake.svg" },
+    { title: "Strategy & Planning", pathIcon: "/icons/price/service/floor-plan.svg" },
+    { title: "Design & Prototyping", pathIcon: "/icons/price/service/pencil.svg" },
+    { title: "Development", pathIcon: "/icons/price/service/code-bracket.svg" },
+    { title: "Quality Assurance", pathIcon: "/icons/price/service/task-daily.svg" },
+    { title: "Deployment", pathIcon: "/icons/price/service/deploy-line.svg" },
+    { title: "Post-Launch Support", pathIcon: "/icons/price/service/support.svg" },
   ],
   bottom: [
     {
@@ -184,4 +183,48 @@ const wordpress = {
   ],
 };
 
-export { webDev, SEO, uiAndUx, wordpress };
+const graphicDesign = {
+  serviceTitle: "Visualizing Your Brand with Creative and Impactful Designs",
+  top: [
+    { title: "Consultation", pathIcon: "/icons/price/service/handshake.svg" },
+    { title: "Research & Discovery", pathIcon: "/icons/price/service/research.svg" },
+    { title: "Concept Development", pathIcon: "/icons/price/service/pencil.svg" },
+    { title: "User Feedback & Testing", pathIcon: "/icons/price/service/feedback.svg" },
+    { title: "Finalization", pathIcon: "/icons/price/service/task-daily.svg" },
+    { title: "Delivery", pathIcon: "/icons/price/service/deploy-line.svg" },
+  ],
+  bottom: [
+    {
+      pathIcon: "/icons/price/service/5/bottom/visual.svg",
+      title: "Visual Research",
+      description: "Gathering visual references and design trends to inspire concepts and ensure relevance.",
+    },
+    {
+      pathIcon: "/icons/price/service/5/bottom/technology.svg",
+      title: "Plugin Integration",
+      description: "Developing various ideas and initial sketches to determine the best design direction aligned with client needs.",
+    },
+    {
+      pathIcon: "/icons/price/service/5/bottom/ibm.svg",
+      title: "Security Enhancement",
+      description: "Utilizing design software and techniques such as Adobe Illustrator, Photoshop, and InDesign to create graphic elements.",
+    },
+    {
+      pathIcon: "/icons/price/service/5/bottom/person.svg",
+      title: "Performance Optimization",
+      description: "Ensuring designs align with the client's brand identity, including color palettes, typography, and visual style.",
+    },
+    {
+      pathIcon: "/icons/price/service/5/bottom/agile.svg",
+      title: "Scalability Solutions",
+      description: "Refining and enhancing designs through multiple iterations based on client feedback to achieve the optimal final result.",
+    },
+    {
+      pathIcon: "/icons/price/service/5/bottom/manager.svg",
+      title: "Content Management Efficiency",
+      description: "Preparing final designs in high-quality formats for digital and print use, ensuring clarity and consistency.",
+    },
+  ],
+};
+
+export { webDev, SEO, uiAndUx, wordpress, graphicDesign };

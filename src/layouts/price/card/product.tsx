@@ -40,25 +40,11 @@ const Product = ({
         <h4 className="text-base font-bold md:text-lg text-blue">{title}</h4>
         <p className="text-sm font-medium text-gray-700 line-clamp-3">{description}</p>
         <p className="text-xs font-bold text-gray-500">15 Sold</p>
-        <div className="space-y-1">
-          <h5 className="text-3xl font-bold text-yellow">{currency(price)}</h5>
+        <div className="space-y-2">
+          <h5 className="text-4xl font-bold text-yellow">{currency(price)}</h5>
           <span className="flex items-center gap-4 text-xs">
-            <p className="text-gray-300 line-through">{currency(300000)}</p>
+            <p className="text-gray-400 line-through">{currency(300000)}</p>
             <p className="text-light-red">30%</p>
-          </span>
-        </div>
-        <div className="flex items-center gap-2 text-xs text-gray-500">
-          <span className="flex items-center gap-1">
-            <Images src="/icons/calendar.svg" alt={title} className="w-4 h-4" cover />
-            <p className="text-gray-500">24 hours</p>
-          </span>
-          <span className="flex items-center gap-1">
-            <Images src="/icons/wave.svg" alt={title} className="w-4 h-4" cover />
-            <p className="text-gray-500">Up to 10 games</p>
-          </span>
-          <span className="flex items-center gap-1">
-            <Images src="/icons/chart.svg" alt={title} className="w-4 h-4" cover />
-            <p className="text-gray-500">2 weeks</p>
           </span>
         </div>
         <Link

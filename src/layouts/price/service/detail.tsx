@@ -18,7 +18,7 @@ const Detail = () => {
             <p className="flex-shrink text-sm font-semibold tracking-wide uppercase text-light me-4 md:text-lg">Services</p>
             <i className="flex-grow max-w-xs border-t-2 border-gray-400" />
           </div>
-          <Button className="whitespace-nowrap bg-orange rounded-3xl text-light hover:bg-light hover:text-orange">Most Popular</Button>
+          <Button className="whitespace-nowrap bg-orange rounded-3xl text-light cursor-auto">Most Popular</Button>
         </div>
         <div className="flex justify-between">
           <div className="flex-1 max-w-lg space-y-6">

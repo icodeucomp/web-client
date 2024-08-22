@@ -1,23 +1,25 @@
 import Container from "@/components/container";
 import Images from "@/components/images";
 
-import { webDev, SEO, uiAndUx, wordpress } from "@/static/service";
+import { webDev, SEO, uiAndUx, wordpress, graphicDesign } from "@/static/service";
 
 const Environment = ({ id }: { id: string }) => {
-  const render = id === "1" ? webDev : id === "2" ? SEO : id === "3" ? uiAndUx : wordpress;
+  const render = id === "1" ? webDev : id === "2" ? SEO : id === "3" ? uiAndUx : id === "4" ? wordpress : graphicDesign;
   return (
     <Container className="pb-40">
       <h4 className="max-w-xl text-3xl font-bold leading-normal">{render.serviceTitle}</h4>
-      <div className="flex items-center gap-2 mt-16">
-        {render.top.map((item, index) => (
-          <div key={index} className="flex items-start justify-center gap-2">
+      <div className={`flex items-center mt-16 ${render.top.length === 7 ? "gap-2" : "gap-7"}`}>
+        {render.top.map((item, index, row) => (
+          <div key={index} className={`flex items-start justify-center ${render.top.length === 7 ? "gap-2" : "gap-7"}`}>
             <div className="flex flex-col items-center justify-center gap-4 text-center">
               <div className="grid p-4 rounded-full place-items-center bg-orange">
                 <Images src={item.pathIcon} alt="business process icon" className="w-16 h-16" />
               </div>
-              <p className="h-10 text-sm">{item.title}</p>
+              <p className="h-10 text-sm max-w-24">{item.title}</p>
             </div>
-            {index < 6 && <Images src="/icons/price/service/line-arrow.svg" alt="line arrow icon" className="mt-5 min-w-14 min-h-14" />}
+            {index + 1 !== row.length && (
+              <Images src="/icons/price/service/line-arrow.svg" alt="line arrow icon" className="mt-5 min-w-14 min-h-14" />
+            )}
           </div>
         ))}
       </div>

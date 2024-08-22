@@ -1,5 +1,6 @@
 import Button from "@/components/button";
 import Container from "@/components/container";
+import MotionComponent from "@/components/motion";
 
 const Table = () => {
   const data = [
@@ -10,7 +11,7 @@ const Table = () => {
 
   return (
     <Container className="pb-40">
-      <div className="overflow-x-auto">
+      <MotionComponent tag="div" duration={1} delay={0.6} initialO={0} initialX={0} animateO={1} animateX={0} className="overflow-x-auto">
         <table className="min-w-full overflow-hidden rounded-2xl bg-light">
           <thead>
             <tr>
@@ -83,7 +84,7 @@ const Table = () => {
             ))}
           </tbody>
         </table>
-      </div>
+      </MotionComponent>
     </Container>
   );
 };

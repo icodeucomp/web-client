@@ -15,17 +15,17 @@ import currency from "@/utils/currency";
 const Price = () => {
   const [border, setBorder] = useState<number | null>(null);
   return (
-    <Container className="flex gap-8 pt-40 pb-16">
+    <Container className="flex flex-col gap-8 pt-32 pb-16 lg:flex-row">
       <MotionComponent tag="div" duration={0.3} initialO={0} initialX={-70} animateO={1} animateX={0} className="flex-1 max-w-xl space-y-8">
         <div className="px-8 py-20 overflow-hidden rounded bg-gradient-to-b from-purple to-dark-blue">
-          <Images src="/temporary-image.png" alt="temporary" className="h-64 mx-auto w-96" cover />
+          <Images src="/temporary-image.png" alt="temporary" className="h-32 mx-auto w-60 md:h-60 xl:h-64 md:w-80 xl:w-96" cover />
         </div>
         <div className="relative">
           <Swiper
             modules={[Navigation]}
             navigation={{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }}
             spaceBetween={10}
-            breakpoints={{ 0: { slidesPerView: 1 }, 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }}
+            breakpoints={{ 0: { slidesPerView: 2 }, 768: { slidesPerView: 3 } }}
             slidesPerView={3}
           >
             {Array.from({ length: 4 }).map((_, index) => (
@@ -51,16 +51,16 @@ const Price = () => {
         </div>
       </MotionComponent>
       <MotionComponent tag="div" duration={0.6} delay={0.3} initialO={0} initialX={70} animateO={1} animateX={0} className="flex-1 mt-6">
-        <div className="space-y-4">
-          <h4 className="text-4xl leading-snug text-gradient">Website TopUp Gaming</h4>
-          <p className="text-lg text-light-yellow">Starts From</p>
-          <span className="flex items-center gap-4">
+        <div className="space-y-2 md:space-y-4">
+          <h4 className="text-2xl leading-snug md:text-3xl lg:text-4xl text-gradient">Website TopUp Gaming</h4>
+          <p className="text-base md:text-lg text-light-yellow">Starts From</p>
+          <span className="flex items-center gap-4 text-sm md:text-base">
             <p className="text-gray-300 line-through">{currency(300000)}</p>
             <p className="text-light-red">30% off</p>
           </span>
-          <p className="text-6xl text-gradient">{currency(200000)}</p>
+          <p className="text-4xl md:text-5xl lg:text-6xl text-gradient">{currency(200000)}</p>
           <p className="tracking-wide">What you`ll get (Basic pack):</p>
-          <ul className="space-y-1">
+          <ul className="space-y-1 text-sm md:text-base">
             <li className="flex items-center gap-2">
               <Images src="/icons/check.svg" alt="check" className="w-6 h-6" />
               <p className="text-gray-300">Up to 10 games</p>

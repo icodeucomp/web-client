@@ -32,19 +32,23 @@ const Service = ({
       initialY={120}
       animateO={1}
       animateY={0}
-      className="relative flex flex-col flex-1 w-full gap-5 p-8 overflow-hidden text-center duration-300 shadow-2xl min-w-72 max-w-80 rounded-3xl bg-light hover:bg-yellow group"
+      className="relative flex flex-col flex-1 w-full gap-4 md:gap-5 p-8 overflow-hidden text-center duration-300 shadow-2xl min-w-72 max-w-80 rounded-3xl bg-light hover:bg-yellow group"
     >
-      {index % 2 === 1 && <p className="absolute px-4 py-1 text-xs uppercase top-4 right-4 bg-orange rounded-2xl w-max">Most Popular</p>}
-      <div className="p-4 mx-auto mt-8 rounded-full bg-light">
-        <Images src={pathImg} alt={title} className="w-10 h-10" />
+      {index % 2 === 1 && (
+        <p className="absolute px-4 py-1 text-xs uppercase top-2 right-2 md:top-4 md:right-4 bg-orange rounded-2xl w-max">Most Popular</p>
+      )}
+      <div className="p-4 mx-auto mt-0 md:mt-8 rounded-full bg-light">
+        <Images src={pathImg} alt={title} className="w-8 h-8 md:w-10 md:h-10" />
       </div>
       <h4 className="h-12 text-base font-bold md:text-lg text-blue">{title}</h4>
       <div className="space-y-1">
         <p className="text-xs font-medium text-yellow group-hover:text-blue">Starts From</p>
-        <h5 className="text-3xl font-bold text-yellow group-hover:text-blue">{currency(price)}</h5>
+        <h5 className="text-2xl md:text-3xl font-bold text-yellow group-hover:text-blue">{currency(price)}</h5>
       </div>
-      <p className="text-sm font-medium text-gray-500 group-hover:text-light line-clamp-3">{description}</p>
-      <div className="space-y-1 text-left">
+      <div className="hidden md:block">
+        <p className="text-sm font-medium text-gray-500 group-hover:text-light line-clamp-3">{description}</p>
+      </div>
+      <div className="space-y-1 text-left hidden md:block">
         <h5 className="font-bold text-dark hover:text-light">What you get:</h5>
         <menu className="space-y-1 h-28">
           {list.map((child, e) => (

@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
 import MotionComponent from "./motion";
 
 interface TabProps {
@@ -31,8 +30,7 @@ const Tabs: React.FC<TabsProps> = ({ tabs }) => {
         {tabs.map((tab, index) => (
           <button
             key={index}
-            className={`px-4 py-2 text-sm font-medium duration-300 
-            ${activeTab === index ? "bg-orange rounded-full" : "text-gray-500"}`}
+            className={`px-4 py-2 text-xs md:text-sm font-medium duration-300 ${activeTab === index ? "bg-orange rounded-full" : "text-gray-500"}`}
             onClick={() => setActiveTab(index)}
           >
             {tab.label}

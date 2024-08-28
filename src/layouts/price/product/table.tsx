@@ -11,12 +11,21 @@ const Table = () => {
 
   return (
     <Container className="pb-40">
-      <MotionComponent tag="div" duration={1} delay={0.6} initialO={0} initialX={0} animateO={1} animateX={0} className="overflow-x-auto">
+      <MotionComponent
+        tag="div"
+        duration={1}
+        delay={0.6}
+        initialO={0}
+        initialX={0}
+        animateO={1}
+        animateX={0}
+        className="overflow-x-auto table-scrollbar"
+      >
         <table className="min-w-full overflow-hidden rounded-2xl bg-light">
           <thead>
             <tr>
               <th className="px-4 py-2 whitespace-nowrap">
-                <h5 className="text-2xl text-gradient">Compare our plans</h5>
+                <h5 className="text-xl md:text-2xl text-gradient">Compare our plans</h5>
               </th>
               <th className="px-4 py-8 whitespace-nowrap">
                 <div className="flex flex-col items-center gap-4 text-gradient">
@@ -44,7 +53,7 @@ const Table = () => {
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="text-sm md:text-base">
             <tr>
               <td className="px-4 py-2 text-light bg-gradient-to-b from-yellow to-orange" colSpan={5}>
                 Access

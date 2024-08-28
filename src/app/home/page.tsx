@@ -9,7 +9,7 @@ export default function page() {
     <>
       <section className="bg-gradient-to-b from-blue from-30% to-orange">
         <Hero />
-        <div className="flex justify-center">
+        <div className="justify-center hidden lg:flex">
           <p className="font-light text-center w-max group">
             Scroll to learn more
             <IoIosArrowDown
@@ -28,12 +28,12 @@ export default function page() {
           <Service />
         </div>
       </section>
-      <section className="bg-gradient-to-b from-blue to-dark-blue">
+      <section className="bg-blue">
         <Experience />
       </section>
-      <section className="bg-gradient-to-b from-dark-blue to-blue">
+      {/* <section className="bg-gradient-to-b from-dark-blue to-blue">
         <Testimonial />
-      </section>
+      </section> */}
       {/* <section className="bg-gradient-to-b from-lemon-yellow to-blue">
         <Blog />
       </section> */}

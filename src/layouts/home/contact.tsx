@@ -7,16 +7,16 @@ import MotionComponent from "@/components/motion";
 
 const Contact = () => {
   return (
-    <Container className="pt-10 pb-32">
-      <h4 className="px-8 text-2xl font-bold tracking-wide text-center sm:text-3xl md:text-5xl md:text-start">
+    <Container className="pt-10 pb-10 lg:pb-32">
+      <h4 className="px-8 text-2xl font-bold tracking-wide text-center sm:text-3xl md:text-4xl lg:text-5xl md:text-start">
         Get in Touch with our <strong className="text-gradient">Team</strong>.
       </h4>
-      <div className="flex flex-col-reverse gap-16 px-8 py-16 lg:flex-row">
+      <div className="flex flex-col-reverse gap-16 px-0 py-8 lg:px-8 lg:py-16 lg:flex-row">
         <MotionComponent tag="div" duration={1} delay={1} initialO={0} initialX={-50} animateO={1} animateX={0} className="flex-1">
           <ContactFormSlice />
         </MotionComponent>
         <Background
-          parentClassName="max-w-lg"
+          parentClassName="max-w-lg hidden lg:block"
           className="items-center justify-center gap-16 px-4 text-gray-200 md:px-8 min-h-500"
           src="/images/home/talk-people.png"
         >

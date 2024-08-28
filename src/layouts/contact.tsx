@@ -32,7 +32,7 @@ const ContactFormSlice = () => {
         <input
           id="fullName"
           type="text"
-          className="w-full px-4 py-4 bg-transparent outline-none me-2 placeholder:text-dark text-dark"
+          className="w-full p-2 text-sm bg-transparent outline-none md:text-base md:p-4 me-2 placeholder:text-dark text-dark"
           placeholder="Full Name"
           onChange={handleChange}
         />
@@ -42,7 +42,7 @@ const ContactFormSlice = () => {
         <input
           id="email"
           type="text"
-          className="w-full px-4 py-4 bg-transparent outline-none me-2 placeholder:text-dark text-dark"
+          className="w-full p-2 text-sm bg-transparent outline-none md:text-base md:p-4 me-2 placeholder:text-dark text-dark"
           placeholder="Email Address"
           onChange={handleChange}
         />
@@ -52,7 +52,7 @@ const ContactFormSlice = () => {
         <input
           id="phoneNumber"
           type="text"
-          className="w-full px-4 py-4 bg-transparent outline-none me-2 placeholder:text-dark text-dark"
+          className="w-full p-2 text-sm bg-transparent outline-none md:text-base md:p-4 me-2 placeholder:text-dark text-dark"
           placeholder="Phone Number"
           onChange={handleChange}
         />
@@ -62,7 +62,7 @@ const ContactFormSlice = () => {
         <textarea
           id="message"
           rows={5}
-          className="w-full px-4 py-4 bg-transparent outline-none me-2 placeholder:text-dark text-dark"
+          className="w-full p-2 text-sm bg-transparent outline-none md:text-base md:p-4 me-2 placeholder:text-dark text-dark"
           placeholder="Write something here..."
           onChange={handleChange}
         />

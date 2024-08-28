@@ -6,7 +6,7 @@ import { Core, Purpose } from "@/layouts/about";
 
 export default function page() {
   return (
-    <>
+    <div className="overflow-x-hidden">
       <section>
         <HeroSlice
           title="About Us"
@@ -20,6 +20,6 @@ export default function page() {
           <Core />
         </div>
       </section>
-    </>
+    </div>
   );
 }

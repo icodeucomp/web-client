@@ -1,5 +1,13 @@
 import { BlogField, OurService, PriceField, TemplateField, TestimonialField } from "@/types";
 
+export const navbarList: { title: string; path: string }[] = [
+  { title: "Home", path: "/home" },
+  { title: "About Us", path: "/about" },
+  { title: "Services", path: "/service" },
+  { title: "Pricing", path: "/price" },
+  { title: "Contact Us", path: "/contact" },
+];
+
 export const mission: string[] = [
   "Develop technology solutions that meet the specific needs of businesses, driving success and growth.",
   "Build and nurture strong partnerships with clients and stakeholders, creating an environment where collaborative efforts lead to shared growth and achievement.",
@@ -120,6 +128,30 @@ export const ourService: OurService[] = [
     description:
       "Elevate your digital experience with our UI/UX Custom Design service. We combine stunning visuals with seamless functionality to create engaging and user-friendly interfaces that resonate with your audience.",
   },
+  {
+    pathIcon: "/icons/task-white.svg",
+    pathImg: "/images/service/time-management.png",
+    title: "Graphic Design",
+    description:
+      "Harness the power of professional graphic design in your brand. Unique logos, eye-catching marketing materials and digital graphic/illustrated work... to make your brand look awesome. By info graphics that speak for themselves, to packaging designs of the future -- we create compelling work designed specifically to captivate & communicate.",
+  },
+];
+
+export const stackImages: string[] = [
+  "/images/price/stack-1.png",
+  "/images/price/stack-2.png",
+  "/images/price/stack-3.png",
+  "/images/price/stack-4.png",
+  "/images/price/stack-5.png",
+  "/images/price/stack-6.png",
+  "/images/price/stack-7.png",
+  "/images/price/stack-8.png",
+  "/images/price/stack-9.png",
+  "/images/price/stack-10.png",
+  "/images/price/stack-11.png",
+  "/images/price/stack-12.png",
+  "/images/price/stack-13.png",
+  "/images/price/stack-14.png",
 ];
 
 export const price: PriceField[] = [

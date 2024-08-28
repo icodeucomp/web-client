@@ -7,7 +7,7 @@ import Images from "@/components/images";
 
 const Contact = () => {
   return (
-    <Container className="pt-10 pb-32">
+    <Container className="pt-10 pb-32 hidden lg:block">
       <MotionComponent
         tag="h4"
         duration={1}

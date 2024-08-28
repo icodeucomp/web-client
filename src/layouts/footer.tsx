@@ -9,19 +9,19 @@ import { FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 const Footer = () => {
   return (
     <section className="z-10 bg-dark-blue">
-      <Container className="relative z-1">
+      <Container className="relative hidden z-1 lg:block">
         <div className="absolute left-0 flex items-center justify-between w-full px-10 py-16 -top-24 bg-gradient-to-r from-orange to-yellow rounded-3xl">
           <div className="space-y-4">
-            <h4 className="text-3xl font-bold">Ready to start scaling your business now?</h4>
+            <h4 className="text-2xl font-bold xl:text-3xl">Ready to start scaling your business now?</h4>
             <p className="text-sm font-medium">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel, tempora!</p>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 whitespace-nowrap">
             <Button className="bg-light text-orange rounded-3xl">Contact us</Button>
             <Button className="bg-orange rounded-3xl">Our Services</Button>
           </div>
         </div>
       </Container>
-      <Container className="flex flex-col items-center justify-center gap-8 pb-12 text-center pt-36 lg:items-start lg:gap-24 lg:flex-row md:text-start">
+      <Container className="flex flex-col items-center justify-center gap-8 pt-16 pb-12 text-center lg:pt-36 lg:items-start lg:gap-24 lg:flex-row md:text-start">
         <div className="space-y-4">
           <Link href="/" className="flex items-center justify-center gap-4">
             <Images className="w-10 h-10" src="/icons/logo-icodeu.svg" alt="logo i code u" />

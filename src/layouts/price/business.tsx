@@ -1,9 +1,9 @@
 import Container from "@/components/container";
 import Tabs from "@/components/tabs";
+import MotionComponent from "@/components/motion";
 
 import Product from "./card/product";
 import Service from "./card/service";
-import MotionComponent from "@/components/motion";
 
 const products = [
   {
@@ -109,7 +109,7 @@ const tabData = [
 const Business = () => {
   return (
     <Container className="pt-40 pb-20">
-      <div className="flex flex-col items-center justify-center w-full text-3xl leading-snug">
+      <div className="flex flex-col items-center justify-center w-full text-xl md:text-2xl lg:text-3xl leading-snug">
         <MotionComponent tag="h4" duration={0.3} initialO={0} initialY={40} animateO={1} animateY={0} className="text-gradient">
           Streamline your teamwork. Start free.
         </MotionComponent>

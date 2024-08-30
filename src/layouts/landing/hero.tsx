@@ -12,23 +12,23 @@ const Hero = () => {
           <Images className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14" src="/icons/logo-icodeu.svg" alt="logo i code u" />
           <h1 className="text-lg font-bold sm:text-xl md:text-2xl font-red-hat">ICodeU</h1>
         </Link>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1 md:gap-2">
           <Link href="/contact">
             <Button className="border-2 rounded-3xl border-orange text-orange hover:bg-orange hover:text-light">Contact Us</Button>
           </Link>
-          <Link href="/price">
-            <Button className="rounded-3xl bg-gradient-to-r from-yellow to-orange hover:from-orange hover:to-yellow">See Pricing</Button>
+          <Link href="/price" className="hidden md:block">
+            <Button className="rounded-3xl bg-gradient-to-r from-yellow to-orange hover:from-orange hover:to-yellow">Free Consulting</Button>
           </Link>
         </div>
       </div>
       <div className="max-w-2xl mx-auto my-24 space-y-8 text-center">
-        <h3 className="text-2xl md:text-5xl text-gradient">The Right Technology for Your Business</h3>
+        <h3 className="text-2xl md:text-5xl text-gradient">Create the Right Technology for Your Business</h3>
         <p className="text-sm sm:text-lg">
           We apply agile methods to deliver customized IT services and support for various non-IT tasks, ensuring your business needs are met
           efficiently
         </p>
         <Button className="mx-auto button-gradient">
-          See Pricing
+          Free Consulting
           <IoIosArrowDown size={16} className="rounded-full shadow-md bg-light fill-orange" />
         </Button>
       </div>

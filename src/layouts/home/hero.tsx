@@ -10,7 +10,7 @@ const Hero = () => {
   return (
     <Container className="flex flex-col-reverse items-center justify-center min-h-screen gap-16 pt-24 pb-8 lg:pt-0 lg:items-end lg:flex-row 2xl:min-h-600">
       <div className="flex-1 max-w-lg text-center lg:text-start">
-        <h4 className="text-3xl font-medium sm:text-4xl md:text-5xl lg:text-6xl">The Right</h4>
+        <h4 className="text-3xl font-medium sm:text-4xl md:text-5xl lg:text-6xl">Create the Right</h4>
         <h2 className="text-3xl font-extrabold sm:text-4xl md:text-5xl lg:text-6xl text-gradient">Technology for Your Business</h2>
         <p className="mt-4 text-sm leading-6 md:leading-7 sm:mt-8 md:text-base">
           We apply agile methods to deliver customized IT services and support for various non-IT tasks, ensuring your business needs are met

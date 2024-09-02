@@ -1,7 +1,11 @@
-import Link from "next/link";
-import Images from "@/components/images";
+"use client";
 
-import MotionComponent from "@/components/motion";
+import { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+
+import Link from "next/link";
+
+import Images from "@/components/images";
 
 import { MdArrowForwardIos } from "react-icons/md";
 
@@ -20,15 +24,20 @@ const Product = ({
   description: string;
   index: number;
 }) => {
+  const controls = useAnimation();
+
+  useEffect(() => {
+    controls.start({
+      opacity: 1,
+      y: 0,
+      transition: { duration: index < 3 ? 0.5 + index / 4 : index / 5, delay: index < 3 ? 0.4 + index / 4 : index / 5 },
+    });
+  }, [controls, index]);
+
   return (
-    <MotionComponent
-      tag="article"
-      duration={index < 3 ? 0.5 + index / 4 : index / 5}
-      delay={index < 3 ? 0.4 + index / 4 : index / 5}
-      initialO={0}
-      initialY={120}
-      animateO={1}
-      animateY={0}
+    <motion.article
+      initial={{ opacity: 0, y: 120 }}
+      animate={controls}
       className="relative flex flex-col flex-1 w-full overflow-hidden duration-300 shadow-2xl min-w-72 max-w-80 rounded-3xl bg-light group"
     >
       {index % 2 === 1 && (
@@ -60,7 +69,7 @@ const Product = ({
           Learn More <MdArrowForwardIos className="fill-orange" />
         </Link>
       </div>
-    </MotionComponent>
+    </motion.article>
   );
 };
 

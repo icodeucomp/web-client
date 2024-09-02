@@ -7,12 +7,12 @@ import { webDev, SEO, uiAndUx, wordpress, graphicDesign } from "@/static/service
 const Environment = ({ id }: { id: string }) => {
   const render = id === "1" ? webDev : id === "2" ? SEO : id === "3" ? uiAndUx : id === "4" ? wordpress : graphicDesign;
   return (
-    <Container className="pb-10 lg:pb-40">
+    <Container className="pb-28 sm:pb-20 lg:pb-40">
       <MotionComponent
         tag="h4"
         duration={1}
         initialO={0}
-        initialX={-100}
+        initialX={-50}
         animateO={1}
         animateX={0}
         className="max-w-xl text-xl font-bold leading-normal sm:text-2xl md:text-3xl"
@@ -55,7 +55,7 @@ const Environment = ({ id }: { id: string }) => {
           duration={1}
           delay={0.9}
           initialO={0}
-          initialY={100}
+          initialY={50}
           animateO={1}
           animateY={0}
           className="grid grid-cols-1 gap-4 sm:gap-8 sm:grid-cols-2"

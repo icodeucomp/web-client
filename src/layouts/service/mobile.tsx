@@ -8,14 +8,22 @@ import Container from "@/components/container";
 import Images from "@/components/images";
 import MotionComponent from "@/components/motion";
 
-import { FaLongArrowAltRight } from "react-icons/fa";
+import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 
 import { ourService } from "@/static";
+import { Navigation } from "swiper/modules";
 
 const Mobile = () => {
   return (
     <Container className="block py-16 lg:hidden">
-      <Swiper spaceBetween={10} breakpoints={{ 0: { slidesPerView: 1 }, 600: { slidesPerView: 2 } }} slidesPerView={2} className="block lg:!hidden">
+      <Swiper
+        modules={[Navigation]}
+        navigation={{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }}
+        spaceBetween={10}
+        breakpoints={{ 0: { slidesPerView: 1 }, 600: { slidesPerView: 2 } }}
+        slidesPerView={2}
+        className="block lg:!hidden"
+      >
         {ourService.map((item, index) => {
           const imgClass = `${
             index === 0
@@ -61,6 +69,15 @@ const Mobile = () => {
           );
         })}
       </Swiper>
+      <div className="flex items-center justify-center w-full gap-2 py-8 text-sm font-medium lg:hidden">
+        <div className="swiper-button-prev">
+          <FaLongArrowAltLeft size={24} />
+        </div>
+        <p className="mb-5">Swipe</p>
+        <div className="swiper-button-next">
+          <FaLongArrowAltRight size={24} />
+        </div>
+      </div>
     </Container>
   );
 };

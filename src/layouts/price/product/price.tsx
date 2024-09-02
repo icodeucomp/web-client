@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
@@ -11,12 +11,24 @@ import Button from "@/components/button";
 
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 import currency from "@/utils/currency";
+import { motion, useAnimation } from "framer-motion";
 
 const Price = () => {
-  const [border, setBorder] = useState<number | null>(null);
+  const [border, setBorder] = React.useState<number | null>(null);
+
+  const controls = useAnimation();
+
+  React.useEffect(() => {
+    controls.start({
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.3 },
+    });
+  }, [controls]);
+
   return (
     <Container className="flex flex-col gap-8 pt-32 pb-16 lg:flex-row">
-      <MotionComponent tag="div" duration={0.3} initialO={0} initialX={-70} animateO={1} animateX={0} className="flex-1 max-w-xl space-y-8">
+      <motion.div initial={{ opacity: 0, x: -100 }} animate={controls} className="flex-1 max-w-xl space-y-8">
         <div className="px-8 py-20 overflow-hidden rounded bg-gradient-to-b from-purple to-dark-blue">
           <Images src="/temporary-image.png" alt="temporary" className="h-32 mx-auto w-60 md:h-60 xl:h-64 md:w-80 xl:w-96" cover />
         </div>
@@ -49,8 +61,8 @@ const Price = () => {
             </div>
           </div>
         </div>
-      </MotionComponent>
-      <MotionComponent tag="div" duration={0.6} delay={0.3} initialO={0} initialX={70} animateO={1} animateX={0} className="flex-1 mt-6">
+      </motion.div>
+      <motion.div initial={{ opacity: 0, x: 100 }} animate={controls} className="flex-1 mt-6">
         <div className="space-y-2 md:space-y-4">
           <h4 className="text-2xl leading-snug md:text-3xl lg:text-4xl text-gradient">Website TopUp Gaming</h4>
           <p className="text-base md:text-lg text-light-yellow">Starts From</p>
@@ -84,7 +96,7 @@ const Price = () => {
           </ul>
           <Button className="flex justify-center w-full button-gradient">Contact Us</Button>
         </div>
-      </MotionComponent>
+      </motion.div>
     </Container>
   );
 };

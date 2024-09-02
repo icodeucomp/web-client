@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import MotionComponent from "./motion";
+import { useAnimation, motion } from "framer-motion";
 
 interface TabProps {
   label: string;
@@ -15,18 +15,19 @@ interface TabsProps {
 const Tabs: React.FC<TabsProps> = ({ tabs }) => {
   const [activeTab, setActiveTab] = React.useState<number>(0);
 
+  const controls = useAnimation();
+
+  React.useEffect(() => {
+    controls.start({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 1.1, delay: 0.8 },
+    });
+  }, [controls]);
+
   return (
     <>
-      <MotionComponent
-        tag="div"
-        duration={1.1}
-        delay={0.8}
-        initialO={0}
-        initialY={40}
-        animateO={1}
-        animateY={0}
-        className="flex justify-center gap-2 p-1 mx-auto rounded-full bg-light w-max"
-      >
+      <motion.div initial={{ opacity: 0, y: 50 }} animate={controls} className="flex justify-center gap-2 p-1 mx-auto rounded-full bg-light w-max">
         {tabs.map((tab, index) => (
           <button
             key={index}
@@ -36,10 +37,8 @@ const Tabs: React.FC<TabsProps> = ({ tabs }) => {
             {tab.label}
           </button>
         ))}
-      </MotionComponent>
-      <MotionComponent tag="div" duration={1.5} delay={1.2} initialO={0} initialY={40} animateO={1} animateY={0} key={activeTab} className="p-4">
-        {tabs[activeTab]?.children}
-      </MotionComponent>
+      </motion.div>
+      <div className="p-4">{tabs[activeTab]?.children}</div>
     </>
   );
 };

@@ -1,6 +1,10 @@
+"use client";
+
+import { useEffect } from "react";
 import Link from "next/link";
 
-import MotionComponent from "@/components/motion";
+import { motion, useAnimation } from "framer-motion";
+
 import Images from "@/components/images";
 import Button from "@/components/button";
 
@@ -23,15 +27,20 @@ const Service = ({
   list: string[];
   index: number;
 }) => {
+  const controls = useAnimation();
+
+  useEffect(() => {
+    controls.start({
+      opacity: 1,
+      y: 0,
+      transition: { duration: index < 3 ? 0.5 + index / 4 : index / 5, delay: index < 3 ? 0.4 + index / 4 : index / 5 },
+    });
+  }, [controls, index]);
+
   return (
-    <MotionComponent
-      tag="article"
-      duration={index < 3 ? 0.5 + index / 4 : index / 5}
-      delay={index < 3 ? 0.4 + index / 4 : index / 5}
-      initialO={0}
-      initialY={120}
-      animateO={1}
-      animateY={0}
+    <motion.article
+      initial={{ opacity: 0, y: 120 }}
+      animate={controls}
       className="relative flex flex-col flex-1 w-full gap-4 md:gap-5 p-8 overflow-hidden text-center duration-300 shadow-2xl min-w-72 max-w-80 rounded-3xl bg-light hover:bg-yellow group"
     >
       {index % 2 === 1 && (
@@ -62,7 +71,7 @@ const Service = ({
       <Link href={`/price/service/${index + 1}`}>
         <Button className="w-full rounded-2xl bg-orange text-light group-hover:bg-light group-hover:text-orange">Read More</Button>
       </Link>
-    </MotionComponent>
+    </motion.article>
   );
 };
 

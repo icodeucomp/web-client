@@ -6,6 +6,8 @@ import { usePathname } from "next/navigation";
 
 import Link from "next/link";
 
+import { motion } from "framer-motion";
+
 import Container from "@/components/container";
 import Images from "@/components/images";
 
@@ -14,8 +16,8 @@ import useToggleState from "@/hooks/useToggleState";
 import { MdArrowCircleRight } from "react-icons/md";
 import { IoClose } from "react-icons/io5";
 import { IoMdMenu } from "react-icons/io";
+
 import { navbarList } from "@/static";
-import { motion } from "framer-motion";
 
 const Header = () => {
   const pathname = usePathname();

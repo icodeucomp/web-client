@@ -1,22 +1,8 @@
 "use client";
 
-// components/AnimatedBox.tsx
 import { motion } from "framer-motion";
-import { ElementType, ReactNode, useEffect, useState } from "react";
 
-interface MotionComponentProps {
-  initialO?: number;
-  initialY?: number;
-  initialX?: number;
-  animateO?: number;
-  animateY?: number;
-  animateX?: number;
-  delay?: number;
-  duration: number;
-  tag: ElementType;
-  className: string;
-  children?: ReactNode;
-}
+import { MotionComponentProps } from "@/types";
 
 const MotionComponent = ({
   children,
@@ -31,7 +17,7 @@ const MotionComponent = ({
   delay,
   duration,
 }: MotionComponentProps) => {
-  const Component = motion(tag); // Create a motion component from the tag prop
+  const Component = motion(tag);
 
   return (
     <Component

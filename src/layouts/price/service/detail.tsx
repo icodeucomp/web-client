@@ -1,5 +1,7 @@
 "use client";
 
+import useFetchApi from "@/hooks/useFetchApi";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import Button from "@/components/button";
@@ -10,7 +12,13 @@ import Background from "@/components/background";
 
 import { RiCheckLine } from "react-icons/ri";
 
-const Detail = () => {
+import { webDev, SEO, uiAndUx, wordpress, graphicDesign } from "@/static/service";
+
+const Detail = ({ id }: { id: string }) => {
+  const { response: service } = useFetchApi(`/services/${id}`, "GET");
+
+  const render = id === "1" ? webDev : id === "2" ? SEO : id === "3" ? uiAndUx : id === "4" ? wordpress : graphicDesign;
+
   return (
     <>
       <Container className="pt-40">
@@ -125,12 +133,10 @@ const Detail = () => {
           colorBackdrop="bg-dark/70 z-1"
           isBackdrop
         >
-          <div className="flex w-full max-w-screen-lg gap-2 mx-auto text-center">
-            <Images src="/icons/top-double-quote.svg" alt="top double quote circle" className="w-20 h-20" />
-            <h5 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl text-gradient">
-              Boost your site`s visibility and speed with expert SEO and performance optimization
-            </h5>
-            <Images src="/icons/bottom-double-quote.svg" alt="bottom double quote circle" className="w-20 h-20" />
+          <div className="flex items-center w-full max-w-screen-lg gap-2 mx-auto text-center sm:gap-4">
+            <Images src="/icons/top-double-quote.svg" alt="top double quote circle" className="w-28 h-28" />
+            <h5 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl text-gradient">{render.message}</h5>
+            <Images src="/icons/bottom-double-quote.svg" alt="bottom double quote circle" className="w-28 h-28" />
           </div>
         </Background>
       </MotionComponent>

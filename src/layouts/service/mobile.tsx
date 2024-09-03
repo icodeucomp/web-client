@@ -3,6 +3,7 @@
 import Link from "next/link";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
 
 import Container from "@/components/container";
 import Images from "@/components/images";
@@ -11,7 +12,6 @@ import MotionComponent from "@/components/motion";
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 
 import { ourService } from "@/static";
-import { Navigation } from "swiper/modules";
 
 const Mobile = () => {
   return (

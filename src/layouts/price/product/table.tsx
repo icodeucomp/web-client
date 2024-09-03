@@ -2,7 +2,7 @@ import Button from "@/components/button";
 import Container from "@/components/container";
 import MotionComponent from "@/components/motion";
 
-const Table = () => {
+const Table = ({ id }: { id: string }) => {
   const data = [
     { id: 1, name: "Editors", basic: "unlimited", semi: "limited", advanced: "unlimited", enterprise: "unlimited" },
     { id: 2, name: "Viewers", basic: "unlimited", semi: "5", advanced: "unlimited", enterprise: "9" },

@@ -8,7 +8,7 @@ export default function page({ params }: { params: { id: string } }) {
       <section className="relative bg-black">
         <Image src="/images/white-line-mobile.png" alt="line background" fill className="max-w-screen-xl mx-auto" />
         <div className="bg-gradient-to-b from-blue/50 to-orange/50">
-          <Detail />
+          <Detail id={params.id} />
           <Environment id={params.id} />
         </div>
       </section>

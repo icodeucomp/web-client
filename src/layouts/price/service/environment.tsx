@@ -15,7 +15,7 @@ const Environment = ({ id }: { id: string }) => {
         initialX={-50}
         animateO={1}
         animateX={0}
-        className="max-w-xl text-xl font-bold leading-normal sm:text-2xl md:text-3xl"
+        className="max-w-xl text-lg font-bold leading-normal text-center md:text-start sm:text-xl md:text-2xl lg:text-3xl"
       >
         {render.serviceTitle}
       </MotionComponent>
@@ -27,7 +27,7 @@ const Environment = ({ id }: { id: string }) => {
                 <div className="grid p-4 rounded-full place-items-center bg-orange">
                   <Images src={item.pathIcon} alt="business process icon" className="w-12 h-12 md:w-16 md:h-16" />
                 </div>
-                <p className="h-10 text-sm max-w-24">{item.title}</p>
+                <p className="h-16 text-sm max-w-24">{item.title}</p>
               </div>
               {index + 1 !== row.length && (
                 <Images src="/icons/price/service/line-arrow.svg" alt="line arrow icon" className="mt-5 min-h-10 min-w-10 md:min-w-14 md:min-h-14" />

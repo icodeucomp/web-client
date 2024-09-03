@@ -1,18 +1,12 @@
 "use client";
 
 import React from "react";
+
 import { useAnimation, motion } from "framer-motion";
 
-interface TabProps {
-  label: string;
-  children: React.ReactNode;
-}
+import { TabsProps } from "@/types";
 
-interface TabsProps {
-  tabs: TabProps[];
-}
-
-const Tabs: React.FC<TabsProps> = ({ tabs }) => {
+const Tabs = ({ tabs }: { tabs: TabsProps[] }) => {
   const [activeTab, setActiveTab] = React.useState<number>(0);
 
   const controls = useAnimation();

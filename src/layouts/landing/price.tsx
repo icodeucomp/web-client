@@ -18,12 +18,12 @@ import { price } from "@/static";
 
 import currency from "@/utils/currency";
 
-import { CardPriceProps } from "@/types";
+import { LandingCardPriceProps } from "@/types";
 
-const Card = ({ onMouseLeave, onMouseEnter, isHighlight, pathImg, price, title, description, index }: CardPriceProps) => {
+const Card = ({ onMouseLeave, onMouseEnter, isHighlight, pathImg, price, title, description, index }: LandingCardPriceProps) => {
   return (
     <article
-      className={`card-price group ${isHighlight && "lg:-translate-y-16 lg:shadow-2xl lg:bg-yellow"}`}
+      className={`landing-card-price group ${isHighlight && "lg:-translate-y-16 lg:shadow-2xl lg:bg-yellow"}`}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >

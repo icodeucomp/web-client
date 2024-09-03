@@ -12,21 +12,9 @@ import { RiCheckLine } from "react-icons/ri";
 
 import currency from "@/utils/currency";
 
-const Service = ({
-  pathImg,
-  price,
-  title,
-  description,
-  index,
-  list,
-}: {
-  pathImg: string;
-  price: number;
-  title: string;
-  description: string;
-  list: string[];
-  index: number;
-}) => {
+import { PriceCardServiceProps } from "@/types";
+
+const Service = ({ pathImg, price, title, description, index, list }: PriceCardServiceProps) => {
   const controls = useAnimation();
 
   useEffect(() => {
@@ -38,11 +26,7 @@ const Service = ({
   }, [controls, index]);
 
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 120 }}
-      animate={controls}
-      className="relative flex flex-col flex-1 w-full gap-4 md:gap-5 p-8 overflow-hidden text-center duration-300 shadow-2xl min-w-72 max-w-80 rounded-3xl bg-light hover:bg-yellow group"
-    >
+    <motion.article initial={{ opacity: 0, y: 120 }} animate={controls} className="price-card-service group">
       {index % 2 === 1 && (
         <p className="absolute px-4 py-1 text-xs uppercase top-2 right-2 md:top-4 md:right-4 bg-orange rounded-2xl w-max">Most Popular</p>
       )}

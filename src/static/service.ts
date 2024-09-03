@@ -1,5 +1,8 @@
-const webDev = {
+import { PriceServiceField } from "@/types";
+
+const webDev: PriceServiceField = {
   serviceTitle: "Designing and Delivering The Right Web Solutions for Your Business",
+  message: "Enhance your company's growth with custom web development services",
   top: [
     { title: "Consultation", pathIcon: "/icons/price/service/handshake.svg" },
     { title: "Strategy & Planning", pathIcon: "/icons/price/service/floor-plan.svg" },
@@ -48,8 +51,9 @@ const webDev = {
   ],
 };
 
-const SEO = {
+const SEO: PriceServiceField = {
   serviceTitle: "Optimizing Your Site for Search Engines and Speed for Better Result",
+  message: "Boost your site's visibility and speed with expert SEO and performance optimization",
   top: [
     { title: "Consultation", pathIcon: "/icons/price/service/handshake.svg" },
     { title: "Website Audit", pathIcon: "/icons/price/service/floor-plan.svg" },
@@ -93,8 +97,9 @@ const SEO = {
   ],
 };
 
-const uiAndUx = {
+const uiAndUx: PriceServiceField = {
   serviceTitle: "Designing Seamless Experiences That Connect with Your Audience",
+  message: "Enhance user engagement with custom UI/UX design tailored to your brand",
   top: [
     { title: "Consultation", pathIcon: "/icons/price/service/handshake.svg" },
     { title: "Research", pathIcon: "/icons/price/service/research.svg" },
@@ -138,8 +143,9 @@ const uiAndUx = {
   ],
 };
 
-const wordpress = {
+const wordpress: PriceServiceField = {
   serviceTitle: "Designing Seamless Experiences That Connect with Your Audience",
+  message: "Power your online presence with a customized WordPress website, tailored to your needs",
   top: [
     { title: "Consultation", pathIcon: "/icons/price/service/handshake.svg" },
     { title: "Strategy & Planning", pathIcon: "/icons/price/service/floor-plan.svg" },
@@ -183,8 +189,9 @@ const wordpress = {
   ],
 };
 
-const graphicDesign = {
+const graphicDesign: PriceServiceField = {
   serviceTitle: "Visualizing Your Brand with Creative and Impactful Designs",
+  message: "Enhance productivity with customized solutions for your tasks, designed to support your personal & business goals",
   top: [
     { title: "Consultation", pathIcon: "/icons/price/service/handshake.svg" },
     { title: "Research & Discovery", pathIcon: "/icons/price/service/research.svg" },

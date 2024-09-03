@@ -11,19 +11,9 @@ import { MdArrowForwardIos } from "react-icons/md";
 
 import currency from "@/utils/currency";
 
-const Product = ({
-  pathImg,
-  price,
-  title,
-  description,
-  index,
-}: {
-  pathImg: string;
-  price: number;
-  title: string;
-  description: string;
-  index: number;
-}) => {
+import { PriceCardProductProps } from "@/types";
+
+const Product = ({ pathImg, price, title, description, index }: PriceCardProductProps) => {
   const controls = useAnimation();
 
   useEffect(() => {
@@ -35,11 +25,7 @@ const Product = ({
   }, [controls, index]);
 
   return (
-    <motion.article
-      initial={{ opacity: 0, y: 120 }}
-      animate={controls}
-      className="relative flex flex-col flex-1 w-full overflow-hidden duration-300 shadow-2xl min-w-72 max-w-80 rounded-3xl bg-light group"
-    >
+    <motion.article initial={{ opacity: 0, y: 120 }} animate={controls} className="price-card-product group">
       {index % 2 === 1 && (
         <p className="absolute px-4 py-2 md:py-1 text-xs uppercase top-0 md:top-4 right-0 md:left-4 bg-orange rounded-es-2xl md:rounded-2xl w-max">
           Most Popular

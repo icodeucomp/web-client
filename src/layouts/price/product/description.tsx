@@ -2,7 +2,7 @@ import Container from "@/components/container";
 import MotionComponent from "@/components/motion";
 import { IoIosArrowDown } from "react-icons/io";
 
-const Description = () => {
+const Description = ({ id }: { id: string }) => {
   return (
     <Container className="pb-16">
       <hr className="mb-8" />

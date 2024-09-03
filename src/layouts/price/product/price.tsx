@@ -1,20 +1,26 @@
 "use client";
 
 import React from "react";
+
+import useFetchApi from "@/hooks/useFetchApi";
+
+import { motion, useAnimation } from "framer-motion";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 
 import Container from "@/components/container";
 import Images from "@/components/images";
-import MotionComponent from "@/components/motion";
 import Button from "@/components/button";
 
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
-import currency from "@/utils/currency";
-import { motion, useAnimation } from "framer-motion";
 
-const Price = () => {
+import currency from "@/utils/currency";
+
+const Price = ({ id }: { id: string }) => {
   const [border, setBorder] = React.useState<number | null>(null);
+
+  const { response: product } = useFetchApi(`/products/${id}`, "GET");
 
   const controls = useAnimation();
 

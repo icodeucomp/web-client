@@ -1,7 +1,9 @@
 import Background from "@/components/background";
 import MotionComponent from "@/components/motion";
 
-const HeroSlice = ({ title, description }: { title: string; description: string }) => {
+import { BasicHeroProps } from "@/types";
+
+const HeroSlice = ({ title, description }: BasicHeroProps) => {
   return (
     <Background
       src="/images/hero.png"

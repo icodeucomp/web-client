@@ -1,15 +1,12 @@
 import { useState, useEffect } from "react";
+
 import axios, { AxiosResponse } from "axios";
 
-interface UseAxiosResponse<T = any> {
-  response: T | null;
-  error: string | null;
-  loading: boolean;
-}
+import { FetchApiResponse } from "@/types";
 
-axios.defaults.baseURL = "https://catfact.ninja";
+axios.defaults.baseURL = "https://icodeu-backend-vwixvuygpq-uc.a.run.app/api/v1";
 
-const useFetchApi = <T extends unknown>(url: string, method: string, contentType?: string): UseAxiosResponse => {
+const useFetchApi = <T extends unknown>(url: string, method: string, contentType?: string): FetchApiResponse => {
   const [response, setResponse] = useState<T | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
@@ -19,11 +16,9 @@ const useFetchApi = <T extends unknown>(url: string, method: string, contentType
       try {
         setLoading(true);
         const response: AxiosResponse<T> = await axios(url, {
-          method,
+          method: method,
           timeout: 10000,
-          headers: {
-            "Content-Type": contentType || "application/json",
-          },
+          headers: { "Content-Type": contentType || "application/json" },
         });
         setResponse(response.data);
         setError(null);

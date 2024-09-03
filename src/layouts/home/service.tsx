@@ -30,7 +30,7 @@ const Service = () => {
           .filter((_, index) => index < 4)
           .map((item, index) => (
             <article key={index} className={`h-full text-center bg-card-3d rounded-3xl group ${index % 2 === 1 ? "xl:-mt-10" : ""}`}>
-              <div className="card-home-service">
+              <div className="home-card-service">
                 <Images src={item.pathIcon} alt={item.title} className="w-10 h-10 mx-auto" />
                 <h4 className="text-base font-semibold lg:text-lg">{item.title}</h4>
                 <p className="text-sm font-light">{item.description}</p>

@@ -1,3 +1,7 @@
+"use client";
+
+import useFetchApi from "@/hooks/useFetchApi";
+
 import Container from "@/components/container";
 import Tabs from "@/components/tabs";
 import MotionComponent from "@/components/motion";
@@ -107,13 +111,33 @@ const tabData = [
 ];
 
 const Business = () => {
+  const { response: products } = useFetchApi("/products", "GET");
+  const { response: services } = useFetchApi("/services", "GET");
+
   return (
     <Container className="pt-40 pb-20">
-      <div className="flex flex-col items-center justify-center w-full text-xl md:text-2xl lg:text-3xl leading-snug">
-        <MotionComponent tag="h4" duration={0.3} initialO={0} initialY={40} animateO={1} animateY={0} className="text-gradient">
+      <div className="flex flex-col items-center justify-center w-full leading-snug text-center md:text-start">
+        <MotionComponent
+          tag="h4"
+          duration={0.3}
+          initialO={0}
+          initialY={40}
+          animateO={1}
+          animateY={0}
+          className="text-lg sm:text-xl text-gradient md:text-2xl lg:text-3xl"
+        >
           Streamline your teamwork. Start free.
         </MotionComponent>
-        <MotionComponent tag="h4" duration={0.7} delay={0.4} initialO={0} initialY={40} animateO={1} animateY={0} className="text-gradient">
+        <MotionComponent
+          tag="h4"
+          duration={0.7}
+          delay={0.4}
+          initialO={0}
+          initialY={40}
+          animateO={1}
+          animateY={0}
+          className="text-2xl text-gradient md:text-3xl"
+        >
           Choose the perfect plan for your business needs
         </MotionComponent>
       </div>

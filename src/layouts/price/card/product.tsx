@@ -27,30 +27,30 @@ const Product = ({ pathImg, price, title, description, index }: PriceCardProduct
   return (
     <motion.article initial={{ opacity: 0, y: 120 }} animate={controls} className="price-card-product group">
       {index % 2 === 1 && (
-        <p className="absolute px-4 py-2 md:py-1 text-xs uppercase top-0 md:top-4 right-0 md:left-4 bg-orange rounded-es-2xl md:rounded-2xl w-max">
+        <p className="absolute top-0 right-0 px-4 py-1 uppercase sm:py-2 text-xxs sm:text-xs md:py-1 md:top-4 md:left-4 bg-orange rounded-es-2xl md:rounded-2xl w-max">
           Most Popular
         </p>
       )}
-      <div className="mt-12 hidden md:block">
+      <div className="hidden mt-12 lg:block">
         <Images src={pathImg} alt={title} className="w-full h-64" cover />
       </div>
       <div className="p-6 space-y-2 md:space-y-4">
-        <p className="text-xs font-bold text-orange">Website</p>
-        <h4 className="text-base font-bold md:text-lg text-blue">{title}</h4>
-        <div className="hidden md:block">
+        <p className="font-bold text-xxs sm:text-xs text-orange">Website</p>
+        <h4 className="text-sm font-bold sm:text-base md:text-lg text-blue">{title}</h4>
+        <div className="hidden lg:block">
           <p className="text-sm font-medium text-gray-700 line-clamp-3">{description}</p>
         </div>
-        <p className="text-xs font-bold text-gray-500">15 Sold</p>
+        <p className="font-bold text-gray-500 text-xxs sm:text-xs">15 Sold</p>
         <div className="space-y-2">
-          <h5 className="text-2xl md:text-4xl font-bold text-yellow">{currency(price)}</h5>
-          <span className="flex items-center gap-4 text-xs">
+          <h5 className="text-base font-bold sm:text-lg md:text-2xl lg:text-4xl text-yellow">{currency(price)}</h5>
+          <span className="flex items-center gap-4 text-xxs sm:text-xs">
             <p className="text-gray-400 line-through">{currency(300000)}</p>
             <p className="text-light-red">30%</p>
           </span>
         </div>
         <Link
           href="/price/product/12345"
-          className="flex items-center gap-2 px-6 py-2 text-sm font-bold border w-max rounded-4xl bg-light text-orange border-orange"
+          className="flex items-center gap-2 px-2 py-1 text-xs font-bold border sm:text-sm sm:px-4 md:px-6 sm:py-2 w-max rounded-4xl bg-light text-orange border-orange"
         >
           Learn More <MdArrowForwardIos className="fill-orange" />
         </Link>

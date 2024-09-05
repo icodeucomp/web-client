@@ -1,7 +1,9 @@
+import Link from "next/link";
+
 import Button from "@/components/button";
 import Container from "@/components/container";
 import Images from "@/components/images";
-import Link from "next/link";
+
 import { IoIosArrowDown } from "react-icons/io";
 
 const Hero = () => {

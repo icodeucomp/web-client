@@ -1,12 +1,13 @@
 import Image from "next/image";
 
-import { Contact, Experience, Hero, Prefer, Price, Service, Testimonial, Footer } from "@/layouts/landing";
+import { Contact, Experience, Hero, Prefer, Price, Service, Testimonial } from "@/layouts/landing";
 
 import Backdrop from "@/components/backdrop";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
-    <>
+    <div className="overflow-x-hidden">
       <section className="bg-gradient-to-b from-blue from-30% to-orange">
         <Hero />
       </section>
@@ -36,6 +37,6 @@ export default function Home() {
       <section className="bg-dark-blue">
         <Footer />
       </section>
-    </>
+    </div>
   );
 }

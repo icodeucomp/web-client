@@ -8,10 +8,10 @@ import Link from "next/link";
 
 import { motion } from "framer-motion";
 
+import useToggleState from "@/hooks/useToggleState";
+
 import Container from "@/components/container";
 import Images from "@/components/images";
-
-import useToggleState from "@/hooks/useToggleState";
 
 import { MdArrowCircleRight } from "react-icons/md";
 import { IoClose } from "react-icons/io5";
@@ -31,6 +31,10 @@ const Header = () => {
   const motionVariants = {
     open: { y: 0, opacity: 1, display: "flex", transition: { staggerChildren: 0.3, ease: "easeOut" } },
     closed: { y: -100, opacity: 0, display: "none", transition: { staggerChildren: 0.1, ease: "easeOut" } },
+  };
+
+  const isActive = (path: string) => {
+    return pathname === path || pathname.startsWith(`${path}/`);
   };
 
   useEffect(() => {
@@ -62,7 +66,8 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 w-full py-3 z-1000 transition-all duration-500 bg-blue ${isVisible ? "translate-y-0" : "-translate-y-full"} ${bgColor}`}
+      ref={ref}
+      className={`fixed top-0 w-full p-3 z-1000 transition-all duration-500 bg-blue ${isVisible ? "translate-y-0" : "-translate-y-full"} ${bgColor}`}
     >
       <Container className="flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
@@ -74,7 +79,7 @@ const Header = () => {
             <Link
               key={index}
               href={item.path}
-              className={`font-medium duration-300 hover:text-orange hover:font-bold ${item.path.includes(pathname) ? "text-orange" : "text-light"}`}
+              className={`font-medium duration-300 hover:text-orange hover:font-bold ${isActive(item.path) ? "text-orange" : "text-light"}`}
             >
               {item.title}
             </Link>
@@ -90,7 +95,7 @@ const Header = () => {
             <Link
               key={index}
               href={item.path}
-              className={`font-medium duration-300 hover:text-orange hover:font-bold ${item.path.includes(pathname) ? "text-orange" : "text-light"}`}
+              className={`font-medium duration-300 hover:text-orange hover:font-bold ${isActive(item.path) ? "text-orange" : "text-light"}`}
             >
               {item.title}
             </Link>

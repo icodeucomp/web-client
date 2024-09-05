@@ -15,7 +15,7 @@ import { ourService } from "@/static";
 
 const Mobile = () => {
   return (
-    <Container className="block py-16 lg:hidden">
+    <Container className="block py-16 md:hidden">
       <Swiper
         modules={[Navigation]}
         navigation={{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }}

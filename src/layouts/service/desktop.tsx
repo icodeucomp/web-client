@@ -10,11 +10,19 @@ import { ourService } from "@/static";
 
 const Desktop = () => {
   return (
-    <Container className="hidden lg:grid grid-cols-3 gap-8 pt-16 overflow-hidden pb-52">
+    <Container className="hidden grid-cols-3 gap-8 pt-16 overflow-hidden md:grid pb-52">
       <>
         {ourService.slice(0, 4).map((item, index) => {
           const posClass = `${index === 1 ? "right-10 -bottom-20" : "-translate-x-1/2 -bottom-20 left-1/2"}`;
-          const imgClass = `${index === 0 ? "w-96 h-72" : index === 1 ? "w-[480px] h-96" : index === 2 ? "w-[550px] h-[360px]" : "w-72 h-80"}`;
+          const imgClass = `${
+            index === 0
+              ? "w-96 h-72"
+              : index === 1
+              ? "w-96 lg:w-[480px] h-80 lg:h-96"
+              : index === 2
+              ? "w-[550px] h-[360px]"
+              : "w-64 lg:w-72 h-72 lg:h-80"
+          }`;
           return (
             <MotionComponent
               tag="div"
@@ -33,8 +41,8 @@ const Desktop = () => {
                 <Images src="/images/service/circle.png" alt="circle" className="w-40 h-40" />
               </div>
               <Images src={item.pathIcon} alt={item.title} className="w-12 h-12" />
-              <h5 className="text-2xl font-bold">{item.title}</h5>
-              <p className="font-medium text-justify">{item.description}</p>
+              <h5 className="text-xl font-bold lg:text-2xl">{item.title}</h5>
+              <p className="text-sm font-medium text-justify lg:text-base">{item.description}</p>
               <Link href={`/price/service/${index + 1}`} className="flex items-center gap-2 text-xl font-medium text-center w-max group">
                 Learn More
                 <FaLongArrowAltRight size={24} />
@@ -60,10 +68,10 @@ const Desktop = () => {
           <Images src="/images/service/circle.png" alt="circle" className="w-40 h-40" />
         </div>
         <div className="flex items-center gap-8">
-          <div className="max-w-lg space-y-4">
+          <div className="max-w-md space-y-4 lg:max-w-lg">
             <Images src={ourService[4].pathIcon} alt="Graphic Design" className="w-12 h-12" />
-            <h5 className="text-2xl font-bold">{ourService[4].title}</h5>
-            <p className="font-medium text-justify">{ourService[4].description}</p>
+            <h5 className="text-xl font-bold lg:text-2xl">{ourService[4].title}</h5>
+            <p className="text-sm font-medium text-justify lg:text-base">{ourService[4].description}</p>
             <p className="flex items-center gap-2 text-lg font-medium text-center w-max group">
               Learn More
               <FaLongArrowAltRight size={24} />

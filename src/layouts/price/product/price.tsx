@@ -33,8 +33,8 @@ const Price = ({ id }: { id: string }) => {
   }, [controls]);
 
   return (
-    <Container className="flex flex-col gap-8 pt-32 pb-16 lg:flex-row">
-      <motion.div initial={{ opacity: 0, x: -100 }} animate={controls} className="flex-1 max-w-xl space-y-8">
+    <Container className="flex flex-col gap-8 pt-32 pb-16 md:flex-row">
+      <motion.div initial={{ opacity: 0, x: -100 }} animate={controls} className="flex-1 max-w-md lg:max-w-xl space-y-8">
         <div className="px-8 py-20 overflow-hidden rounded bg-gradient-to-b from-purple to-dark-blue">
           <Images src="/temporary-image.png" alt="temporary" className="h-32 mx-auto w-60 md:h-60 xl:h-64 md:w-80 xl:w-96" cover />
         </div>

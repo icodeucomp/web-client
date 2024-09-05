@@ -89,7 +89,7 @@ const tabData = [
   {
     label: "Products",
     children: (
-      <div className="flex flex-wrap justify-center gap-8 mt-8">
+      <div className="grid grid-cols-2 gap-2 mt-8 lg:grid-cols-3 sm:gap-4 md:gap-8">
         {products.map((item, index) => {
           const { description, pathImg, price, title } = item;
           return <Product key={index} index={index} description={description} pathImg={pathImg} price={price} title={title} />;
@@ -100,7 +100,7 @@ const tabData = [
   {
     label: "Services",
     children: (
-      <div className="flex flex-wrap justify-center gap-8 mt-8">
+      <div className="grid grid-cols-2 gap-2 mt-8 lg:grid-cols-3 sm:gap-4 md:gap-8">
         {services.map((item, index) => {
           const { description, pathImg, price, title, list } = item;
           return <Service key={index} index={index} list={list} description={description} pathImg={pathImg} price={price} title={title} />;
@@ -116,31 +116,18 @@ const Business = () => {
 
   return (
     <Container className="pt-40 pb-20">
-      <div className="flex flex-col items-center justify-center w-full leading-snug text-center md:text-start">
-        <MotionComponent
-          tag="h4"
-          duration={0.3}
-          initialO={0}
-          initialY={40}
-          animateO={1}
-          animateY={0}
-          className="text-lg sm:text-xl text-gradient md:text-2xl lg:text-3xl"
-        >
-          Streamline your teamwork. Start free.
-        </MotionComponent>
-        <MotionComponent
-          tag="h4"
-          duration={0.7}
-          delay={0.4}
-          initialO={0}
-          initialY={40}
-          animateO={1}
-          animateY={0}
-          className="text-2xl text-gradient md:text-3xl"
-        >
-          Choose the perfect plan for your business needs
-        </MotionComponent>
-      </div>
+      <MotionComponent
+        tag="div"
+        duration={1}
+        initialO={0}
+        initialY={40}
+        animateO={1}
+        animateY={0}
+        className="flex flex-col items-center justify-center w-full leading-snug text-center md:text-start"
+      >
+        <h4 className="text-lg sm:text-xl text-gradient md:text-2xl lg:text-3xl">Streamline your teamwork. Start free.</h4>
+        <h4 className="text-2xl text-gradient md:text-3xl">Choose the perfect plan for your business needs</h4>
+      </MotionComponent>
       <div className="mt-10">
         <Tabs tabs={tabData} />
       </div>

@@ -10,7 +10,7 @@ export default function page() {
       <section>
         <HeroSlice
           title="About Us"
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas optio eligendi dignissimos assumenda quae repellendus, reiciendis cum sunt consequuntur fuga unde, commodi necessitatibus ea sint suscipit. Amet eos iste consectetur!"
+          description="IcodeU committed to being your trusted technology partner, providing IT solutions that are precisely tailored to meet the unique demands of your business and drive shared growth."
         />
       </section>
       <section className="relative bg-black">

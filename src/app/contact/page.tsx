@@ -1,15 +1,12 @@
-import Link from "next/link";
-
 import ContactFormSlice from "@/layouts/contact";
 
 import MotionComponent from "@/components/motion";
-import Container from "@/components/container";
-import Images from "@/components/images";
 import Background from "@/components/background";
+import Button from "@/components/button";
+import Footer from "@/components/footer";
 
 import { FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import Button from "@/components/button";
 
 export default function page() {
   return (
@@ -34,9 +31,11 @@ export default function page() {
               </MotionComponent>
               <MotionComponent tag="div" duration={1} delay={1} initialO={0} initialX={-50} animateO={1} animateX={0} className="flex-1">
                 <p className="my-2 font-bold text-center">Or</p>
-                <Button className="flex items-center justify-center w-full gap-2 rounded-3xl bg-green hover:bg-green/90 hover:shadow-2xl">
-                  <FaWhatsapp className="w-6 h-6 text-light" /> Contact us through Whatsapp
-                </Button>
+                <a href="https://wa.me/6285183154204" target="_blank" rel="noreferrer">
+                  <Button className="flex items-center justify-center w-full gap-2 rounded-3xl bg-green hover:bg-green/90 hover:shadow-2xl">
+                    <FaWhatsapp className="w-6 h-6 text-light" /> Contact us through Whatsapp
+                  </Button>
+                </a>
               </MotionComponent>
             </Background>
           </div>
@@ -117,56 +116,11 @@ export default function page() {
         </div>
       </div>
       <section className="bg-dark-blue">
-        <Container className="flex flex-col items-center justify-center gap-8 pt-10 pb-12 text-center md:pt-20 lg:items-start lg:gap-24 lg:flex-row md:text-start">
-          <div className="space-y-4">
-            <Link href="/" className="flex items-center justify-center gap-4">
-              <Images className="w-10 h-10" src="/icons/logo-icodeu.svg" alt="logo i code u" />
-              <h1 className="text-lg font-bold font-red-hat">ICodeU</h1>
-            </Link>
-            <p className="text-sm text-gray-400">The Right Technology for Your Business</p>
-            <div className="flex items-center justify-center gap-4">
-              <a href="/">
-                <FaWhatsapp className="w-8 h-8 fill-yellow" />
-              </a>
-              <a href="/">
-                <FaInstagram className="w-8 h-8 fill-yellow" />
-              </a>
-              <a href="/">
-                <FaLinkedin className="w-8 h-8 fill-yellow" />
-              </a>
-            </div>
-          </div>
-          <div className="flex flex-col gap-4 md:gap-8 lg:gap-14 md:flex-row">
-            <div>
-              <h5 className="mb-2 text-sm font-light tracking-wide sm:text-base text-yellow">Company</h5>
-              <p className="mb-1 text-xs text-gray-400 sm:text-sm">About Us</p>
-              <p className="mb-1 text-xs text-gray-400 sm:text-sm">Contact Us</p>
-            </div>
-            <div>
-              <h5 className="mb-2 text-sm font-light tracking-wide sm:text-base text-yellow">Product</h5>
-              <p className="mb-1 text-xs text-gray-400 sm:text-sm">Features</p>
-              <p className="mb-1 text-xs text-gray-400 sm:text-sm">Pricing</p>
-              <p className="mb-1 text-xs text-gray-400 sm:text-sm">Method</p>
-              <p className="mb-1 text-xs text-gray-400 sm:text-sm">Blog</p>
-              <p className="mb-1 text-xs text-gray-400 sm:text-sm">Testimonial</p>
-            </div>
-            <div>
-              <h5 className="mb-2 text-sm font-light tracking-wide sm:text-base text-yellow">Company</h5>
-              <p className="mb-1 text-xs text-gray-400 sm:text-sm">Responsive Web Development</p>
-              <p className="mb-1 text-xs text-gray-400 sm:text-sm">SEO & Website Optimization</p>
-              <p className="mb-1 text-xs text-gray-400 sm:text-sm">Custom UI/UX Design</p>
-              <p className="mb-1 text-xs text-gray-400 sm:text-sm">WordPress Web Development</p>
-              <p className="mb-1 text-xs text-gray-400 sm:text-sm">IT & Non-IT Task Completion</p>
-            </div>
-            <div>
-              <h5 className="mb-2 text-sm font-light tracking-wide sm:text-base text-yellow">Contact Us</h5>
-              <p className="mb-1 text-xs font-bold sm:text-sm text-yellow">icodeu@gmail.com</p>
-              <p className="mb-1 text-xs font-bold sm:text-sm text-yellow"> +133-394-3439-1435</p>
-            </div>
-          </div>
-        </Container>
+        <Footer />
         <div className="w-full py-6 text-center bg-yellow">
-          <h5 className="text-sm">© 2024 ICodeU. All Rights Reserved</h5>
+          <MotionComponent tag="h5" duration={1} delay={1} initialO={0} initialY={20} animateO={1} animateY={0} className="text-sm">
+            © 2024 ICodeU. All Rights Reserved
+          </MotionComponent>
         </div>
       </section>
     </div>

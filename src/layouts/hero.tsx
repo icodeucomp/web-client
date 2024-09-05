@@ -7,7 +7,7 @@ const HeroSlice = ({ title, description }: BasicHeroProps) => {
   return (
     <Background
       src="/images/hero.png"
-      className="items-center justify-center w-full px-4 mx-auto min-h-500 md:min-h-screen max-w-container sm:px-8 xl:min-h-600"
+      className="items-center justify-center w-full px-4 mx-auto min-h-500 lg:min-h-screen max-w-container sm:px-8 2xl:min-h-600"
       colorBackdrop="bg-blue/50 z-1"
       isBackdrop
     >

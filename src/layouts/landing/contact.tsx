@@ -32,9 +32,11 @@ const Contact = () => {
         <p className="text-sm md:text-lg">
           With lots of unique blocks, you can easily build a page without coding. Build your next landing page so quickly with Albino.
         </p>
-        <Button className="flex items-center justify-center w-full gap-2 rounded-2xl bg-green hover:bg-green/90 hover:shadow-2xl">
-          <FaWhatsapp className="w-6 h-6 text-light" /> Contact us through Whatsapp
-        </Button>
+        <a href="https://wa.me/6285183154204" target="_blank" rel="noreferrer">
+          <Button className="flex items-center justify-center w-full gap-2 rounded-2xl bg-green hover:bg-green/90 hover:shadow-2xl">
+            <FaWhatsapp className="w-6 h-6 text-light" /> Contact us through Whatsapp
+          </Button>
+        </a>
       </div>
       <div className="max-w-xs p-6 mx-auto overflow-hidden lg:mx-0 md:max-w-md rounded-xl bg-light">
         <form className="space-y-4">

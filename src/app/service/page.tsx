@@ -5,11 +5,11 @@ import { Desktop, Mobile } from "@/layouts/service";
 
 export default function page() {
   return (
-    <>
+    <div className="overflow-x-hidden">
       <section>
         <HeroSlice
-          title="Our Services"
-          description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas optio eligendi dignissimos assumenda quae repellendus, reiciendis cum sunt consequuntur fuga unde, commodi necessitatibus ea sint suscipit. Amet eos iste consectetur!"
+          title="Services We Provide"
+          description="We understand that every business has its own distinct needs, which is why we offer a range of specialized services, including technology consulting, UI/UX design, website development, graphic design, and performance optimization."
         />
       </section>
       <section className="relative bg-black">
@@ -19,6 +19,6 @@ export default function page() {
           <Mobile />
         </div>
       </section>
-    </>
+    </div>
   );
 }

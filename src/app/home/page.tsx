@@ -1,23 +1,12 @@
 import Image from "next/image";
 
-import { Hero, Profile, Service, Experience, Testimonial, Blog, Contact } from "@/layouts/home";
-
-import { IoIosArrowDown } from "react-icons/io";
+import { Hero, Profile, Service, Experience, Contact } from "@/layouts/home";
 
 export default function page() {
   return (
-    <>
+    <div className="overflow-x-hidden">
       <section className="bg-gradient-to-b from-blue from-30% to-orange">
         <Hero />
-        <div className="justify-center hidden lg:flex">
-          <p className="font-light text-center w-max group">
-            Scroll to learn more
-            <IoIosArrowDown
-              size={24}
-              className="p-1 mx-auto mt-1 border rounded-full shadow-md border-light fill-light group-hover:fill-orange group-hover:bg-light"
-            />
-          </p>
-        </div>
       </section>
       <section className="relative overflow-hidden">
         <Image src="/images/white-line-mobile.png" alt="line background" fill className="max-w-screen-xl mx-auto mt-60" />
@@ -40,6 +29,6 @@ export default function page() {
       <section className="bg-blue">
         <Contact />
       </section>
-    </>
+    </div>
   );
 }

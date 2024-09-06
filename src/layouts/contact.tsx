@@ -28,7 +28,7 @@ const ContactFormSlice = () => {
   return (
     <form className="w-full space-y-4">
       <label htmlFor="fullName" className="flex items-center gap-1 py-2.5 rounded-md overflow-hidden bg-light shadow-md">
-        <BsPersonCircle className="fill-orange ms-4" size={32} />
+        <BsPersonCircle className="fill-orange ms-4 size-6 sm:size-8" />
         <input
           id="fullName"
           type="text"
@@ -38,7 +38,7 @@ const ContactFormSlice = () => {
         />
       </label>
       <label htmlFor="email" className="flex items-center gap-1 py-2.5 rounded-md overflow-hidden bg-light shadow-md">
-        <MdEmail className="fill-orange ms-4" size={32} />
+        <MdEmail className="fill-orange ms-4 size-6 sm:size-8" />
         <input
           id="email"
           type="text"
@@ -48,7 +48,7 @@ const ContactFormSlice = () => {
         />
       </label>
       <label htmlFor="phoneNumber" className="flex items-center gap-1 py-2.5 rounded-md overflow-hidden bg-light shadow-md">
-        <FaPhoneFlip className="fill-orange ms-4" size={32} />
+        <FaPhoneFlip className="fill-orange ms-4 size-6 sm:size-8" />
         <input
           id="phoneNumber"
           type="text"
@@ -58,7 +58,7 @@ const ContactFormSlice = () => {
         />
       </label>
       <label htmlFor="message" className="flex gap-1 py-2.5 rounded-md overflow-hidden bg-light shadow-md">
-        <IoMdChatbubbles className="mt-3 fill-orange ms-4" size={32} />
+        <IoMdChatbubbles className="mt-3 fill-orange ms-4 size-6 sm:size-8" />
         <textarea
           id="message"
           rows={5}

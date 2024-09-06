@@ -34,7 +34,7 @@ const Price = ({ id }: { id: string }) => {
 
   return (
     <Container className="flex flex-col gap-8 pt-32 pb-16 md:flex-row">
-      <motion.div initial={{ opacity: 0, x: -100 }} animate={controls} className="flex-1 max-w-md lg:max-w-xl space-y-8">
+      <motion.div initial={{ opacity: 0, x: -100 }} animate={controls} className="flex-1 max-w-md space-y-8 lg:max-w-xl">
         <div className="px-8 py-20 overflow-hidden rounded bg-gradient-to-b from-purple to-dark-blue">
           <Images src="/temporary-image.png" alt="temporary" className="h-32 mx-auto w-60 md:h-60 xl:h-64 md:w-80 xl:w-96" cover />
         </div>
@@ -80,23 +80,23 @@ const Price = ({ id }: { id: string }) => {
           <p className="tracking-wide">What you`ll get (Basic pack):</p>
           <ul className="space-y-1 text-sm md:text-base">
             <li className="flex items-center gap-2">
-              <Images src="/icons/check.svg" alt="check" className="w-6 h-6" />
+              <Images src="/icons/check.svg" alt="check" className="size-5 sm:size-6" />
               <p className="text-gray-300">Up to 10 games</p>
             </li>
             <li className="flex items-center gap-2">
-              <Images src="/icons/check.svg" alt="check" className="w-6 h-6" />
+              <Images src="/icons/check.svg" alt="check" className="size-5 sm:size-6" />
               <p className="text-gray-300">5 social media services</p>
             </li>
             <li className="flex items-center gap-2">
-              <Images src="/icons/check.svg" alt="check" className="w-6 h-6" />
+              <Images src="/icons/check.svg" alt="check" className="size-5 sm:size-6" />
               <p className="text-gray-300">Include dashboard</p>
             </li>
             <li className="flex items-center gap-2">
-              <Images src="/icons/check.svg" alt="check" className="w-6 h-6" />
+              <Images src="/icons/check.svg" alt="check" className="size-5 sm:size-6" />
               <p className="text-gray-300">Free hosting for 1 year</p>
             </li>
             <li className="flex items-center gap-2">
-              <Images src="/icons/check.svg" alt="check" className="w-6 h-6" />
+              <Images src="/icons/check.svg" alt="check" className="size-5 sm:size-6" />
               <p className="text-gray-300">Free domain for 1 year</p>
             </li>
           </ul>

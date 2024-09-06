@@ -85,7 +85,7 @@ input[type="number"] {
     @apply bg-gray-50 border border-gray-300 text-dark text-sm sm:text-base rounded-lg focus:ring-blue focus:border-blue w-full p-2.5 outline-none;
   }
   .landing-card-price {
-    @apply relative flex flex-col flex-1 max-w-full gap-4 p-8 overflow-hidden text-center duration-300 shadow-none sm:max-w-sm md:max-w-md lg:max-w-xs min-w-72 rounded-3xl bg-light lg:hover:-translate-y-16 hover:shadow-2xl hover:bg-yellow;
+    @apply relative flex flex-col max-w-full gap-4 p-8 overflow-hidden text-center duration-300 shadow-none sm:max-w-sm md:max-w-md lg:max-w-xs min-w-72 rounded-3xl bg-light lg:hover:-translate-y-16 hover:shadow-2xl hover:bg-yellow;
   }
   .home-card-service {
     @apply flex flex-col justify-center gap-4 p-4 duration-300 bg-gradient-to-b from-yellow to-orange rounded-3xl h-64 lg:h-72 -translate-x-1.5 -translate-y-1.5 lg:group-hover:-translate-x-4 lg:group-hover:-translate-y-4;
@@ -95,5 +95,23 @@ input[type="number"] {
   }
   .price-card-service {
     @apply relative flex flex-col flex-1 w-full p-4 overflow-hidden text-center duration-300 rounded-lg shadow-2xl sm:p-8 max-w-80 sm:rounded-3xl bg-light hover:bg-yellow;
+  }
+  .triangle-core {
+    @apply hidden lg:block absolute left-1/2 -translate-x-1/2 size-0 border-l-[35px] border-l-transparent border-t-[60px] border-t-orange border-r-[35px] border-r-transparent;
+  }
+  .footer-container {
+    @apply flex flex-col items-center justify-center gap-8 pt-16 pb-12 overflow-hidden text-center lg:items-start lg:gap-24 lg:flex-row md:text-start;
+  }
+  .home-hero-container {
+    @apply flex flex-col-reverse items-center justify-center gap-16 pt-24 pb-8 min-h-500 lg:min-h-screen lg:pt-0 lg:items-end lg:flex-row 2xl:min-h-600;
+  }
+  .popular-label-product-price {
+    @apply absolute top-0 right-0 px-4 py-1 uppercase sm:py-2 text-xxs sm:text-xs md:py-1 md:top-4 md:left-4 bg-orange rounded-es-2xl md:rounded-2xl w-max;
+  }
+  .popular-label-service-price {
+    @apply absolute px-4 py-1 uppercase text-xxs sm:text-xs top-1 right-1 sm:top-4 sm:right-4 bg-orange rounded-2xl w-max;
+  }
+  .link-product-price {
+    @apply flex items-center gap-2 px-2 py-1 text-xs font-bold border sm:text-sm sm:px-4 md:px-6 sm:py-2 w-max rounded-4xl bg-light text-orange border-orange;
   }
 }

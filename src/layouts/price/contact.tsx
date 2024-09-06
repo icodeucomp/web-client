@@ -7,7 +7,7 @@ import Images from "@/components/images";
 
 const Contact = () => {
   return (
-    <Container className="pt-10 pb-32 hidden lg:block">
+    <Container className="hidden pt-10 pb-32 lg:block">
       <MotionComponent
         tag="h4"
         duration={1}
@@ -31,7 +31,7 @@ const Contact = () => {
           >
             <h4 className="text-3xl font-bold leading-snug text-center">“We specialize in helping our customers digitize their business”</h4>
             <div className="text-center">
-              <Images src="/images/home/sandra.png" alt="sandra photo" className="w-20 h-20 mx-auto" />
+              <Images src="/images/home/sandra.png" alt="sandra photo" className="mx-auto size-20" />
               <h5 className="mt-4 text-lg font-bold">Sandra Lewis</h5>
               <p className="text-sm">Front-End Developer</p>
             </div>

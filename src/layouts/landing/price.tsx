@@ -1,11 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import React from "react";
 import Link from "next/link";
 
 import { SwiperSlide, Swiper } from "swiper/react";
 
 import { Navigation } from "swiper/modules";
+
+import { motion, useAnimation } from "framer-motion";
 
 import Button from "@/components/button";
 import Container from "@/components/container";
@@ -29,7 +31,7 @@ const Card = ({ onMouseLeave, onMouseEnter, isHighlight, pathImg, price, title, 
     >
       {index % 2 === 1 && <p className="absolute px-4 py-1 text-xs uppercase top-4 right-4 bg-orange rounded-2xl w-max">Most Popular</p>}
       <div className="p-4 mx-auto mt-8 rounded-full bg-light">
-        <Images src={pathImg} alt={title} className="w-10 h-10" />
+        <Images src={pathImg} alt={title} className="size-8 sm:size-10" />
       </div>
       <h4 className="text-base font-bold h-14 md:text-lg text-blue">{title}</h4>
       <p className={`text-xs font-medium text-yellow group-hover:text-blue ${isHighlight ? "lg:text-blue" : "text-yellow"}`}>Starts From</p>
@@ -53,18 +55,36 @@ const Card = ({ onMouseLeave, onMouseEnter, isHighlight, pathImg, price, title, 
 };
 
 const Pricing = () => {
-  const [hover, setHover] = useState<number | null>(null);
+  const [hover, setHover] = React.useState<number | null>(null);
+
+  const h2 = useAnimation();
+  const hr = useAnimation();
+  const h4 = useAnimation();
+  const div = useAnimation();
+
+  React.useEffect(() => {
+    h2.start({ opacity: 1, y: 0, transition: { duration: 1 } });
+    hr.start({ opacity: 1, y: 0, transition: { duration: 1, delay: 0.5 } });
+    h4.start({ opacity: 1, y: 0, transition: { duration: 1, delay: 0.8 } });
+    div.start({ opacity: 1, y: 0, transition: { duration: 1.2, delay: 1 } });
+  }, [h2, h4, hr, div]);
 
   return (
     <Container className="pt-10">
       <div className="pt-4 mb-16 text-center lg:mb-24">
-        <h2 className="pb-2 text-sm tracking-[4px] uppercase">Pricing & Plans</h2>
-        <hr className="w-16 h-0.5 mx-auto bg-light" />
-        <h3 className="max-w-screen-lg mx-auto mt-6 text-xl font-bold md:text-2xl lg:text-4xl text-light text-shadow">
+        <motion.h2 initial={{ opacity: 0, y: 30 }} animate={h2} className="pb-2 text-sm tracking-[4px] uppercase">
+          Pricing & Plans
+        </motion.h2>
+        <motion.hr initial={{ opacity: 0, y: 30 }} animate={h2} className="w-16 h-0.5 mx-auto bg-light" />
+        <motion.h4
+          initial={{ opacity: 0, y: 30 }}
+          animate={h4}
+          className="max-w-screen-lg mx-auto mt-6 text-xl font-bold md:text-2xl lg:text-4xl text-light text-shadow"
+        >
           Whether your time-saving automation needs are large or small, we`re here to help you scale.
-        </h3>
+        </motion.h4>
       </div>
-      <div className="justify-center hidden gap-8 py-8 lg:flex lg:bg-light rounded-3xl">
+      <motion.div initial={{ opacity: 0, y: 50 }} animate={div} className="justify-center hidden gap-8 py-8 lg:flex lg:bg-light rounded-3xl">
         {price.map((item, index) => {
           const { description, pathImg, price, title } = item;
           return (
@@ -81,42 +101,50 @@ const Pricing = () => {
             />
           );
         })}
-      </div>
-      <Swiper
-        modules={[Navigation]}
-        navigation={{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }}
-        spaceBetween={10}
-        breakpoints={{ 0: { slidesPerView: 1 }, 768: { slidesPerView: 2 } }}
-        slidesPerView={2}
-        className="block lg:!hidden"
+      </motion.div>
+      <motion.div initial={{ opacity: 0, y: 50 }} animate={div}>
+        <Swiper
+          modules={[Navigation]}
+          navigation={{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }}
+          spaceBetween={10}
+          breakpoints={{ 0: { slidesPerView: 1 }, 768: { slidesPerView: 2 } }}
+          slidesPerView={2}
+          className="block lg:!hidden"
+        >
+          {price.map((item, index) => {
+            const { description, pathImg, price, title } = item;
+            return (
+              <SwiperSlide key={index}>
+                <Card
+                  index={index}
+                  description={description}
+                  pathImg={pathImg}
+                  price={price}
+                  title={title}
+                  isHighlight={hover === null ? index === 1 : hover === index}
+                  onMouseEnter={() => setHover(index)}
+                  onMouseLeave={() => setHover(null)}
+                />
+              </SwiperSlide>
+            );
+          })}
+          <SwiperSlide className="py-32 my-auto">
+            <Link href="/" className="flex items-center justify-center w-full h-full gap-2 pb-8 text-sm font-medium hover:underline">
+              See Full Pricing <IoIosArrowForward size={20} className="rounded-full bg-light fill-orange" />
+            </Link>
+          </SwiperSlide>
+        </Swiper>
+      </motion.div>
+      <motion.div initial={{ opacity: 0, y: 50 }} animate={div} className="hidden lg:block">
+        <Link href="/" className="flex items-center justify-center gap-2 py-16 mx-auto text-sm font-medium w-max hover:underline">
+          See Full Pricing <IoIosArrowForward size={20} className="rounded-full bg-light fill-orange" />
+        </Link>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={div}
+        className="flex items-center justify-center w-full gap-2 py-8 text-sm font-medium lg:hidden"
       >
-        {price.map((item, index) => {
-          const { description, pathImg, price, title } = item;
-          return (
-            <SwiperSlide key={index}>
-              <Card
-                index={index}
-                description={description}
-                pathImg={pathImg}
-                price={price}
-                title={title}
-                isHighlight={hover === null ? index === 1 : hover === index}
-                onMouseEnter={() => setHover(index)}
-                onMouseLeave={() => setHover(null)}
-              />
-            </SwiperSlide>
-          );
-        })}
-        <SwiperSlide className="py-32 my-auto">
-          <Link href="/" className="flex items-center justify-center w-full h-full gap-2 pb-8 text-sm font-medium hover:underline">
-            See Full Pricing <IoIosArrowForward size={20} className="rounded-full bg-light fill-orange" />
-          </Link>
-        </SwiperSlide>
-      </Swiper>
-      <Link href="/" className="items-center justify-center hidden gap-2 py-16 mx-auto text-sm font-medium w-max hover:underline lg:flex">
-        See Full Pricing <IoIosArrowForward size={20} className="rounded-full bg-light fill-orange" />
-      </Link>
-      <div className="flex items-center justify-center w-full gap-2 py-8 text-sm font-medium lg:hidden">
         <div className="swiper-button-prev">
           <FaLongArrowAltLeft size={24} />
         </div>
@@ -124,7 +152,7 @@ const Pricing = () => {
         <div className="swiper-button-next">
           <FaLongArrowAltRight size={24} />
         </div>
-      </div>
+      </motion.div>
     </Container>
   );
 };

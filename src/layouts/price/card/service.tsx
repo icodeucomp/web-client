@@ -27,11 +27,9 @@ const Service = ({ pathImg, price, title, description, index, list }: PriceCardS
 
   return (
     <motion.article initial={{ opacity: 0, y: 120 }} animate={controls} className="price-card-service group">
-      {index % 2 === 1 && (
-        <p className="absolute px-4 py-1 uppercase text-xxs sm:text-xs top-1 right-1 sm:top-4 sm:right-4 bg-orange rounded-2xl w-max">Most Popular</p>
-      )}
+      {index % 2 === 1 && <p className="popular-label-service-price">Most Popular</p>}
       <div className="p-4 mx-auto mt-4 rounded-full sm:mt-8 bg-light">
-        <Images src={pathImg} alt={title} className="w-8 h-8 md:w-10 md:h-10" />
+        <Images src={pathImg} alt={title} className="size-8 md:size-10" />
       </div>
       <h4 className="flex-grow mt-2 text-sm font-bold sm:text-base md:text-lg text-blue group-hover:text-light">{title}</h4>
       <div className="mt-4 sm:space-y-1">

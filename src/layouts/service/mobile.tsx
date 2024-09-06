@@ -50,10 +50,10 @@ const Mobile = () => {
                 className="relative pt-12 overflow-hidden bg-gradient-to-r from-orange to-yellow rounded-xl"
               >
                 <div className="absolute -top-16 -right-16">
-                  <Images src="/images/service/circle.png" alt="circle" className="w-40 h-40" />
+                  <Images src="/images/service/circle.png" alt="circle" className="size-32" />
                 </div>
                 <div className="px-8 mb-8 space-y-4">
-                  <Images src={item.pathIcon} alt={item.title} className="w-12 h-12" />
+                  <Images src={item.pathIcon} alt={item.title} className="size-10" />
                   <h5 className="text-lg font-bold md:text-xl lg:text-2xl h-14 lg:auto">{item.title}</h5>
                   <Link
                     href={`/price/service/${index + 1}`}

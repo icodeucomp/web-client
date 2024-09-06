@@ -8,10 +8,10 @@ const Purpose = () => {
     <Container className="py-16">
       <MotionComponent tag="div" duration={1} delay={0.2} initialO={0} animateO={1} className="relative pb-16 font-extrabold text-center">
         <div className="absolute top-0 left-4 sm:left-12 md:left-20">
-          <Images src="/icons/top-double-quote.svg" alt="top double quote circle" className="w-10 h-10 lg:h-16 md:w-12 md:h-12 lg:w-16" />
+          <Images src="/icons/top-double-quote.svg" alt="top double quote circle" className="size-8 sm:size-10 md:size-12 lg:size-16" />
         </div>
         <div className="absolute top-0 right-4 sm:right-12 md:right-20">
-          <Images src="/icons/bottom-double-quote.svg" alt="bottom double quote circle" className="w-10 h-10 lg:h-16 md:w-12 md:h-12 lg:w-16" />
+          <Images src="/icons/bottom-double-quote.svg" alt="bottom double quote circle" className="size-8 sm:size-10 md:size-12 lg:size-16" />
         </div>
         <div className="pt-8 space-y-2 text-3xl sm:text-5xl lg:text-6xl">
           <h4 className="font-bold">Create</h4>

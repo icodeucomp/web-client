@@ -57,23 +57,23 @@ const Detail = ({ id }: { id: string }) => {
               <p>What you get:</p>
               <menu className="grid justify-between grid-cols-1 gap-1 text-sm sm:grid-cols-2 sm:gap-2 sm:text-base">
                 <li className="flex items-center gap-2">
-                  <RiCheckLine className="fill-orange" size={24} />
+                  <RiCheckLine className="fill-orange size-5 sm:size-6" />
                   <p className="text-gray-300">Task Management</p>
                 </li>
                 <li className="flex items-center gap-2">
-                  <RiCheckLine className="fill-orange" size={24} />
+                  <RiCheckLine className="fill-orange size-5 sm:size-6" />
                   <p className="text-gray-300">Project Training</p>
                 </li>
                 <li className="flex items-center gap-2">
-                  <RiCheckLine className="fill-orange" size={24} />
+                  <RiCheckLine className="fill-orange size-5 sm:size-6" />
                   <p className="text-gray-300">Team Collaboration</p>
                 </li>
                 <li className="flex items-center gap-2">
-                  <RiCheckLine className="fill-orange" size={24} />
+                  <RiCheckLine className="fill-orange size-5 sm:size-6" />
                   <p className="text-gray-300">Reminders</p>
                 </li>
                 <li className="flex items-center gap-2">
-                  <RiCheckLine className="fill-orange" size={24} />
+                  <RiCheckLine className="fill-orange size-5 sm:size-6" />
                   <p className="text-gray-300">Notification</p>
                 </li>
               </menu>
@@ -118,7 +118,7 @@ const Detail = ({ id }: { id: string }) => {
                 <Images
                   src="/temporary-image-3.png"
                   alt="temporary"
-                  className="mx-auto overflow-hidden h-52 sm:h-48 md:h-60 lg:h-72 w-72 sm:w-64 md:w-80 lg:w-96 rounded-xl"
+                  className="h-48 mx-auto overflow-hidden md:h-60 lg:h-72 w-72 md:w-80 lg:w-96 rounded-xl"
                   cover
                 />
               </SwiperSlide>
@@ -134,9 +134,9 @@ const Detail = ({ id }: { id: string }) => {
           isBackdrop
         >
           <div className="flex items-center w-full max-w-screen-lg gap-2 mx-auto text-center sm:gap-4">
-            <Images src="/icons/top-double-quote.svg" alt="top double quote circle" className="w-28 h-28" />
+            <Images src="/icons/top-double-quote.svg" alt="top double quote circle" className="size-16 sm:size-20 md:size-28" />
             <h5 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl text-gradient">{render.message}</h5>
-            <Images src="/icons/bottom-double-quote.svg" alt="bottom double quote circle" className="w-28 h-28" />
+            <Images src="/icons/bottom-double-quote.svg" alt="bottom double quote circle" className="size-16 sm:size-20 md:size-28" />
           </div>
         </Background>
       </MotionComponent>

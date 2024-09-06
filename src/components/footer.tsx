@@ -8,22 +8,22 @@ import { FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <Container className="flex flex-col items-center justify-center gap-8 pt-16 pb-12 text-center lg:items-start lg:gap-24 lg:flex-row md:text-start">
+    <Container className="footer-container">
       <MotionComponent tag="div" duration={1} initialO={0} initialY={50} animateO={1} animateY={0} className="space-y-4">
         <Link href="/" className="flex items-center justify-center gap-4">
-          <Images className="w-10 h-10" src="/icons/logo-icodeu.svg" alt="logo i code u" />
+          <Images className="size-10" src="/icons/logo-icodeu.svg" alt="logo i code u" />
           <h1 className="text-lg font-bold font-red-hat">ICodeU</h1>
         </Link>
         <p className="text-sm text-gray-400">Create The Right Technology for Your Business</p>
         <div className="flex items-center justify-center gap-4">
           <a href="https://wa.me/6285183154204" target="_blank" rel="noreferrer">
-            <FaWhatsapp className="w-8 h-8 fill-yellow" />
+            <FaWhatsapp className="size-8 fill-yellow" />
           </a>
           <a href="https://www.instagram.com/icodeu_?igsh=MWtpZjQ0ZWZoNGQxag==" target="_blank" rel="noreferrer">
-            <FaInstagram className="w-8 h-8 fill-yellow" />
+            <FaInstagram className="size-8 fill-yellow" />
           </a>
           <a href="https://www.linkedin.com/company/icodeu" target="_blank" rel="noreferrer">
-            <FaLinkedin className="w-8 h-8 fill-yellow" />
+            <FaLinkedin className="size-8 fill-yellow" />
           </a>
         </div>
       </MotionComponent>

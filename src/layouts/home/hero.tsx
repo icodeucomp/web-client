@@ -10,7 +10,7 @@ import { IoIosArrowDown } from "react-icons/io";
 const Hero = () => {
   return (
     <>
-      <Container className="flex flex-col-reverse items-center justify-center min-h-500 lg:min-h-screen gap-16 pt-24 pb-8 lg:pt-0 lg:items-end lg:flex-row 2xl:min-h-600">
+      <Container className="home-hero-container">
         <MotionComponent
           tag="div"
           duration={1}
@@ -39,12 +39,12 @@ const Hero = () => {
           </div>
         </MotionComponent>
         <MotionComponent tag="div" duration={1} delay={0.5} initialO={0} initialX={80} animateO={1} animateX={0} className="flex-1">
-          <div className="bg-gradient-to-bl from-yellow from-10% to-purple rounded-t-full w-max mx-auto px-10 pt-24 sm:pt-32 pb-2">
-            <Images src="/images/home/hero-people.png" alt="people bring laptop" className="w-60 h-60 md:w-80 md:h-80" cover />
+          <div className="bg-gradient-to-bl from-yellow from-10% to-purple rounded-t-full w-max ms-auto px-10 sm:px-16 pt-24 sm:pt-32 pb-2">
+            <Images src="/images/home/hero-people.png" alt="people bring laptop" className="size-60 md:size-80" cover />
           </div>
         </MotionComponent>
       </Container>
-      <MotionComponent
+      {/* <MotionComponent
         tag="div"
         duration={1}
         delay={0.8}
@@ -61,7 +61,7 @@ const Hero = () => {
             className="p-1 mx-auto mt-1 border rounded-full shadow-md border-light fill-light group-hover:fill-orange group-hover:bg-light"
           />
         </p>
-      </MotionComponent>
+      </MotionComponent> */}
     </>
   );
 };

@@ -38,9 +38,9 @@ const Desktop = () => {
               }`}
             >
               <div className="absolute -top-16 -right-16">
-                <Images src="/images/service/circle.png" alt="circle" className="w-40 h-40" />
+                <Images src="/images/service/circle.png" alt="circle" className="size-40" />
               </div>
-              <Images src={item.pathIcon} alt={item.title} className="w-12 h-12" />
+              <Images src={item.pathIcon} alt={item.title} className="size-12" />
               <h5 className="text-xl font-bold lg:text-2xl">{item.title}</h5>
               <p className="text-sm font-medium text-justify lg:text-base">{item.description}</p>
               <Link href={`/price/service/${index + 1}`} className="flex items-center gap-2 text-xl font-medium text-center w-max group">
@@ -65,11 +65,11 @@ const Desktop = () => {
         className="relative col-span-3 px-8 py-12 space-y-4 overflow-hidden bg-gradient-to-r from-orange to-yellow rounded-xl"
       >
         <div className="absolute -top-16 -right-16">
-          <Images src="/images/service/circle.png" alt="circle" className="w-40 h-40" />
+          <Images src="/images/service/circle.png" alt="circle" className="size-40" />
         </div>
         <div className="flex items-center gap-8">
           <div className="max-w-md space-y-4 lg:max-w-lg">
-            <Images src={ourService[4].pathIcon} alt="Graphic Design" className="w-12 h-12" />
+            <Images src={ourService[4].pathIcon} alt="Graphic Design" className="size-12" />
             <h5 className="text-xl font-bold lg:text-2xl">{ourService[4].title}</h5>
             <p className="text-sm font-medium text-justify lg:text-base">{ourService[4].description}</p>
             <p className="flex items-center gap-2 text-lg font-medium text-center w-max group">

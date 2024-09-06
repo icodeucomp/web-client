@@ -26,11 +26,7 @@ const Product = ({ pathImg, price, title, description, index }: PriceCardProduct
 
   return (
     <motion.article initial={{ opacity: 0, y: 120 }} animate={controls} className="price-card-product group">
-      {index % 2 === 1 && (
-        <p className="absolute top-0 right-0 px-4 py-1 uppercase sm:py-2 text-xxs sm:text-xs md:py-1 md:top-4 md:left-4 bg-orange rounded-es-2xl md:rounded-2xl w-max">
-          Most Popular
-        </p>
-      )}
+      {index % 2 === 1 && <p className="popular-label-product-price">Most Popular</p>}
       <div className="hidden mt-12 lg:block">
         <Images src={pathImg} alt={title} className="w-full h-64" cover />
       </div>
@@ -48,10 +44,7 @@ const Product = ({ pathImg, price, title, description, index }: PriceCardProduct
             <p className="text-light-red">30%</p>
           </span>
         </div>
-        <Link
-          href="/price/product/12345"
-          className="flex items-center gap-2 px-2 py-1 text-xs font-bold border sm:text-sm sm:px-4 md:px-6 sm:py-2 w-max rounded-4xl bg-light text-orange border-orange"
-        >
+        <Link href="/price/product/12345" className="link-product-price">
           Learn More <MdArrowForwardIos className="fill-orange" />
         </Link>
       </div>

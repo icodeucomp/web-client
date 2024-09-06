@@ -25,7 +25,7 @@ const Environment = ({ id }: { id: string }) => {
             <div key={index} className={`flex items-start justify-center ${render.top.length === 7 ? "gap-2" : "gap-7"}`}>
               <div className="flex flex-col items-center justify-center gap-4 text-center">
                 <div className="grid p-4 rounded-full place-items-center bg-orange">
-                  <Images src={item.pathIcon} alt="business process icon" className="w-12 h-12 md:w-16 md:h-16" />
+                  <Images src={item.pathIcon} alt="business process icon" className="size-12 md:size-16" />
                 </div>
                 <p className="h-16 text-sm max-w-24">{item.title}</p>
               </div>
@@ -63,7 +63,7 @@ const Environment = ({ id }: { id: string }) => {
           {render.bottom.map((item, index) => (
             <div key={index} className="px-8 py-4 space-y-4 overflow-hidden bg-orange rounded-xl">
               <div className="flex items-center gap-4">
-                <Images src={item.pathIcon} alt={`${item.title} icon`} className="w-8 h-8 sm:h-10 sm:w-10 md:w-12 md:h-12 lg:w-14 lg:h-14" />
+                <Images src={item.pathIcon} alt={`${item.title} icon`} className="size-8 sm:size-10 md:size-12 lg:size-14" />
                 <h5 className="text-base font-semibold sm:text-lg md:text-xl max-w-72">{item.title}</h5>
               </div>
               <p className="text-xs leading-snug sm:text-sm sm:leading-normal">{item.description}</p>

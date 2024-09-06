@@ -30,12 +30,12 @@ const Stack = () => {
         <div className="flex overflow-hidden">
           <motion.div className="flex flex-shrink-0" animate="animate" variants={imageVariants}>
             {firstImages.map((image, index) => (
-              <Images key={`col1-${index}`} src={image} alt="stack icon" className="w-20 h-20 mx-4 lg:w-24 lg:h-24 md:mx-8" cover />
+              <Images key={`col1-${index}`} src={image} alt="stack icon" className="mx-4 size-20 lg:size-24 md:mx-8" cover />
             ))}
           </motion.div>
           <motion.div className="flex flex-shrink-0" animate="animate" variants={imageVariants}>
             {firstImages.map((image, index) => (
-              <Images key={`col1-${index}`} src={image} alt="stack icon" className="w-20 h-20 mx-4 lg:w-24 lg:h-24 md:mx-8" cover />
+              <Images key={`col1-${index}`} src={image} alt="stack icon" className="mx-4 size-20 lg:size-24 md:mx-8" cover />
             ))}
           </motion.div>
         </div>
@@ -43,12 +43,12 @@ const Stack = () => {
         <div className="flex overflow-hidden">
           <motion.div className="flex flex-shrink-0" animate="animate" variants={imageVariants}>
             {secondImages.map((image, index) => (
-              <Images key={`col2-${index}`} src={image} alt="stack icon" className="w-20 h-20 mx-4 lg:w-24 lg:h-24 md:mx-8" cover />
+              <Images key={`col2-${index}`} src={image} alt="stack icon" className="mx-4 size-20 lg:size-24 md:mx-8" cover />
             ))}
           </motion.div>
           <motion.div className="flex flex-shrink-0" animate="animate" variants={imageVariants}>
             {secondImages.map((image, index) => (
-              <Images key={`col2-${index}`} src={image} alt="stack icon" className="w-20 h-20 mx-4 lg:w-24 lg:h-24 md:mx-8" cover />
+              <Images key={`col2-${index}`} src={image} alt="stack icon" className="mx-4 size-20 lg:size-24 md:mx-8" cover />
             ))}
           </motion.div>
         </div>

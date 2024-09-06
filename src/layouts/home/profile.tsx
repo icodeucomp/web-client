@@ -71,7 +71,7 @@ const Profile = () => {
                 key={index}
                 className="flex items-center justify-start gap-4"
               >
-                <Images src={item.pathImg} alt={item.description} className="w-6 h-6" />
+                <Images src={item.pathImg} alt={item.description} className="size-5 sm:size-6" />
                 <p className="flex-grow font-semibold text-light-yellow">{item.description}</p>
               </MotionComponent>
             ))}

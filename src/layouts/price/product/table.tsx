@@ -11,16 +11,7 @@ const Table = ({ id }: { id: string }) => {
 
   return (
     <Container className="pb-40">
-      <MotionComponent
-        tag="div"
-        duration={1}
-        delay={0.6}
-        initialO={0}
-        initialX={0}
-        animateO={1}
-        animateX={0}
-        className="overflow-x-auto table-scrollbar"
-      >
+      <MotionComponent tag="div" duration={1} delay={0.6} initialO={0} initialX={0} animateO={1} animateX={0} className="overflow-x-auto scrollbar">
         <table className="min-w-full overflow-hidden rounded-2xl bg-light">
           <thead>
             <tr>

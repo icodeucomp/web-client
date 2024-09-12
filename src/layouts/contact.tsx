@@ -1,7 +1,12 @@
 "use client";
 
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
+
+import usePost from "@/hooks/usePost";
+
 import Button from "@/components/button";
+
+import toast from "react-hot-toast";
 
 import { BsPersonCircle } from "react-icons/bs";
 import { FaPhoneFlip } from "react-icons/fa6";
@@ -10,23 +15,32 @@ import { MdEmail } from "react-icons/md";
 
 import { InputType } from "@/types";
 
+import { ContactUs, ResponsePayload } from "@/types/response-api";
+type ResponseContactUs = ResponsePayload<ContactUs>;
+
 const ContactFormSlice = () => {
   const initValues = { fullName: "", email: "", phoneNumber: "", message: "" };
-  const initState = { values: initValues, isLoading: false, error: false };
 
-  const [input, setInput] = useState<InputType>(initState);
+  const [input, setInput] = useState<InputType>(initValues);
+
+  const { execute, loading, response } = usePost<ResponseContactUs>("/mails/contact-us");
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setInput((prev) => ({
       ...prev,
-      values: {
-        ...prev.values,
-        [e.target.id]: e.target.value,
-      },
+      [e.target.id]: e.target.value,
     }));
   };
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    execute(input);
+    toast.success(response?.message as string);
+    setInput(initValues);
+  };
+
   return (
-    <form className="w-full space-y-4">
+    <form className="w-full space-y-4" onSubmit={handleSubmit}>
       <label htmlFor="fullName" className="flex items-center gap-1 py-2.5 rounded-md overflow-hidden bg-light shadow-md">
         <BsPersonCircle className="fill-orange ms-4 size-6 sm:size-8" />
         <input
@@ -35,26 +49,32 @@ const ContactFormSlice = () => {
           className="w-full p-2 text-sm bg-transparent outline-none md:text-base md:p-4 me-2 placeholder:text-dark text-dark"
           placeholder="Full Name"
           onChange={handleChange}
+          value={input.fullName}
+          required
         />
       </label>
       <label htmlFor="email" className="flex items-center gap-1 py-2.5 rounded-md overflow-hidden bg-light shadow-md">
         <MdEmail className="fill-orange ms-4 size-6 sm:size-8" />
         <input
           id="email"
-          type="text"
+          type="email"
           className="w-full p-2 text-sm bg-transparent outline-none md:text-base md:p-4 me-2 placeholder:text-dark text-dark"
           placeholder="Email Address"
           onChange={handleChange}
+          value={input.email}
+          required
         />
       </label>
       <label htmlFor="phoneNumber" className="flex items-center gap-1 py-2.5 rounded-md overflow-hidden bg-light shadow-md">
         <FaPhoneFlip className="fill-orange ms-4 size-6 sm:size-8" />
         <input
           id="phoneNumber"
-          type="text"
+          type="number"
           className="w-full p-2 text-sm bg-transparent outline-none md:text-base md:p-4 me-2 placeholder:text-dark text-dark"
           placeholder="Phone Number"
           onChange={handleChange}
+          value={input.phoneNumber}
+          required
         />
       </label>
       <label htmlFor="message" className="flex gap-1 py-2.5 rounded-md overflow-hidden bg-light shadow-md">
@@ -65,9 +85,12 @@ const ContactFormSlice = () => {
           className="w-full p-2 text-sm bg-transparent outline-none md:text-base md:p-4 me-2 placeholder:text-dark text-dark"
           placeholder="Write something here..."
           onChange={handleChange}
+          value={input.message}
         />
       </label>
-      <Button className="justify-center w-full button-gradient">Submit Now</Button>
+      <Button type="submit" className={`justify-center w-full button-gradient ${loading && "animate-pulse"}`}>
+        Submit Now
+      </Button>
     </form>
   );
 };

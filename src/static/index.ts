@@ -11,7 +11,7 @@ export const navbarList: { title: string; path: string }[] = [
 export const mission: string[] = [
   "Develop technology solutions that meet the specific needs of businesses, driving success and growth.",
   "Build and nurture strong partnerships with clients and stakeholders, creating an environment where collaborative efforts lead to shared growth and achievement.",
-  "Cultivate an agile, fair, and harmonious workplace that supports employee well-being and fosters a culture of innovation and productivity.",
+  "Cultivate an agile, fair, and harmonious workplace that fosters a culture of innovation and productivity.",
   "Implement agile methodologies to ensure flexibility, rapid adaptation, and precise execution of technology solutions, optimizing results and enhancing client satisfaction.",
 ];
 

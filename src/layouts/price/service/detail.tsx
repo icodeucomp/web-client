@@ -1,6 +1,6 @@
 "use client";
 
-import useFetchApi from "@/hooks/useFetchApi";
+import useGet from "@/hooks/useGet";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -14,8 +14,11 @@ import { RiCheckLine } from "react-icons/ri";
 
 import { webDev, SEO, uiAndUx, wordpress, graphicDesign } from "@/static/service";
 
+import { ResponsePayload, ServiceOrProduct } from "@/types/response-api";
+type ResponseService = ResponsePayload<ServiceOrProduct>;
+
 const Detail = ({ id }: { id: string }) => {
-  const { response: service } = useFetchApi(`/services/${id}`, "GET");
+  const { response: service } = useGet<ResponseService>(`/services/${id}`);
 
   const render = id === "1" ? webDev : id === "2" ? SEO : id === "3" ? uiAndUx : id === "4" ? wordpress : graphicDesign;
 

@@ -20,7 +20,6 @@ const Footer = () => {
         >
           <div className="space-y-4">
             <h4 className="text-2xl font-bold xl:text-3xl">Ready to start scaling your business now?</h4>
-            <p className="text-sm font-medium">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel, tempora!</p>
           </div>
           <div className="flex items-center gap-4 whitespace-nowrap">
             <Link href="/contact">

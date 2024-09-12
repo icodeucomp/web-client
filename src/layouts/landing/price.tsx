@@ -1,13 +1,16 @@
 "use client";
 
-import React from "react";
+import React, { RefObject } from "react";
+
 import Link from "next/link";
+
+import useInView from "@/hooks/useInView";
 
 import { SwiperSlide, Swiper } from "swiper/react";
 
 import { Navigation } from "swiper/modules";
 
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 
 import Button from "@/components/button";
 import Container from "@/components/container";
@@ -29,7 +32,7 @@ const Card = ({ onMouseLeave, onMouseEnter, isHighlight, pathImg, price, title, 
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      {index % 2 === 1 && <p className="absolute px-4 py-1 text-xs uppercase top-4 right-4 bg-orange rounded-2xl w-max">Most Popular</p>}
+      {/* <p className="popular-label-service-price">Most Popular</p> */}
       <div className="p-4 mx-auto mt-8 rounded-full bg-light">
         <Images src={pathImg} alt={title} className="size-8 sm:size-10" />
       </div>
@@ -57,34 +60,50 @@ const Card = ({ onMouseLeave, onMouseEnter, isHighlight, pathImg, price, title, 
 const Pricing = () => {
   const [hover, setHover] = React.useState<number | null>(null);
 
-  const h2 = useAnimation();
-  const hr = useAnimation();
-  const h4 = useAnimation();
-  const div = useAnimation();
+  const { isInView, elementRef } = useInView<HTMLDivElement>();
 
-  React.useEffect(() => {
-    h2.start({ opacity: 1, y: 0, transition: { duration: 1 } });
-    hr.start({ opacity: 1, y: 0, transition: { duration: 1, delay: 0.5 } });
-    h4.start({ opacity: 1, y: 0, transition: { duration: 1, delay: 0.8 } });
-    div.start({ opacity: 1, y: 0, transition: { duration: 1.2, delay: 1 } });
-  }, [h2, h4, hr, div]);
+  const variantsH2 = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } };
+  const variantsHR = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } };
+  const variantsH4 = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } };
+  const variantsDivOne = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } };
+  const variantsDivTwo = { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } };
 
   return (
-    <Container className="pt-10">
+    <Container className="pt-10" ref={elementRef}>
       <div className="pt-4 mb-16 text-center lg:mb-24">
-        <motion.h2 initial={{ opacity: 0, y: 30 }} animate={h2} className="pb-2 text-sm tracking-[4px] uppercase">
+        <motion.h2
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          variants={variantsH2}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="pb-2 text-sm tracking-[4px] uppercase"
+        >
           Pricing & Plans
         </motion.h2>
-        <motion.hr initial={{ opacity: 0, y: 30 }} animate={h2} className="w-16 h-0.5 mx-auto bg-light" />
+        <motion.hr
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          variants={variantsHR}
+          transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+          className="w-16 h-0.5 mx-auto bg-light"
+        />
         <motion.h4
-          initial={{ opacity: 0, y: 30 }}
-          animate={h4}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          variants={variantsH4}
+          transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
           className="max-w-screen-lg mx-auto mt-6 text-xl font-bold md:text-2xl lg:text-4xl text-light text-shadow"
         >
           Whether your time-saving automation needs are large or small, we`re here to help you scale.
         </motion.h4>
       </div>
-      <motion.div initial={{ opacity: 0, y: 50 }} animate={div} className="justify-center hidden gap-8 py-8 lg:flex lg:bg-light rounded-3xl">
+      <motion.div
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        variants={variantsDivOne}
+        transition={{ duration: 1, delay: 0.7, ease: "easeOut" }}
+        className="justify-center hidden gap-8 py-8 lg:flex lg:bg-light rounded-3xl"
+      >
         {price.map((item, index) => {
           const { description, pathImg, price, title } = item;
           return (
@@ -102,14 +121,20 @@ const Pricing = () => {
           );
         })}
       </motion.div>
-      <motion.div initial={{ opacity: 0, y: 50 }} animate={div}>
+
+      <motion.div
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        variants={variantsDivOne}
+        transition={{ duration: 1, delay: 0.7, ease: "easeOut" }}
+        className="block lg:hidden"
+      >
         <Swiper
           modules={[Navigation]}
           navigation={{ nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" }}
           spaceBetween={10}
           breakpoints={{ 0: { slidesPerView: 1 }, 768: { slidesPerView: 2 } }}
           slidesPerView={2}
-          className="block lg:!hidden"
         >
           {price.map((item, index) => {
             const { description, pathImg, price, title } = item;
@@ -135,14 +160,22 @@ const Pricing = () => {
           </SwiperSlide>
         </Swiper>
       </motion.div>
-      <motion.div initial={{ opacity: 0, y: 50 }} animate={div} className="hidden lg:block">
+      <motion.div
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        variants={variantsDivTwo}
+        transition={{ duration: 1, delay: 0.9, ease: "easeOut" }}
+        className="hidden lg:block"
+      >
         <Link href="/" className="flex items-center justify-center gap-2 py-16 mx-auto text-sm font-medium w-max hover:underline">
           See Full Pricing <IoIosArrowForward size={20} className="rounded-full bg-light fill-orange" />
         </Link>
       </motion.div>
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={div}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        variants={variantsDivTwo}
+        transition={{ duration: 1, delay: 0.9, ease: "easeOut" }}
         className="flex items-center justify-center w-full gap-2 py-8 text-sm font-medium lg:hidden"
       >
         <div className="swiper-button-prev">

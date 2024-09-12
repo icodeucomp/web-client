@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Toaster } from "react-hot-toast";
+
 import "./globals.css";
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -15,7 +18,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} min-h-screen flex flex-col`}>{children}</body>
+      <body className={`${inter.className} min-h-screen flex flex-col scroll-smooth`}>
+        <Toaster position="bottom-center" reverseOrder={false} />
+        {children}
+      </body>
     </html>
   );
 }

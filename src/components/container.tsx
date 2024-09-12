@@ -1,7 +1,15 @@
+import React, { forwardRef } from "react";
 import { ContainerProps } from "@/types";
 
-const Container = ({ className, children }: ContainerProps) => {
-  return <div className={`relative max-w-container w-full mx-auto px-4 sm:px-8 ${className ?? ""}`}>{children}</div>;
-};
+const Container = forwardRef<HTMLDivElement, ContainerProps>(({ className, children, ...props }, ref) => {
+  return (
+    <div ref={ref} className={`relative max-w-container w-full mx-auto px-4 sm:px-8 ${className ?? ""}`} {...props}>
+      {children}
+    </div>
+  );
+});
+
+// Set a display name for the component
+Container.displayName = "Container";
 
 export default Container;

@@ -1,11 +1,21 @@
+"use client";
+
+import useGet from "@/hooks/useGet";
+
 import Container from "@/components/container";
 import Images from "@/components/images";
 import MotionComponent from "@/components/motion";
 
 import { webDev, SEO, uiAndUx, wordpress, graphicDesign } from "@/static/service";
 
+import { ResponsePayload, ServiceOrProduct } from "@/types/response-api";
+type ResponseService = ResponsePayload<ServiceOrProduct>;
+
 const Environment = ({ id }: { id: string }) => {
+  const { response: service } = useGet<ResponseService>(`/services/${id}`);
+
   const render = id === "1" ? webDev : id === "2" ? SEO : id === "3" ? uiAndUx : id === "4" ? wordpress : graphicDesign;
+
   return (
     <Container className="pb-28 sm:pb-20 lg:pb-40">
       <MotionComponent
@@ -19,10 +29,10 @@ const Environment = ({ id }: { id: string }) => {
       >
         {render.serviceTitle}
       </MotionComponent>
-      <MotionComponent tag="div" duration={1} delay={0.3} initialO={0} initialY={100} animateO={1} animateY={0} className="overflow-x-auto">
-        <div className={`flex items-center mt-16 ${render.top.length === 7 ? "gap-2" : "gap-7"}`}>
+      <MotionComponent tag="div" duration={1} delay={0.3} initialO={0} initialY={100} animateO={1} animateY={0} className="overflow-x-auto scrollbar">
+        <div className={`flex items-center mt-16 ${render.top.length === 7 ? "gap-2" : "gap-6"}`}>
           {render.top.map((item, index, row) => (
-            <div key={index} className={`flex items-start justify-center ${render.top.length === 7 ? "gap-2" : "gap-7"}`}>
+            <div key={index} className={`flex items-start justify-center ${render.top.length === 7 ? "gap-2" : "gap-6"}`}>
               <div className="flex flex-col items-center justify-center gap-4 text-center">
                 <div className="grid p-4 rounded-full place-items-center bg-orange">
                   <Images src={item.pathIcon} alt="business process icon" className="size-12 md:size-16" />

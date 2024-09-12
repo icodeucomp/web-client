@@ -2,9 +2,10 @@
 
 import React from "react";
 
-import useFetchApi from "@/hooks/useFetchApi";
+import useGet from "@/hooks/useGet";
+import useInView from "@/hooks/useInView";
 
-import { motion, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -17,24 +18,28 @@ import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 
 import currency from "@/utils/currency";
 
+import { ResponsePayload, ServiceOrProduct } from "@/types/response-api";
+type ResponseProduct = ResponsePayload<ServiceOrProduct>;
+
 const Price = ({ id }: { id: string }) => {
   const [border, setBorder] = React.useState<number | null>(null);
 
-  const { response: product } = useFetchApi(`/products/${id}`, "GET");
+  const { response: product } = useGet<ResponseProduct>(`/products/${id}`);
 
-  const controls = useAnimation();
+  const { isInView, elementRef } = useInView<HTMLDivElement>();
 
-  React.useEffect(() => {
-    controls.start({
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.3 },
-    });
-  }, [controls]);
+  const variantsDivOne = { hidden: { opacity: 0, x: -100 }, visible: { opacity: 1, x: 0 } };
+  const variantsDivTwo = { hidden: { opacity: 0, x: 100 }, visible: { opacity: 1, x: 0 } };
 
   return (
-    <Container className="flex flex-col gap-8 pt-32 pb-16 md:flex-row">
-      <motion.div initial={{ opacity: 0, x: -100 }} animate={controls} className="flex-1 max-w-md space-y-8 lg:max-w-xl">
+    <Container className="flex flex-col gap-8 pt-32 pb-16 md:flex-row" ref={elementRef}>
+      <motion.div
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        variants={variantsDivOne}
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="flex-1 max-w-md space-y-8 lg:max-w-xl"
+      >
         <div className="px-8 py-20 overflow-hidden rounded bg-gradient-to-b from-purple to-dark-blue">
           <Images src="/temporary-image.png" alt="temporary" className="h-32 mx-auto w-60 md:h-60 xl:h-64 md:w-80 xl:w-96" cover />
         </div>
@@ -68,7 +73,13 @@ const Price = ({ id }: { id: string }) => {
           </div>
         </div>
       </motion.div>
-      <motion.div initial={{ opacity: 0, x: 100 }} animate={controls} className="flex-1 mt-6">
+      <motion.div
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        variants={variantsDivTwo}
+        transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+        className="flex-1 mt-6"
+      >
         <div className="space-y-2 md:space-y-4">
           <h4 className="text-2xl leading-snug md:text-3xl lg:text-4xl text-gradient">Website TopUp Gaming</h4>
           <p className="text-base md:text-lg text-light-yellow">Starts From</p>

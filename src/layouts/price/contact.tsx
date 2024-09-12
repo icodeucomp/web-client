@@ -29,11 +29,13 @@ const Contact = () => {
             className="items-center justify-center gap-16 px-4 text-gray-200 md:px-8 min-h-500"
             src="/images/home/talk-people.png"
           >
-            <h4 className="text-3xl font-bold leading-snug text-center">“We specialize in helping our customers digitize their business”</h4>
+            <h4 className="text-3xl font-bold leading-snug text-center">
+              “We are committed to delivering the ideal technology to drive your business forward”
+            </h4>
             <div className="text-center">
-              <Images src="/images/home/sandra.png" alt="sandra photo" className="mx-auto size-20" />
-              <h5 className="mt-4 text-lg font-bold">Sandra Lewis</h5>
-              <p className="text-sm">Front-End Developer</p>
+              <Images src="/images/home/asya-faris.png" alt="sandra photo" className="mx-auto overflow-hidden rounded-full size-20" />
+              <h5 className="mt-4 text-lg font-bold">Asya Faris</h5>
+              <p className="text-sm">Project Manager</p>
             </div>
           </Background>
         </MotionComponent>

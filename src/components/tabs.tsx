@@ -1,27 +1,30 @@
 "use client";
 
-import React from "react";
+import { useState } from "react";
 
-import { useAnimation, motion } from "framer-motion";
+import useInView from "@/hooks/useInView";
+
+import { motion } from "framer-motion";
 
 import { TabsProps } from "@/types";
 
 const Tabs = ({ tabs }: { tabs: TabsProps[] }) => {
-  const [activeTab, setActiveTab] = React.useState<number>(0);
+  const [activeTab, setActiveTab] = useState<number>(0);
 
-  const controls = useAnimation();
+  const { isInView, elementRef } = useInView<HTMLDivElement>();
 
-  React.useEffect(() => {
-    controls.start({
-      opacity: 1,
-      y: 0,
-      transition: { duration: 1.1, delay: 0.8 },
-    });
-  }, [controls]);
+  const variantsDivOne = { hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0 } };
 
   return (
     <>
-      <motion.div initial={{ opacity: 0, y: 50 }} animate={controls} className="flex justify-center gap-2 p-1 mx-auto rounded-full bg-light w-max">
+      <motion.div
+        ref={elementRef}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        variants={variantsDivOne}
+        transition={{ duration: 1, ease: "easeOut" }}
+        className="flex justify-center gap-2 p-1 mx-auto rounded-full bg-light w-max"
+      >
         {tabs.map((tab, index) => (
           <button
             key={index}

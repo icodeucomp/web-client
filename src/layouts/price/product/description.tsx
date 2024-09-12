@@ -1,8 +1,18 @@
+"use client";
+
+import useGet from "@/hooks/useGet";
+
 import Container from "@/components/container";
 import MotionComponent from "@/components/motion";
+
 import { IoIosArrowDown } from "react-icons/io";
 
+import { ResponsePayload, ServiceOrProduct } from "@/types/response-api";
+type ResponseProduct = ResponsePayload<ServiceOrProduct>;
+
 const Description = ({ id }: { id: string }) => {
+  const { response: products } = useGet<ResponseProduct>(`/products/${id}`);
+
   return (
     <Container className="pb-16">
       <hr className="mb-8" />

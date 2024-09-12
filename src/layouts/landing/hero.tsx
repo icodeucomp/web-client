@@ -30,9 +30,6 @@ const Hero = () => {
           <Link href="/contact">
             <Button className="border-2 rounded-3xl border-orange text-orange hover:bg-orange hover:text-light">Contact Us</Button>
           </Link>
-          <Link href="/price" className="hidden md:block">
-            <Button className="rounded-3xl bg-gradient-to-r from-yellow to-orange hover:from-orange hover:to-yellow">Free Consulting</Button>
-          </Link>
         </MotionComponent>
       </div>
       <div className="max-w-2xl mx-auto my-24 space-y-8 text-center">
@@ -44,12 +41,12 @@ const Hero = () => {
           efficiently
         </MotionComponent>
         <MotionComponent tag="div" duration={1} delay={0.9} initialO={0} initialY={30} animateO={1} animateY={0} className="block">
-          <Link href="/price">
+          <a href="#consulting">
             <Button className="mx-auto button-gradient">
               Free Consulting
               <IoIosArrowDown size={16} className="rounded-full shadow-md bg-light fill-orange" />
             </Button>
-          </Link>
+          </a>
         </MotionComponent>
       </div>
       {/* <div className="absolute top-28 left-28">

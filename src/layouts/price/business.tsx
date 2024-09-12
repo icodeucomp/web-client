@@ -1,133 +1,90 @@
 "use client";
 
-import useFetchApi from "@/hooks/useFetchApi";
+import useGet from "@/hooks/useGet";
+import useInView from "@/hooks/useInView";
+
+import { motion } from "framer-motion";
 
 import Container from "@/components/container";
 import Tabs from "@/components/tabs";
-import MotionComponent from "@/components/motion";
 
 import Product from "./card/product";
 import Service from "./card/service";
 
-const products = [
-  {
-    pathImg: "/temporary-image-2.png",
-    title: "Website TopUp Gaming",
-    price: 200000,
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt enim, sed a blanditiis tempore corporis harum distinctio, consequatur earum possimus repudiandae soluta totam libero qui exercitationem, fugit officia ipsam error!",
-  },
-  {
-    pathImg: "/temporary-image-2.png",
-    title: "Website TopUp Netflix",
-    price: 100000,
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt enim, sed a blanditiis tempore corporis harum distinctio, consequatur earum possimus repudiandae soluta totam libero qui exercitationem, fugit officia ipsam error!",
-  },
-  {
-    pathImg: "/temporary-image-2.png",
-    title: "Website TopUp Netflix",
-    price: 100000,
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt enim, sed a blanditiis tempore corporis harum distinctio, consequatur earum possimus repudiandae soluta totam libero qui exercitationem, fugit officia ipsam error!",
-  },
-  {
-    pathImg: "/temporary-image-2.png",
-    title: "Custom UI/UX Design",
-    price: 300000,
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt enim, sed a blanditiis tempore corporis harum distinctio, consequatur earum possimus repudiandae soluta totam libero qui exercitationem, fugit officia ipsam error!",
-  },
-  {
-    pathImg: "/temporary-image-2.png",
-    title: "Custom UI/UX Design",
-    price: 300000,
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt enim, sed a blanditiis tempore corporis harum distinctio, consequatur earum possimus repudiandae soluta totam libero qui exercitationem, fugit officia ipsam error!",
-  },
-];
+import { ServiceOrProduct, ResponsePayload } from "@/types/response-api";
 
-const services = [
-  {
-    pathImg: "/icons/code-orange.svg",
-    title: "Responsive Web Development",
-    price: 200000,
-    list: ["Free Domain", "Free Server", "Exclusive Design", "Up to 10 revision"],
-    description: "Feugiat finibus conubia sollicitudin iaculis nullam suspendisse netus curae faucibus euismod fringilla quisque",
-  },
-  {
-    pathImg: "/icons/process-orange.svg",
-    title: "SEO & Website Performance Optimization",
-    price: 100000,
-    list: ["Free Domain", "Free Server", "Exclusive Design"],
-    description: "Ultrices et ut mauris sapien eros sed sollicitudin sollicitudin conubia quisque laoreet hac conubia mauris",
-  },
-  {
-    pathImg: "/icons/figma-orange.svg",
-    title: "Custom UI/UX Design",
-    price: 300000,
-    list: ["Include Source Files", "Up to 10 Revision", "Free Mockup"],
-    description: "Aliquam consectetuer class netus vestibulum duis venenatis potenti consectetur vehicula habitasse luctus purus",
-  },
-  {
-    pathImg: "/icons/figma-orange.svg",
-    title: "Wordpress",
-    price: 300000,
-    list: ["Include Source Files", "Up to 10 Revision", "Free Mockup"],
-    description: "Aliquam consectetuer class netus vestibulum duis venenatis potenti consectetur vehicula habitasse luctus purus",
-  },
-  {
-    pathImg: "/icons/figma-orange.svg",
-    title: "Graphic Design",
-    price: 200000,
-    list: ["Include Source Files", "Up to 10 Revision", "Free Mockup"],
-    description: "Aliquam consectetuer class netus vestibulum duis venenatis potenti consectetur vehicula habitasse luctus purus",
-  },
-];
-
-const tabData = [
-  {
-    label: "Products",
-    children: (
-      <div className="grid grid-cols-2 gap-2 mt-8 lg:grid-cols-3 sm:gap-4 md:gap-8">
-        {products.map((item, index) => {
-          const { description, pathImg, price, title } = item;
-          return <Product key={index} index={index} description={description} pathImg={pathImg} price={price} title={title} />;
-        })}
-      </div>
-    ),
-  },
-  {
-    label: "Services",
-    children: (
-      <div className="grid grid-cols-2 gap-2 mt-8 lg:grid-cols-3 sm:gap-4 md:gap-8">
-        {services.map((item, index) => {
-          const { description, pathImg, price, title, list } = item;
-          return <Service key={index} index={index} list={list} description={description} pathImg={pathImg} price={price} title={title} />;
-        })}
-      </div>
-    ),
-  },
-];
+type ResponseProductsOrServices = ResponsePayload<ServiceOrProduct[]>;
 
 const Business = () => {
-  const { response: products } = useFetchApi("/products", "GET");
-  const { response: services } = useFetchApi("/services", "GET");
+  const { response: products } = useGet<ResponseProductsOrServices>("/products");
+  const { response: services } = useGet<ResponseProductsOrServices>("/services");
+
+  const { isInView, elementRef } = useInView<HTMLDivElement>();
+
+  const div = { hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0 } };
+
+  const tabData = [
+    {
+      label: "Products",
+      children: (
+        <div className="grid grid-cols-2 gap-2 mt-8 lg:grid-cols-3 sm:gap-4 md:gap-8">
+          {products?.data.map((item, index) => {
+            const { description, price, images, name, discount, slug, discountedPrice } = item;
+            return (
+              <Product
+                key={index}
+                index={index}
+                description={description}
+                pathImg={images}
+                price={price}
+                title={name}
+                slug={slug}
+                discount={discount}
+                discountedPrice={discountedPrice}
+              />
+            );
+          })}
+        </div>
+      ),
+    },
+    {
+      label: "Services",
+      children: (
+        <div className="grid grid-cols-2 gap-2 mt-8 lg:grid-cols-3 sm:gap-4 md:gap-8">
+          {services?.data.map((item, index) => {
+            const { description, images, price, name, discount, discountedPrice, slug } = item;
+            return (
+              <Service
+                key={index}
+                index={index}
+                description={description}
+                pathImg={images}
+                price={price}
+                title={name}
+                slug={slug}
+                discount={discount}
+                discountedPrice={discountedPrice}
+              />
+            );
+          })}
+        </div>
+      ),
+    },
+  ];
 
   return (
     <Container className="pt-40 pb-20">
-      <MotionComponent
-        tag="div"
-        duration={1}
-        initialO={0}
-        initialY={40}
-        animateO={1}
-        animateY={0}
+      <motion.div
+        ref={elementRef}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        variants={div}
+        transition={{ duration: 1, ease: "easeOut" }}
         className="flex flex-col items-center justify-center w-full leading-snug text-center md:text-start"
       >
         <h4 className="text-lg sm:text-xl text-gradient md:text-2xl lg:text-3xl">Streamline your teamwork. Start free.</h4>
         <h4 className="text-2xl text-gradient md:text-3xl">Choose the perfect plan for your business needs</h4>
-      </MotionComponent>
+      </motion.div>
       <div className="mt-10">
         <Tabs tabs={tabData} />
       </div>

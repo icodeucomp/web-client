@@ -1,11 +1,5 @@
 import { ButtonHTMLAttributes, ElementType, ReactNode } from "react";
 
-export interface FetchApiResponse<T = any> {
-  response: T | null;
-  error: string | null;
-  loading: boolean;
-}
-
 export interface ContainerProps {
   className?: string;
   children: JSX.Element | JSX.Element[];
@@ -67,21 +61,15 @@ export interface LandingCardPriceProps {
   index: number;
 }
 
-export interface PriceCardProductProps {
-  pathImg: string;
+export interface PriceCardProps {
+  slug: string;
+  pathImg: string[];
   price: number;
   title: string;
   description: string;
   index: number;
-}
-
-export interface PriceCardServiceProps {
-  pathImg: string;
-  price: number;
-  title: string;
-  description: string;
-  list: string[];
-  index: number;
+  discount: number;
+  discountedPrice: number;
 }
 
 export interface TemplateField {
@@ -106,15 +94,11 @@ export interface PriceServiceField {
 }
 
 export interface InputType {
-  isLoading?: boolean;
-  error?: boolean;
-  values: {
-    fullName: string;
-    email: string;
-    message?: string;
-    phoneNumber: string;
-    service?: string;
-  };
+  fullName: string;
+  email: string;
+  message?: string;
+  phoneNumber: string;
+  service?: string;
 }
 
 export interface OurService extends TemplateField {

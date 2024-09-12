@@ -42,9 +42,9 @@ const Header = () => {
       window.addEventListener("scroll", () => {
         const currentScrollY = window.scrollY;
 
-        if (currentScrollY > 100 && currentScrollY > lastScrollY) {
+        if (currentScrollY > 50 && currentScrollY > lastScrollY) {
           setIsVisible(false);
-        } else if (currentScrollY < lastScrollY || currentScrollY <= 100) {
+        } else if (currentScrollY < lastScrollY || currentScrollY <= 50) {
           setIsVisible(true);
         }
 

@@ -32,6 +32,7 @@
   background: linear-gradient(180deg, #cc7e00 0%, #cc5500 100%);
 }
 
+/* swiper style */
 .swiper-button-next::after,
 .swiper-button-prev::after {
   content: "" !important;
@@ -44,34 +45,65 @@
   position: unset !important;
 }
 
+/* number input style */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-/* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
 }
 
+/* scrollbar style */
 .table-scrollbar::-webkit-scrollbar {
   width: 20px;
   height: 12px;
 }
-
 .table-scrollbar::-webkit-scrollbar-track {
   border-radius: 100vh;
   background: #f7f4ed;
 }
-
 .table-scrollbar::-webkit-scrollbar-thumb {
   background: #bbbbbb;
   border-radius: 100vh;
   border: 3px solid #f7f4ed;
 }
-
 .table-scrollbar::-webkit-scrollbar-thumb:hover {
   background: #ff6c01;
+}
+
+/* loader style */
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 3px solid #f7f4ed;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 3px solid;
+  border-color: #ff6c01 transparent;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @layer components {
@@ -91,10 +123,10 @@ input[type="number"] {
     @apply flex flex-col justify-center gap-4 p-4 duration-300 bg-gradient-to-b from-yellow to-orange rounded-3xl h-64 lg:h-72 -translate-x-1.5 -translate-y-1.5 lg:group-hover:-translate-x-4 lg:group-hover:-translate-y-4;
   }
   .price-card-product {
-    @apply relative flex flex-col flex-1 w-full overflow-hidden duration-300 shadow-2xl max-w-80 rounded-3xl bg-light;
+    @apply relative flex-1 w-full overflow-hidden duration-300 rounded-lg shadow-2xl max-w-80 sm:rounded-3xl bg-light;
   }
   .price-card-service {
-    @apply relative flex flex-col flex-1 w-full p-4 overflow-hidden text-center duration-300 rounded-lg shadow-2xl sm:p-8 max-w-80 sm:rounded-3xl bg-light hover:bg-yellow;
+    @apply relative flex-1 w-full overflow-hidden text-center duration-300 rounded-lg shadow-2xl max-w-80 sm:rounded-3xl bg-light hover:bg-yellow;
   }
   .triangle-core {
     @apply hidden lg:block absolute left-1/2 -translate-x-1/2 size-0 border-l-[35px] border-l-transparent border-t-[60px] border-t-orange border-r-[35px] border-r-transparent;
@@ -105,13 +137,13 @@ input[type="number"] {
   .home-hero-container {
     @apply flex flex-col-reverse items-center justify-center gap-16 pt-24 pb-8 min-h-500 lg:min-h-screen lg:pt-0 lg:items-end lg:flex-row 2xl:min-h-600;
   }
-  .popular-label-product-price {
+  .popular-label-price {
     @apply absolute top-0 right-0 px-4 py-1 uppercase sm:py-2 text-xxs sm:text-xs md:py-1 md:top-4 md:left-4 bg-orange rounded-es-2xl md:rounded-2xl w-max;
-  }
-  .popular-label-service-price {
-    @apply absolute px-4 py-1 uppercase text-xxs sm:text-xs top-1 right-1 sm:top-4 sm:right-4 bg-orange rounded-2xl w-max;
   }
   .link-product-price {
     @apply flex items-center gap-2 px-2 py-1 text-xs font-bold border sm:text-sm sm:px-4 md:px-6 sm:py-2 w-max rounded-4xl bg-light text-orange border-orange;
+  }
+  .link-service-price {
+    @apply mt-2 sm:mt-4 text-xs md:text-base py-1.5 lg:py-2.5 font-medium duration-300 shadow-lg w-full rounded-lg lg:rounded-2xl bg-orange text-light;
   }
 }

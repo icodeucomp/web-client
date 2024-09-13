@@ -71,7 +71,14 @@ export default function page() {
                   </i>
                   <div className="space-y-1 text-xs sm:text-sm">
                     <p className="font-bold text-dark">Twitter (X)</p>
-                    <p className="text-dark">iCodeU</p>
+                    <a
+                      href="https://x.com/icodeuu"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="font-medium duration-200 text-dark hover:text-orange hover:underline"
+                    >
+                      icodeuu
+                    </a>
                   </div>
                 </MotionComponent>
                 <MotionComponent
@@ -89,7 +96,14 @@ export default function page() {
                   </i>
                   <div className="space-y-1 text-xs sm:text-sm">
                     <p className="font-bold text-dark">Instagram</p>
-                    <p className="text-dark">iCodeU</p>
+                    <a
+                      href="https://www.instagram.com/icodeu_?igsh=MWtpZjQ0ZWZoNGQxag=="
+                      target="_blank"
+                      rel="noreferrer"
+                      className="font-medium duration-200 text-dark hover:text-orange hover:underline"
+                    >
+                      @icodeu_
+                    </a>
                   </div>
                 </MotionComponent>
                 <MotionComponent
@@ -107,7 +121,14 @@ export default function page() {
                   </i>
                   <div className="space-y-1 text-xs sm:text-sm">
                     <p className="font-bold text-dark">LinkedIn</p>
-                    <p className="text-dark">iCodeU</p>
+                    <a
+                      href="https://www.linkedin.com/company/icodeu"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="font-medium duration-200 text-dark hover:text-orange hover:underline"
+                    >
+                      icodeu
+                    </a>
                   </div>
                 </MotionComponent>
               </div>

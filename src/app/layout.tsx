@@ -19,7 +19,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body className={`${inter.className} min-h-screen flex flex-col scroll-smooth`}>
-        <Toaster position="bottom-center" reverseOrder={false} />
+        <Toaster position="top-center" />
         {children}
       </body>
     </html>

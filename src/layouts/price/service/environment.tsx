@@ -14,7 +14,9 @@ type ResponseService = ResponsePayload<ServiceOrProduct>;
 const Environment = ({ id }: { id: string }) => {
   const { response: service } = useGet<ResponseService>(`/services/${id}`);
 
-  const render = id === "1" ? webDev : id === "2" ? SEO : id === "3" ? uiAndUx : id === "4" ? wordpress : graphicDesign;
+  const filterServices = [webDev, SEO, uiAndUx, wordpress, graphicDesign];
+
+  const render = filterServices.find((services) => services.slug === service?.data.slug);
 
   return (
     <Container className="pb-28 sm:pb-20 lg:pb-40">
@@ -27,12 +29,12 @@ const Environment = ({ id }: { id: string }) => {
         animateX={0}
         className="max-w-xl text-lg font-bold leading-normal text-center md:text-start sm:text-xl md:text-2xl lg:text-3xl"
       >
-        {render.serviceTitle}
+        {render?.serviceTitle}
       </MotionComponent>
       <MotionComponent tag="div" duration={1} delay={0.3} initialO={0} initialY={100} animateO={1} animateY={0} className="overflow-x-auto scrollbar">
-        <div className={`flex items-center mt-16 ${render.top.length === 7 ? "gap-2" : "gap-6"}`}>
-          {render.top.map((item, index, row) => (
-            <div key={index} className={`flex items-start justify-center ${render.top.length === 7 ? "gap-2" : "gap-6"}`}>
+        <div className={`flex items-center mt-16 ${render?.top.length === 7 ? "gap-2" : "gap-6"}`}>
+          {render?.top.map((item, index, row) => (
+            <div key={index} className={`flex items-start justify-center ${render?.top.length === 7 ? "gap-2" : "gap-6"}`}>
               <div className="flex flex-col items-center justify-center gap-4 text-center">
                 <div className="grid p-4 rounded-full place-items-center bg-orange">
                   <Images src={item.pathIcon} alt="business process icon" className="size-12 md:size-16" />
@@ -70,7 +72,7 @@ const Environment = ({ id }: { id: string }) => {
           animateY={0}
           className="grid grid-cols-1 gap-4 sm:gap-8 sm:grid-cols-2"
         >
-          {render.bottom.map((item, index) => (
+          {render?.bottom.map((item, index) => (
             <div key={index} className="px-8 py-4 space-y-4 overflow-hidden bg-orange rounded-xl">
               <div className="flex items-center gap-4">
                 <Images src={item.pathIcon} alt={`${item.title} icon`} className="size-8 sm:size-10 md:size-12 lg:size-14" />

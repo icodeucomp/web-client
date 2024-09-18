@@ -1,6 +1,7 @@
 import { PriceServiceField } from "@/types";
 
 const webDev: PriceServiceField = {
+  slug: "responsive-web-development",
   serviceTitle: "Designing and Delivering The Right Web Solutions for Your Business",
   message: "Enhance your company's growth with custom web development services",
   top: [
@@ -52,6 +53,7 @@ const webDev: PriceServiceField = {
 };
 
 const SEO: PriceServiceField = {
+  slug: "seo-website-performance-optimization",
   serviceTitle: "Optimizing Your Site for Search Engines and Speed for Better Result",
   message: "Boost your site's visibility and speed with expert SEO and performance optimization",
   top: [
@@ -98,6 +100,7 @@ const SEO: PriceServiceField = {
 };
 
 const uiAndUx: PriceServiceField = {
+  slug: "custom-uiux-design",
   serviceTitle: "Designing Seamless Experiences That Connect with Your Audience",
   message: "Enhance user engagement with custom UI/UX design tailored to your brand",
   top: [
@@ -144,6 +147,7 @@ const uiAndUx: PriceServiceField = {
 };
 
 const wordpress: PriceServiceField = {
+  slug: "wordpress-development",
   serviceTitle: "Designing Seamless Experiences That Connect with Your Audience",
   message: "Power your online presence with a customized WordPress website, tailored to your needs",
   top: [
@@ -190,6 +194,7 @@ const wordpress: PriceServiceField = {
 };
 
 const graphicDesign: PriceServiceField = {
+  slug: "graphic-design",
   serviceTitle: "Visualizing Your Brand with Creative and Impactful Designs",
   message: "Enhance productivity with customized solutions for your tasks, designed to support your personal & business goals",
   top: [

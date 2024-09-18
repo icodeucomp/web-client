@@ -64,7 +64,7 @@ const Contact = () => {
         <Images src="/icons/chat.svg" alt="icon chat" className="hidden size-16 lg:block" />
         <h4 className="text-2xl font-bold md:text-3xl">Get a free consultancy from us right now!</h4>
         <p className="text-sm md:text-lg">
-          With lots of unique blocks, you can easily build a page without coding. Build your next landing page so quickly with Albino.
+          Take the first step towards IT transformation! Get your free consultation from our experts. Contact us now!
         </p>
         <a href="https://wa.me/6285183154204" target="_blank" rel="noreferrer" className="block">
           <Button className="flex items-center justify-center w-full gap-2 rounded-2xl bg-green hover:bg-green/90 hover:shadow-2xl">

@@ -34,7 +34,7 @@ const Contact = () => {
             </h4>
             <div className="text-center">
               <Images src="/images/home/asya-faris.png" alt="sandra photo" className="mx-auto overflow-hidden rounded-full size-20" />
-              <h5 className="mt-4 text-lg font-bold">Asya Faris</h5>
+              <h5 className="mt-4 text-lg font-bold">Asya Ismatullah Faris</h5>
               <p className="text-sm">Project Manager</p>
             </div>
           </Background>

@@ -27,7 +27,7 @@ const Product = ({ pathImg, price, title, description, index, slug, discount, di
 
   return (
     <motion.article initial={{ opacity: 0, y: 120 }} animate={controls} className="price-card-product group">
-      <p className="popular-label-price">Most Popular</p>
+      {/* <p className="popular-label-price">Most Popular</p> */}
       <div className="mt-8 sm:mt-16">
         <Images src={pathImg[0]} alt={title} className="w-full h-32 sm:h-48 md:h-60" cover />
       </div>

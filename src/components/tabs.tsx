@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 import { TabsProps } from "@/types";
 
-const Tabs = ({ tabs }: { tabs: TabsProps[] }) => {
+const Tabs = ({ tabsFields, loadProducts, loadServices }: TabsProps) => {
   const [activeTab, setActiveTab] = useState<number>(0);
 
   const { isInView, elementRef } = useInView<HTMLDivElement>();
@@ -25,7 +25,7 @@ const Tabs = ({ tabs }: { tabs: TabsProps[] }) => {
         transition={{ duration: 1, ease: "easeOut" }}
         className="flex justify-center gap-2 p-1 mx-auto rounded-full bg-light w-max"
       >
-        {tabs.map((tab, index) => (
+        {tabsFields.map((tab, index) => (
           <button
             key={index}
             className={`px-4 py-2 text-xs md:text-sm font-medium duration-300 ${activeTab === index ? "bg-orange rounded-full" : "text-gray-500"}`}
@@ -35,7 +35,15 @@ const Tabs = ({ tabs }: { tabs: TabsProps[] }) => {
           </button>
         ))}
       </motion.div>
-      <div className="p-4">{tabs[activeTab]?.children}</div>
+      <div className="p-4">
+        {loadProducts && loadServices ? (
+          <div className="flex justify-center mt-8">
+            <div className="loader"></div>
+          </div>
+        ) : (
+          <>{tabsFields[activeTab]?.children}</>
+        )}
+      </div>
     </>
   );
 };

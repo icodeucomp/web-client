@@ -27,8 +27,12 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export interface TabsProps {
-  label: string;
-  children: React.ReactNode;
+  loadServices: boolean;
+  loadProducts: boolean;
+  tabsFields: {
+    label: string;
+    children: React.ReactNode;
+  }[];
 }
 
 export interface MotionComponentProps {
@@ -54,11 +58,10 @@ export interface LandingCardPriceProps {
   onMouseLeave: () => void;
   onMouseEnter: () => void;
   isHighlight: boolean;
-  pathImg: string;
+  slug: string;
   price: number;
   title: string;
-  description: string[];
-  index: number;
+  features: string[];
 }
 
 export interface PriceCardProps {
@@ -79,7 +82,7 @@ export interface TemplateField {
 }
 
 export interface PriceServiceField {
-  slug?: string;
+  slug: string;
   serviceTitle: string;
   message: string;
   top: {
@@ -105,6 +108,22 @@ export interface OurService extends TemplateField {
   pathImg: string;
 }
 
+export interface ServeField {
+  pathImg: string;
+  description: string;
+}
+
+export interface NavbarField {
+  title: string;
+  path: string;
+}
+
+export interface ImagesField {
+  slug: string;
+  pathIcon: string;
+}
+
+//temporary
 export interface BlogField extends TemplateField {
   date: string;
   topic: string;

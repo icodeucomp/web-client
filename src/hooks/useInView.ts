@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const useInView = <T extends HTMLElement>(threshold = 0.5) => {
+const useInView = <T extends HTMLElement>(threshold = 0.25) => {
   const [isInView, setIsInView] = React.useState<boolean>(false);
   const elementRef = React.useRef<T | null>(null);
 

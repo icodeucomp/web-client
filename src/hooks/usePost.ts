@@ -2,8 +2,6 @@
 
 import { useState } from "react";
 
-import { AxiosResponse } from "axios";
-
 import request from "@/utils/api";
 
 const usePost = <T extends unknown>(path: string) => {
@@ -13,16 +11,16 @@ const usePost = <T extends unknown>(path: string) => {
 
   const execute = async (payload: any) => {
     setLoading(true);
-    try {
-      const response: AxiosResponse<T> = await request({ path, method: "POST", body: payload });
-      setResponse(response.data);
-      setError(null);
-    } catch (err: any) {
-      setError(err instanceof Error ? err.message : "An error occurred");
-      setResponse(null);
-    } finally {
-      setLoading(false);
-    }
+    await request({ path, method: "POST", body: payload })
+      .then((response) => {
+        setResponse(response.data);
+      })
+      .catch((err) => {
+        setError(err instanceof Error ? err.message : "An error occurred");
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   return { response, error, loading, execute };

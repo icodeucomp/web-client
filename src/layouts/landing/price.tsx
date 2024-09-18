@@ -1,9 +1,10 @@
 "use client";
 
-import React, { RefObject } from "react";
+import * as React from "react";
 
 import Link from "next/link";
 
+import useGet from "@/hooks/useGet";
 import useInView from "@/hooks/useInView";
 
 import { SwiperSlide, Swiper } from "swiper/react";
@@ -19,13 +20,17 @@ import Images from "@/components/images";
 import { IoIosArrowForward } from "react-icons/io";
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
 
-import { price } from "@/static";
+import { images } from "@/static";
 
 import currency from "@/utils/currency";
 
 import { LandingCardPriceProps } from "@/types";
+import { ResponsePayload, ServiceOrProduct } from "@/types/response-api";
+type ResponseService = ResponsePayload<ServiceOrProduct[]>;
 
-const Card = ({ onMouseLeave, onMouseEnter, isHighlight, pathImg, price, title, description, index }: LandingCardPriceProps) => {
+const Card = ({ onMouseLeave, onMouseEnter, isHighlight, price, title, features, slug }: LandingCardPriceProps) => {
+  const filterImages = images.filter((image) => image.slug === slug);
+
   return (
     <article
       className={`landing-card-price group ${isHighlight && "lg:-translate-y-16 lg:shadow-2xl lg:bg-yellow"}`}
@@ -33,14 +38,16 @@ const Card = ({ onMouseLeave, onMouseEnter, isHighlight, pathImg, price, title, 
       onMouseLeave={onMouseLeave}
     >
       {/* <p className="popular-label-service-price">Most Popular</p> */}
-      <div className="p-4 mx-auto mt-8 rounded-full bg-light">
-        <Images src={pathImg} alt={title} className="size-8 sm:size-10" />
-      </div>
+      {filterImages.map((image, index) => (
+        <div key={index} className="p-4 mx-auto mt-8 rounded-full bg-light">
+          <Images src={image.pathIcon} alt={image.slug} className="size-8 sm:size-10" />
+        </div>
+      ))}
       <h4 className="text-base font-bold h-14 md:text-lg text-blue">{title}</h4>
       <p className={`text-xs font-medium text-yellow group-hover:text-blue ${isHighlight ? "lg:text-blue" : "text-yellow"}`}>Starts From</p>
       <h5 className={`text-3xl font-bold text-yellow group-hover:text-blue ${isHighlight ? "lg:text-blue" : "text-yellow"}`}>{currency(price)}</h5>
-      <div className="space-y-2 h-28">
-        {description.map((child, e) => (
+      <div className="space-y-2 flex-grow">
+        {features.map((child, e) => (
           <p key={e} className={`text-sm font-medium text-gray-700 group-hover:text-light ${isHighlight ? "lg:text-light" : "text-gray-700"}`}>
             {child}
           </p>
@@ -59,6 +66,8 @@ const Card = ({ onMouseLeave, onMouseEnter, isHighlight, pathImg, price, title, 
 
 const Pricing = () => {
   const [hover, setHover] = React.useState<number | null>(null);
+
+  const { response: services } = useGet<ResponseService>(`/services`);
 
   const { isInView, elementRef } = useInView<HTMLDivElement>();
 
@@ -104,16 +113,15 @@ const Pricing = () => {
         transition={{ duration: 1, delay: 0.7, ease: "easeOut" }}
         className="justify-center hidden gap-8 py-8 lg:flex lg:bg-light rounded-3xl"
       >
-        {price.map((item, index) => {
-          const { description, pathImg, price, title } = item;
+        {services?.data.slice(0, 3).map((item, index) => {
+          const { features, images, price, name, slug } = item;
           return (
             <Card
               key={index}
-              index={index}
-              description={description}
-              pathImg={pathImg}
+              slug={slug}
+              features={features}
               price={price}
-              title={title}
+              title={name}
               isHighlight={hover === null ? index === 1 : hover === index}
               onMouseEnter={() => setHover(index)}
               onMouseLeave={() => setHover(null)}
@@ -136,16 +144,15 @@ const Pricing = () => {
           breakpoints={{ 0: { slidesPerView: 1 }, 768: { slidesPerView: 2 } }}
           slidesPerView={2}
         >
-          {price.map((item, index) => {
-            const { description, pathImg, price, title } = item;
+          {services?.data.slice(0, 3).map((item, index) => {
+            const { features, images, price, name, slug } = item;
             return (
               <SwiperSlide key={index}>
                 <Card
-                  index={index}
-                  description={description}
-                  pathImg={pathImg}
+                  slug={slug}
+                  features={features}
                   price={price}
-                  title={title}
+                  title={name}
                   isHighlight={hover === null ? index === 1 : hover === index}
                   onMouseEnter={() => setHover(index)}
                   onMouseLeave={() => setHover(null)}

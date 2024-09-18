@@ -1,6 +1,6 @@
-import { BlogField, OurService, PriceField, TemplateField, TestimonialField } from "@/types";
+import { BlogField, ImagesField, NavbarField, OurService, PriceField, ServeField, TemplateField, TestimonialField } from "@/types";
 
-export const navbarList: { title: string; path: string }[] = [
+export const navbarList: NavbarField[] = [
   { title: "Home", path: "/home" },
   { title: "About Us", path: "/about" },
   { title: "Services", path: "/service" },
@@ -68,7 +68,7 @@ export const service: TemplateField[] = [
   },
 ];
 
-export const serve: { pathImg: string; description: string }[] = [
+export const serve: ServeField[] = [
   { pathImg: "/icons/price.svg", description: "Highly Affordable Prices" },
   { pathImg: "/icons/person.svg", description: "Professional and Experienced Team" },
   { pathImg: "/icons/customer.svg", description: "Excellent Customer Service" },
@@ -122,7 +122,7 @@ export const ourService: OurService[] = [
       "Unlock the full potential of your online presence with our WordPress Development service. We create powerful, customizable, and easy-to-manage websites tailored to meet your specific needs and goals.",
   },
   {
-    pathIcon: "/icons/code-computer.svg",
+    pathIcon: "/icons/figma-white.svg",
     pathImg: "/images/service/uiux-phone.png",
     title: "UI/UX Custom Design",
     description:
@@ -154,6 +154,15 @@ export const stackImages: string[] = [
   "/images/price/stack-14.png",
 ];
 
+export const images: ImagesField[] = [
+  { slug: "custom-uiux-design", pathIcon: "/icons/figma-orange.svg" },
+  { slug: "wordpress-development", pathIcon: "/icons/wordpress-orange.svg" },
+  { slug: "responsive-web-development", pathIcon: "/icons/code-orange.svg" },
+  { slug: "seo-website-performance-optimization", pathIcon: "/icons/process-orange.svg" },
+  { slug: "graphic-design", pathIcon: "/icons/task-orange.svg" },
+];
+
+//temporary
 export const price: PriceField[] = [
   {
     pathImg: "/icons/code-orange.svg",

@@ -29,10 +29,10 @@ const Testimonial = () => {
         “Simply the best. Better than all the rest. I`d recommend this product to beginners and advanced users.”
       </MotionComponent>
       <MotionComponent tag="div" duration={1} delay={0.6} initialO={0} initialY={30} animateO={1} animateY={0} className="relative">
-        <Images src="/images/testi.png" alt="testimonial photo" className="mx-auto size-12" />
+        <Images src="/images/home/asya-faris.png" alt="testimonial photo" className="mx-auto overflow-hidden rounded-full size-12" />
       </MotionComponent>
       <MotionComponent tag="h5" duration={1} delay={0.9} initialO={0} initialY={30} animateO={1} animateY={0} className="font-bold uppercase">
-        Asya Faris
+        Asya Ismatullah Faris
       </MotionComponent>
     </Container>
   );

@@ -11,7 +11,7 @@ import { ResponsePayload, ServiceOrProduct } from "@/types/response-api";
 type ResponseProduct = ResponsePayload<ServiceOrProduct>;
 
 const Description = ({ id }: { id: string }) => {
-  const { response: products } = useGet<ResponseProduct>(`/products/${id}`);
+  const { response: product, loading } = useGet<ResponseProduct>(`/products/${id}`);
 
   return (
     <Container className="pb-16">
@@ -37,19 +37,32 @@ const Description = ({ id }: { id: string }) => {
         animateY={0}
         className="text-sm text-justify text-gray-300 md:text-base line-clamp-3"
       >
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit, iure tempora recusandae, accusamus iste accusantium eius libero
-        repudiandae consequatur hic mollitia atque in, ut vitae doloremque expedita similique. Ullam sapiente asperiores, neque eius aut magnam unde
-        ducimus architecto tempora facilis iusto maiores repellat, exercitationem similique voluptates tempore, eos odit cum.
+        {product?.data.description}
       </MotionComponent>
-      <MotionComponent tag="div" duration={0.9} delay={0.6} initialO={0} initialY={70} animateO={1} animateY={0} className="flex justify-center mt-4">
-        <p className="text-sm font-light text-center text-gray-300 md:text-base w-max group">
-          Click to read more
-          <IoIosArrowDown
-            size={24}
-            className="p-1 mx-auto mt-1 border rounded-full shadow-md border-light fill-light group-hover:fill-orange group-hover:bg-light"
-          />
-        </p>
-      </MotionComponent>
+      {loading ? (
+        <div className="flex justify-center mt-8">
+          <div className="loader"></div>
+        </div>
+      ) : (
+        <MotionComponent
+          tag="div"
+          duration={0.9}
+          delay={0.6}
+          initialO={0}
+          initialY={70}
+          animateO={1}
+          animateY={0}
+          className="flex justify-center mt-4"
+        >
+          <p className="text-sm font-light text-center text-gray-300 md:text-base w-max group">
+            Click to read more
+            <IoIosArrowDown
+              size={24}
+              className="p-1 mx-auto mt-1 border rounded-full shadow-md border-light fill-light group-hover:fill-orange group-hover:bg-light"
+            />
+          </p>
+        </MotionComponent>
+      )}
     </Container>
   );
 };

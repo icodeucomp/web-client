@@ -16,8 +16,8 @@ import { ServiceOrProduct, ResponsePayload } from "@/types/response-api";
 type ResponseProductsOrServices = ResponsePayload<ServiceOrProduct[]>;
 
 const Business = () => {
-  const { response: products } = useGet<ResponseProductsOrServices>("/products");
-  const { response: services } = useGet<ResponseProductsOrServices>("/services");
+  const { response: products, loading: loadProducts } = useGet<ResponseProductsOrServices>("/products");
+  const { response: services, loading: loadServices } = useGet<ResponseProductsOrServices>("/services");
 
   const { isInView, elementRef } = useInView<HTMLDivElement>();
 
@@ -86,7 +86,7 @@ const Business = () => {
         <h4 className="text-2xl text-gradient md:text-3xl">Choose the perfect plan for your business needs</h4>
       </motion.div>
       <div className="mt-10">
-        <Tabs tabs={tabData} />
+        <Tabs tabsFields={tabData} loadProducts={loadProducts} loadServices={loadServices} />
       </div>
     </Container>
   );

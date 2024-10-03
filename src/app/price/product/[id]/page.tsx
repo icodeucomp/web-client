@@ -10,7 +10,7 @@ export default function page({ params }: { params: { id: string } }) {
         <div className="bg-gradient-to-b from-blue/50 to-orange/50">
           <Price id={params.id} />
           <Description id={params.id} />
-          <Table id={params.id} />
+          {/* <Table id={params.id} /> */}
         </div>
       </section>
     </div>

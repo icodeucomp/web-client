@@ -3,14 +3,14 @@ import Link from "next/link";
 import Button from "@/components/button";
 import Container from "@/components/container";
 import Images from "@/components/images";
+import MotionComponent from "@/components/motion";
 
 import { IoIosArrowDown } from "react-icons/io";
-import MotionComponent from "@/components/motion";
 
 const Hero = () => {
   return (
-    <Container className="relative min-h-500 lg:min-h-screen 2xl:min-h-600">
-      <div className="flex justify-between py-4">
+    <Container className="min-h-500 lg:min-h-screen 2xl:min-h-600 flex justify-center items-center">
+      <div className="flex justify-between p-4 absolute top-0 left-0 w-full">
         <MotionComponent tag="div" duration={1} initialO={0} initialX={-50} animateO={1} animateX={0} className="relative">
           <Link href="/home" className="flex items-center gap-2">
             <Images className="size-10 sm:size-12 md:size-14" src="/icons/logo-icodeu.svg" alt="logo i code u" />
@@ -32,7 +32,7 @@ const Hero = () => {
           </Link>
         </MotionComponent>
       </div>
-      <div className="max-w-2xl mx-auto my-24 space-y-8 text-center">
+      <div className="max-w-2xl mx-auto space-y-8 text-center">
         <MotionComponent tag="h2" duration={1} initialO={0} initialY={30} animateO={1} animateY={0} className="text-2xl md:text-5xl text-gradient">
           Create the Right Technology for Your Business
         </MotionComponent>

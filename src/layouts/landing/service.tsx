@@ -7,7 +7,7 @@ import { service } from "@/static";
 const Service = () => {
   return (
     <Container>
-      <div className="pt-4 pb-16 text-center">
+      <div className="pt-16 sm:pt-24 lg:pt-4 pb-16 text-center">
         <MotionComponent
           tag="h2"
           duration={1}

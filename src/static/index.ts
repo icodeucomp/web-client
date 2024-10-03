@@ -103,6 +103,7 @@ export const ourService: OurService[] = [
   {
     pathIcon: "/icons/code-computer.svg",
     pathImg: "/images/service/responsive.png",
+    slug: "responsive-web-development",
     title: "Responsive Web Development",
     description:
       "Our Responsive Web Development service ensures that your website looks and functions flawlessly on any screen size, from desktops to smartphones and tablets.",
@@ -110,6 +111,7 @@ export const ourService: OurService[] = [
   {
     pathIcon: "/icons/statistics.svg",
     pathImg: "/images/service/notebook.png",
+    slug: "seo-website-performance-optimization",
     title: "SEO & Website Performance Optimization",
     description:
       "Boost your online visibility and enhance your website's performance with our comprehensive SEO & Website Performance Optimization service. We help you achieve higher search engine rankings and ensure your site runs smoothly, providing an exceptional user experience that keeps visitors engaged.",
@@ -117,6 +119,7 @@ export const ourService: OurService[] = [
   {
     pathIcon: "/icons/wordpress-white.svg",
     pathImg: "/images/service/wordpress.png",
+    slug: "wordpress-development",
     title: "WordPress Development",
     description:
       "Unlock the full potential of your online presence with our WordPress Development service. We create powerful, customizable, and easy-to-manage websites tailored to meet your specific needs and goals.",
@@ -124,6 +127,7 @@ export const ourService: OurService[] = [
   {
     pathIcon: "/icons/figma-white.svg",
     pathImg: "/images/service/uiux-phone.png",
+    slug: "custom-uiux-design",
     title: "UI/UX Custom Design",
     description:
       "Elevate your digital experience with our UI/UX Custom Design service. We combine stunning visuals with seamless functionality to create engaging and user-friendly interfaces that resonate with your audience.",
@@ -131,6 +135,7 @@ export const ourService: OurService[] = [
   {
     pathIcon: "/icons/task-white.svg",
     pathImg: "/images/service/time-management.png",
+    slug: "graphic-design",
     title: "Graphic Design",
     description:
       "Harness the power of professional graphic design in your brand. Unique logos, eye-catching marketing materials and digital graphic/illustrated work... to make your brand look awesome. By info graphics that speak for themselves, to packaging designs of the future -- we create compelling work designed specifically to captivate & communicate.",

@@ -56,7 +56,7 @@ const Mobile = () => {
                   <Images src={item.pathIcon} alt={item.title} className="size-10" />
                   <h5 className="text-lg font-bold md:text-xl lg:text-2xl h-14 lg:auto">{item.title}</h5>
                   <Link
-                    href={`/price/service/${index + 1}`}
+                    href={`/price/service/${item.slug}`}
                     className="flex items-center gap-2 text-base font-medium text-center md:text-xl w-max group"
                   >
                     Learn More

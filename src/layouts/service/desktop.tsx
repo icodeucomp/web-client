@@ -43,7 +43,7 @@ const Desktop = () => {
               <Images src={item.pathIcon} alt={item.title} className="size-12" />
               <h5 className="text-xl font-bold lg:text-2xl">{item.title}</h5>
               <p className="text-sm font-medium text-justify lg:text-base">{item.description}</p>
-              <Link href={`/price/service/${index + 1}`} className="flex items-center gap-2 text-xl font-medium text-center w-max group">
+              <Link href={`/price/service/${item.slug}`} className="flex items-center gap-2 text-xl font-medium text-center w-max group">
                 Learn More
                 <FaLongArrowAltRight size={24} />
               </Link>
@@ -72,10 +72,10 @@ const Desktop = () => {
             <Images src={ourService[4].pathIcon} alt="Graphic Design" className="size-12" />
             <h5 className="text-xl font-bold lg:text-2xl">{ourService[4].title}</h5>
             <p className="text-sm font-medium text-justify lg:text-base">{ourService[4].description}</p>
-            <p className="flex items-center gap-2 text-lg font-medium text-center w-max group">
+            <Link href={`/price/service/${ourService[4].slug}`} className="flex items-center gap-2 text-lg font-medium text-center w-max group">
               Learn More
               <FaLongArrowAltRight size={24} />
-            </p>
+            </Link>
           </div>
           <Images src={ourService[4].pathImg} alt={ourService[4].title} className="h-52 w-[450px]" cover />
         </div>

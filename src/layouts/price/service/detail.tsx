@@ -28,27 +28,22 @@ const Detail = ({ id }: { id: string }) => {
   return (
     <>
       <Container className="pt-40">
-        {loading ? (
-          <div className="flex justify-center mt-8">
-            <div className="loader"></div>
+        <MotionComponent
+          tag="div"
+          duration={0.5}
+          initialO={0}
+          initialY={-100}
+          animateO={1}
+          animateY={0}
+          className="items-center justify-between hidden mb-10 sm:flex"
+        >
+          <div className="flex items-center w-full">
+            <p className="flex-shrink text-sm font-semibold tracking-wide uppercase text-light me-4 md:text-lg">Services</p>
+            <i className="flex-grow max-w-xs border-t-2 border-gray-400" />
           </div>
-        ) : (
-          <MotionComponent
-            tag="div"
-            duration={0.5}
-            initialO={0}
-            initialY={-100}
-            animateO={1}
-            animateY={0}
-            className="items-center justify-between hidden mb-10 sm:flex"
-          >
-            <div className="flex items-center w-full">
-              <p className="flex-shrink text-sm font-semibold tracking-wide uppercase text-light me-4 md:text-lg">Services</p>
-              <i className="flex-grow max-w-xs border-t-2 border-gray-400" />
-            </div>
-            {/* <Button className="cursor-auto whitespace-nowrap bg-orange rounded-3xl text-light">Most Popular</Button> */}
-          </MotionComponent>
-        )}
+          {/* <Button className="cursor-auto whitespace-nowrap bg-orange rounded-3xl text-light">Most Popular</Button> */}
+        </MotionComponent>
+
         {loading ? (
           <div className="flex justify-center mt-8">
             <div className="loader"></div>

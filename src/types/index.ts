@@ -105,6 +105,7 @@ export interface InputType {
 }
 
 export interface OurService extends TemplateField {
+  slug: string;
   pathImg: string;
 }
 

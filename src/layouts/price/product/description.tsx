@@ -14,7 +14,7 @@ const Description = ({ id }: { id: string }) => {
   const { response: product, loading } = useGet<ResponseProduct>(`/products/${id}`);
 
   return (
-    <Container className="pb-16">
+    <Container className="pb-16 lg:pb-32">
       <hr className="mb-8" />
       <MotionComponent
         tag="h4"
@@ -27,40 +27,23 @@ const Description = ({ id }: { id: string }) => {
       >
         Product Description
       </MotionComponent>
-      <MotionComponent
-        tag="p"
-        duration={0.6}
-        delay={0.3}
-        initialO={0}
-        initialY={70}
-        animateO={1}
-        animateY={0}
-        className="text-sm text-justify text-gray-300 md:text-base line-clamp-3"
-      >
-        {product?.data.description}
-      </MotionComponent>
+
       {loading ? (
         <div className="flex justify-center mt-8">
           <div className="loader"></div>
         </div>
       ) : (
         <MotionComponent
-          tag="div"
-          duration={0.9}
-          delay={0.6}
+          tag="p"
+          duration={0.6}
+          delay={0.3}
           initialO={0}
           initialY={70}
           animateO={1}
           animateY={0}
-          className="flex justify-center mt-4"
+          className="text-sm text-justify text-gray-300 md:text-base line-clamp-3"
         >
-          <p className="text-sm font-light text-center text-gray-300 md:text-base w-max group">
-            Click to read more
-            <IoIosArrowDown
-              size={24}
-              className="p-1 mx-auto mt-1 border rounded-full shadow-md border-light fill-light group-hover:fill-orange group-hover:bg-light"
-            />
-          </p>
+          {product?.data.description}
         </MotionComponent>
       )}
     </Container>

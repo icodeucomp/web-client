@@ -2,7 +2,7 @@ import { UseAxiosInstance } from "@/types/response-api";
 import axios, { AxiosRequestConfig } from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "https://icodeu-backend-vwixvuygpq-as.a.run.app/api/v1",
+  baseURL: "https://icodeu-web-backend-vwixvuygpq-et.a.run.app/api/v1",
 });
 
 const request = async ({ path, method, body }: UseAxiosInstance) => {

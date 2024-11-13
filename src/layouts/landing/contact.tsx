@@ -31,7 +31,7 @@ const Contact = () => {
 
   const { response: services } = useGet<ResponseServicesName>("/services/name");
 
-  const { execute, loading, response } = usePost<ResponseConsulting>("/mails/consulting");
+  const { execute, loading } = usePost<ResponseConsulting>("/mails/consulting");
 
   const initValues = { fullName: "", email: "", phoneNumber: "", service: "" };
 
@@ -47,7 +47,6 @@ const Contact = () => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     execute(input);
-    toast.success(response?.message as string);
     setInput(initValues);
   };
 
@@ -63,9 +62,7 @@ const Contact = () => {
       >
         <Images src="/icons/chat.svg" alt="icon chat" className="hidden size-16 lg:block" />
         <h4 className="text-2xl font-bold md:text-3xl">Get a free consultancy from us right now!</h4>
-        <p className="text-sm md:text-lg">
-          Take the first step towards IT transformation! Get your free consultation from our experts. Contact us now!
-        </p>
+        <p className="text-sm md:text-lg">Take the first step towards IT transformation! Get your free consultation from our experts. Contact us now!</p>
         <a href="https://wa.me/6285183154204" target="_blank" rel="noreferrer" className="block">
           <Button className="flex items-center justify-center w-full gap-2 rounded-2xl bg-green hover:bg-green/90 hover:shadow-2xl">
             <FaWhatsapp className="size-6 text-light" /> Contact us through Whatsapp
@@ -90,29 +87,13 @@ const Contact = () => {
             <label htmlFor="email" className="text-sm font-bold md:text-base text-dark">
               Email
             </label>
-            <input
-              type="email"
-              id="email"
-              className="input-form"
-              placeholder="icodeuu@gmail.com"
-              required
-              onChange={handleChange}
-              value={input.email}
-            />
+            <input type="email" id="email" className="input-form" placeholder="icodeuu@gmail.com" required onChange={handleChange} value={input.email} />
           </div>
           <div className="space-y-1">
             <label htmlFor="phoneNumber" className="text-sm font-bold md:text-base text-dark">
               Number
             </label>
-            <input
-              type="number"
-              id="phoneNumber"
-              className="input-form"
-              placeholder="085183154204"
-              required
-              onChange={handleChange}
-              value={input.phoneNumber}
-            />
+            <input type="number" id="phoneNumber" className="input-form" placeholder="085183154204" required onChange={handleChange} value={input.phoneNumber} />
           </div>
           <div className="space-y-1">
             <label htmlFor="service" className="text-sm font-bold md:text-base text-dark">

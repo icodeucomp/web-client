@@ -23,7 +23,7 @@ const ContactFormSlice = () => {
 
   const [input, setInput] = useState<InputType>(initValues);
 
-  const { execute, loading, response } = usePost<ResponseContactUs>("/mails/contact-us");
+  const { execute, loading } = usePost<ResponseContactUs>("/mails/contact-us");
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setInput((prev) => ({
@@ -35,7 +35,6 @@ const ContactFormSlice = () => {
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     execute(input);
-    toast.success(response?.message as string);
     setInput(initValues);
   };
 

@@ -65,10 +65,7 @@ const Header = () => {
   }, [lastScrollY]);
 
   return (
-    <header
-      ref={ref}
-      className={`fixed top-0 w-full py-4 z-1000 transition-all duration-500 bg-blue ${isVisible ? "translate-y-0" : "-translate-y-full"} ${bgColor}`}
-    >
+    <header ref={ref} className={`fixed top-0 w-full py-4 z-1000 transition-all duration-500 bg-blue ${isVisible ? "translate-y-0" : "-translate-y-full"} ${bgColor}`}>
       <Container className="flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <Images className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14" src="/icons/logo-icodeu.svg" alt="logo i code u" />
@@ -76,11 +73,7 @@ const Header = () => {
         </Link>
         <nav className="hidden gap-4 md:flex">
           {navbarList.slice(0, 4).map((item, index) => (
-            <Link
-              key={index}
-              href={item.path}
-              className={`font-medium duration-300 hover:text-orange hover:font-bold ${isActive(item.path) ? "text-orange" : "text-light"}`}
-            >
+            <Link key={index} href={item.path} className={`font-medium duration-300 hover:text-orange hover:font-bold ${isActive(item.path) ? "text-orange" : "text-light"}`}>
               {item.title}
             </Link>
           ))}
@@ -92,11 +85,7 @@ const Header = () => {
           className={`absolute left-0 flex-col items-center w-full gap-4 px-8 py-8 top-10 md:hidden text-nowrap bg-blue ${bgColor}`}
         >
           {navbarList.map((item, index) => (
-            <Link
-              key={index}
-              href={item.path}
-              className={`font-medium duration-300 hover:text-orange hover:font-bold ${isActive(item.path) ? "text-orange" : "text-light"}`}
-            >
+            <Link key={index} href={item.path} className={`font-medium duration-300 hover:text-orange hover:font-bold ${isActive(item.path) ? "text-orange" : "text-light"}`}>
               {item.title}
             </Link>
           ))}
@@ -106,9 +95,7 @@ const Header = () => {
           <MdArrowCircleRight size={24} className="duration-300 group-hover:fill-orange" />
         </Link>
         <div className="block md:hidden">
-          <button onClick={toggleNavbar}>
-            {navbar ? <IoClose size={32} className="fill-orange" /> : <IoMdMenu size={32} className="fill-orange" />}
-          </button>
+          <button onClick={toggleNavbar}>{navbar ? <IoClose size={32} className="fill-orange" /> : <IoMdMenu size={32} className="fill-orange" />}</button>
         </div>
       </Container>
     </header>

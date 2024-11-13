@@ -25,47 +25,23 @@ const Business = () => {
 
   const tabData = [
     {
-      label: "Products",
-      children: (
-        <div className="grid grid-cols-2 gap-2 mt-8 lg:grid-cols-3 sm:gap-4 md:gap-8">
-          {products?.data.map((item, index) => {
-            const { description, price, images, name, discount, slug, discountedPrice } = item;
-            return (
-              <Product
-                key={index}
-                index={index}
-                description={description}
-                pathImg={images}
-                price={price}
-                title={name}
-                slug={slug}
-                discount={discount}
-                discountedPrice={discountedPrice}
-              />
-            );
-          })}
-        </div>
-      ),
-    },
-    {
       label: "Services",
       children: (
         <div className="grid grid-cols-2 gap-2 mt-8 lg:grid-cols-3 sm:gap-4 md:gap-8">
           {services?.data.map((item, index) => {
             const { description, images, price, name, discount, discountedPrice, slug } = item;
-            return (
-              <Service
-                key={index}
-                index={index}
-                description={description}
-                pathImg={images}
-                price={price}
-                title={name}
-                slug={slug}
-                discount={discount}
-                discountedPrice={discountedPrice}
-              />
-            );
+            return <Service key={index} index={index} description={description} pathImg={images} price={price} title={name} slug={slug} discount={discount} discountedPrice={discountedPrice} />;
+          })}
+        </div>
+      ),
+    },
+    {
+      label: "Products",
+      children: (
+        <div className="grid grid-cols-2 gap-2 mt-8 lg:grid-cols-3 sm:gap-4 md:gap-8">
+          {products?.data.map((item, index) => {
+            const { description, price, images, name, discount, slug, discountedPrice } = item;
+            return <Product key={index} index={index} description={description} pathImg={images} price={price} title={name} slug={slug} discount={discount} discountedPrice={discountedPrice} />;
           })}
         </div>
       ),

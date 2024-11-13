@@ -6,22 +6,13 @@ import { experience } from "@/static";
 const ExperienceSlice = () => {
   return (
     <>
-      <MotionComponent
-        tag="div"
-        duration={1}
-        initialO={0}
-        initialX={80}
-        animateO={1}
-        animateX={0}
-        className="flex items-start justify-end gap-8 pt-8 text-end"
-      >
+      <MotionComponent tag="div" duration={1} initialO={0} initialX={80} animateO={1} animateX={0} className="flex items-start justify-end gap-8 pt-8 text-end">
         <div className="max-w-full space-y-8 md:max-w-sm ms-auto">
           <h4 className="text-2xl font-bold">
             Experience the Power of <strong className="text-gradient">Process graphic</strong>
           </h4>
           <p className="text-sm text-gray-300 sm:text-base text-end">
-            Rather than focusing solely on the problem, we embrace an agile approach to build comprehensive, end-to-end solutions that adapt
-            seamlessly to your needs.
+            Rather than focusing solely on the problem, we embrace an agile approach to build comprehensive, end-to-end solutions that adapt seamlessly to your needs.
           </p>
         </div>
         <div className="p-4 rounded-full shadow-xl bg-yellow shadow-white/20">

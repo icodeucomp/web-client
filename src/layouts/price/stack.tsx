@@ -16,6 +16,8 @@ const Stack = () => {
     animate: { x: ["0%", "-100%"], transition: { x: { repeat: Infinity, repeatType: "loop", ease: "linear", duration: 5 } } },
   };
 
+  // comments
+
   return (
     <Container className="pb-32 space-y-8">
       <div className="flex flex-col space-y-2 text-3xl text-center md:text-start md:text-4xl lg:text-5xl">

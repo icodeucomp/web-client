@@ -19,7 +19,7 @@ const Contact = () => {
           <Background parentClassName="max-w-lg" className="items-center justify-center gap-16 px-4 text-gray-200 md:px-8 min-h-500" src="/images/home/talk-people.png">
             <h4 className="text-3xl font-bold leading-snug text-center">“We are committed to delivering the ideal technology to drive your business forward”</h4>
             <div className="text-center">
-              <Images src="/images/home/asya-faris.png" alt="sandra photo" className="mx-auto overflow-hidden rounded-full size-20" />
+              <Images src="/images/home/default-photo.png" alt="sandra photo" className="mx-auto overflow-hidden rounded-full size-16" />
               <h5 className="mt-4 text-lg font-bold">Asya Ismatullah Faris</h5>
               <p className="text-sm">Project Manager</p>
             </div>
